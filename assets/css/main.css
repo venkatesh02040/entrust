@@ -27,7 +27,7 @@
     --tl-color-common-black: #000000;
     --tl-color-heading-primary: #191919;
     --tl-color-text-body: #4D4D52;
-    --tl-color-theme-primary: #CAA05C;
+    --tl-color-theme-primary: #C6A34F;
     --tl-color-bg-1: #1C1C1D;
     --tl-color-grey-1: #59585D;
     --tl-color-grey-2: #9F9FA4;
@@ -648,7 +648,7 @@ ul {
     font-family: var(--tl-ff-heading);
     font-size: 80px;
     font-weight: 800;
-    color: #fff;
+    color: #c6a34f;
     text-transform: uppercase;
     overflow-x: hidden
 }
@@ -705,7 +705,7 @@ ul {
 
 @media only screen and (max-width: 767px) {
     .site-name span {
-        font-size: 40px
+        font-size: 40px;
     }
 }
 
@@ -2894,10 +2894,9 @@ ul {
 }
 
 .header .primary-header-inner .header-menu-wrap ul li a {
-    font-family: var(--tl-ff-heading);
     color: var(--tl-color-common-white);
     display: block;
-    font-size: 16px;
+    font-size: 17px;
     padding: 36px 0;
     letter-spacing: 0px;
     font-weight: 500;
@@ -3144,15 +3143,14 @@ ul {
 
 .header .primary-header-inner .header-right-wrap .header-contact .content .call-text {
     color: var(--tl-color-common-white);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     display: block
 }
 
 .header .primary-header-inner .header-right-wrap .header-contact .content .call-number {
-    font-family: var(--tl-ff-heading);
     color: var(--tl-color-common-white);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400
 }
 
@@ -3321,7 +3319,7 @@ ul {
 }
 
 .header .primary-header.fixed {
-    background-color: var(--tl-color-heading-primary);
+    background-color: #c6a34f;
     top: 0;
     transition: all .3s ease-in-out
 }
@@ -10617,7 +10615,7 @@ ul {
 
 .hero-section-6 .hero-text span {
     font-family: var(--tl-ff-heading);
-    background: linear-gradient(180deg, #CAA05C 14.9%, rgba(153, 153, 153, 0) 65.95%);
+    background: linear-gradient(180deg, #C6A34F 14.9%, rgba(153, 153, 153, 0) 65.95%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
     background-clip: text;
@@ -16512,7 +16510,8 @@ ul {
 
 .side-menu-social {
     margin-top: 40px;
-    list-style: none
+    list-style: none;
+    color: #c6a34f;
 }
 
 .side-menu-social li {
@@ -17736,7 +17735,6 @@ blockquote .content .author {
 }
 
 .footer-widget .footer-list li a {
-    font-family: var(--tl-ff-heading);
     color: var(--tl-color-common-white);
     font-size: 18px;
     font-weight: 400;
@@ -17837,7 +17835,7 @@ blockquote .content .author {
 }
 
 .social-list a:hover {
-  color: #CAA05C;
+  color: #C6A34F;
 }
 
 @media only screen and (max-width: 992px) {
