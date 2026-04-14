@@ -2914,7 +2914,7 @@ ul {
 }
 
 .header .primary-header-inner .header-menu-wrap ul li a:hover {
-    color: #162950;
+    color: var(--tl-color-common-white);
 }
 
 .header .primary-header-inner .header-menu-wrap ul li a i {
