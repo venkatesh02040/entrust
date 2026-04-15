@@ -107,7 +107,7 @@
             font-family: 'Cal Sans', serif;
             font-size: clamp(36px, 5vw, 64px);
             font-weight: 300;
-            color: var(--entrust-charcoal);
+            color: #162950;
             line-height: 1.1;
             margin: 0 0 24px;
         }
@@ -198,8 +198,10 @@
             background: var(--entrust-border);
             border: 1px solid var(--entrust-border);
             border-bottom: none;
-            position: relative;
-            z-index: 1;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden;
+            /* IMPORTANT */
         }
 
         .dv-contact-field {
@@ -216,30 +218,31 @@
             position: absolute;
             top: 8px;
             left: 24px;
-            font-size: 10px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: var(--entrust-gold);
+            color: white;
             pointer-events: none;
         }
 
         .dv-contact-field input {
             width: 100%;
-            padding: 26px 24px 10px;
+            padding: 32px 24px 10px;
             border: none;
             outline: none;
-            background: transparent;
+            background: #c6a34f;
             font-family: 'Jost', sans-serif;
-            font-size: 13px;
+            font-size: 16px;
             font-weight: 400;
-            color: var(--entrust-charcoal);
+            color: white;
             letter-spacing: 0.02em;
         }
 
         .dv-contact-field input::placeholder {
-            color: var(--entrust-muted);
-            font-weight: 300;
+            color: var(--entrust-ivory);
+            font-weight: 100;
+            font-size: 13px;
         }
 
         .dv-contact-field.dv-field-error {
@@ -261,9 +264,10 @@
             gap: 1px;
             background: var(--entrust-border);
             border: 1px solid var(--entrust-border);
-            position: relative;
-            z-index: 1;
-            margin-bottom: 64px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 50px;
         }
 
         .dv-room-panel {
@@ -373,7 +377,7 @@
         }
 
         .dv-option.selected .dv-option-text {
-            color: var(--entrust-charcoal);
+            color: #162950;
             font-weight: 500;
         }
 
@@ -452,12 +456,17 @@
             font-weight: 500;
         }
 
+        .dv-reset-btn {
+            border-radius: 12px;
+        }
+
         .dv-visualise-btn {
             display: inline-flex;
+            border-radius: 12px;
             align-items: center;
             gap: 12px;
             padding: 16px 40px;
-            background: var(--entrust-charcoal);
+            background: #162950;
             color: var(--entrust-ivory);
             font-family: 'Jost', sans-serif;
             font-size: 12px;
@@ -658,6 +667,7 @@
             padding: 28px 16px 12px;
             background: linear-gradient(to top, rgba(24, 22, 18, 0.82) 0%, transparent 100%);
             pointer-events: none;
+            display: none;
         }
 
         .dv-mosaic-room-tag {
@@ -882,7 +892,7 @@
                         <div class="header-menu-wrap">
                             <div class="mobile-menu-items">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a class="enav-active" href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="services.html">Services</a></li>
                                     <li><a href="portfolio.html">Portfolio</a></li>
@@ -898,7 +908,7 @@
                         <a href="tel:+919845012345" class="header-contact">
                             <span class="icon"><i class="fa-regular fa-phone"></i></span>
                             <span class="content">
-                                <span class="call-text">Call Us Phone</span>
+                                <span class="call-text">Speak With Us</span>
                                 <span class="call-number"> +91 98450 12345</span>
                             </span>
                         </a>
@@ -993,7 +1003,7 @@
                         <a href="tel:+919845012345">+91 98450 12345</a>
                     </li>
                     <li>
-                        <a class="mail" href="mailto:info.entrust@gmail.com">info.entrust@gmail.com</a>
+                        <a class="mail" href="mailto:info@entrust.com">info@entrust.com</a>
                     </li>
                 </ul>
             </div>
@@ -1030,7 +1040,7 @@
                     </li>
                     <li>
                         <i class="fas fa-envelope-open-text"></i>
-                        <a href="mailto:info.entrust@gmail.com">info.entrust@gmail.com</a>
+                        <a href="mailto:info@entrust.com">info@entrust.com</a>
                     </li>
                 </ul>
             </div>
@@ -1084,16 +1094,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slider-element-wrap" data-animation="antra-fadeInRight" data-delay="1300ms"
-                                    data-duration="1300ms">
-                                    <div class="slider-element">
-                                        <h3 class="element-title">Tailored spaces designed around your needs</h3>
-                                        <p>Interior Design <br>Space Planning <br>3D Visualisation</p>
-                                    </div>
-                                    <div class="slider-thumb">
-                                        <img src="assets/img/images/slider-thumb-1.png" alt="slider">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -1128,16 +1128,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slider-element-wrap" data-animation="antra-fadeInRight" data-delay="1300ms"
-                                    data-duration="1300ms">
-                                    <div class="slider-element">
-                                        <h3 class="element-title">A clear process from concept to completion</h3>
-                                        <p>Design Consultation <br>Material Selection <br>Project Execution</p>
-                                    </div>
-                                    <div class="slider-thumb">
-                                        <img src="assets/img/images/slider-thumb-3.png" alt="slider">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -1152,7 +1142,8 @@
                                                 </h4>
                                                 <h2 class="section-title cursor-effect"
                                                     data-animation="antra-fadeInDown" data-delay="1200ms"
-                                                    data-duration="1400ms">Timeless Interiors for <br> Everyday Spaces</h2>
+                                                    data-duration="1400ms">Timeless Interiors for <br> Everyday Spaces
+                                                </h2>
                                             </div>
                                             <div class="bottom-content">
                                                 <div class="antra-desc" data-animation="antra-fadeInUp"
@@ -1169,16 +1160,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="slider-element-wrap" data-animation="antra-fadeInRight" data-delay="1300ms"
-                                    data-duration="1300ms">
-                                    <div class="slider-element">
-                                        <h3 class="element-title">Thoughtful interiors crafted with care</h3>
-                                        <p>Custom Concepts <br>Premium Finishes <br>Turnkey Solutions</p>
-                                    </div>
-                                    <div class="slider-thumb">
-                                        <img src="assets/img/images/slider-thumb-2.png" alt="slider">
                                     </div>
                                 </div>
                             </div>
@@ -1220,7 +1201,8 @@
                                         <img src="assets/img/icon/service-icon-1.png" alt="service">
                                     </div>
                                 </div>
-                                <p>We create practical designs balancing function, structure, and aesthetics with clarity and purpose.</p>
+                                <p>We create practical designs balancing function, structure, and aesthetics with
+                                    clarity and purpose.</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-12">
@@ -1233,7 +1215,8 @@
                                         <img src="assets/img/icon/service-icon-2.png" alt="service">
                                     </div>
                                 </div>
-                                <p>We design interiors that combine style, comfort, and functionality tailored to your vision and everyday needs.</p>
+                                <p>We design interiors that combine style, comfort, and functionality tailored to your
+                                    vision and everyday needs.</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-12">
@@ -1546,7 +1529,7 @@
             </section>
 
             <section class="counter-section counter-1">
-                <div class="counter-text"><span>entrust</span></div>
+                <div class="counter-text"><span>ENTRUST</span></div>
                 <div class="counter-element scroll-area"><img class="scroll-img"
                         src="assets/img/images/counter-img-1.png" alt="counter"></div>
                 <div class="container container-2">
@@ -1826,7 +1809,7 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="section-heading mb-0">
                                 <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
-                                    data-duration="0.9" data-stagger="0.03">amazing design ideas</h4>
+                                    data-duration="0.9" data-stagger="0.03">our design ideas</h4>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12">
@@ -1955,7 +1938,8 @@
                                 <ul class="footer-list">
                                     <li><a>Our Services</a></li>
                                     <li><a href="residential-interior-design.html">Residential Interior Design</a></li>
-                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage Design</a></li>
+                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage
+                                            Design</a></li>
                                     <li><a href="space-planning-layout-design.html">Space Planning & Layout Design</a>
                                     </li>
                                     <li><a href="furniture-materials-finish-selection.html">Furniture, Materials &
@@ -1970,29 +1954,26 @@
                             <div class="footer-widget">
                                 <div class="footer-address">
                                     <a class="number" href="tel:+919845012345">+91 98450 12345</a>
-                                    <a class="mail" href="mailto:info.entrust@gmail.com">info.entrust@gmail.com</a>
+                                    <a class="mail" href="mailto:info@entrust.com">info@entrust.com</a>
                                     <ul class="social-list">
                                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                     </ul>
+                                    <p class="mb-0">
+                                        ©
+                                        <script>document.write(new Date().getFullYear())</script> entrust. All Rights
+                                        Reserved.
+                                    </p>
+                                    <p>Designed and Developed by <a href="https://thinkb.agency"
+                                            target="_blank">thinkB</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="copyright-area">
-                    <div class="container">
-                        <div class="copyright-content">
-                            <p>©
-                                <script>document.write(new Date().getFullYear())</script> entrust. All Rights Reserved.
-                            </p>
-                            <p>Designed and Developed by <a href="https://thinkb.agency" target="_blank">thinkB</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-text"><span>entrust</span></div>
+                <div class="footer-text"><span>ENTRUST</span></div>
             </footer>
             <!-- ./ footer-section -->
 
