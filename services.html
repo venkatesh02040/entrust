@@ -18,12 +18,232 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
+
+    <style>
+        :root {
+            --ink: #0c0b09;
+            --paper: #f4f0e8;
+            --sand: #c6a34f;
+            --copper: #c6a34f;
+            --warm: #e8dfd0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cal Sans', serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        /* SERVICES SECTION */
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+            border-bottom: 1px solid var(--sand);
+        }
+
+        .service-row.reverse {
+            direction: rtl;
+        }
+
+        .service-row.reverse>* {
+            direction: ltr;
+        }
+
+        .service-img {
+            position: relative;
+            overflow: hidden;
+            background: #1a1510;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-num-overlay {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 9rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.07);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .service-body {
+            background: var(--paper);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5rem;
+        }
+
+        .service-row:nth-child(even) .service-body {
+            background: var(--warm);
+        }
+
+        .service-row:nth-child(3) .service-body {
+            background: var(--paper);
+            color: #fff;
+        }
+
+        .service-tag {
+            font-family: 'Golos Text', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .service-tag::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: var(--copper);
+        }
+
+        .service-row:nth-child(3) .service-tag {
+            color: var(--sand);
+        }
+
+        .service-row:nth-child(3) .service-tag::before {
+            background: var(--sand);
+        }
+
+        .service-title {
+            font-family: 'Cal Sans', serif;
+            font-size: clamp(2.2rem, 3.2vw, 3.4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title em {
+            font-style: italic;
+            color: var(--copper);
+        }
+
+        .service-row:nth-child(3) .service-title em {
+            color: var(--sand);
+        }
+
+        .service-desc {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: rgba(12, 11, 9, 0.55);
+            max-width: 400px;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-row:nth-child(3) .service-desc {
+            color: rgba(12, 11, 9, 0.55);
+        }
+
+        .service-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-features li {
+            font-family: 'Golos Text', sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.45;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .service-features li::before {
+            content: '';
+            width: 16px;
+            height: 2px;
+            background: var(--copper);
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .service-row:nth-child(3) .service-features li {
+            color: #0c0b09;
+            opacity: 0.85;
+        }
+
+        .service-row:nth-child(3) .service-features li::before {
+            background: var(--sand);
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: 'Golos Text', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 0.4rem;
+            width: fit-content;
+        }
+
+        .service-link:hover{
+            color: #162950;
+        }
+
+        .service-row:nth-child(3) .service-link {
+            color: #0c0b09;
+            border-color: #0c0b09;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+
+            .service-row,
+            .service-row.reverse {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .service-img {
+                height: 400px;
+            }
+
+            .service-body {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
     <div class="preloader overflow-hidden">
-        <div class="site-name"><span>ENTRUST</span></div>
+        <div class="site-name"><span><img style="width: 75px;margin-bottom: 15px;" src="./assets/img/favicon.png"
+                    alt="img"></span> <span>ENTRUST</span></div>
     </div>
 
     <header class="header sticky-active">
@@ -52,7 +272,7 @@
                         <a href="tel:+919845012345" class="header-contact">
                             <span class="icon"><i class="fa-regular fa-phone"></i></span>
                             <span class="content">
-                                <span class="call-text">Call Us Phone</span>
+
                                 <span class="call-number"> +91 98450 12345</span>
                             </span>
                         </a>
@@ -61,11 +281,20 @@
                         </div>
                         <div class="sidebar-icon">
                             <button class="sidebar-trigger open">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 2C11 0.89543 11.8954 0 13 0H14C15.1046 0 16 0.895431 16 2V3C16 4.10457 15.1046 5 14 5H13C11.8954 5 11 4.10457 11 3V2Z" fill="white"/>
-                                    <path d="M0 2C0 0.89543 0.895431 0 2 0H3C4.10457 0 5 0.895431 5 2V3C5 4.10457 4.10457 5 3 5H2C0.89543 5 0 4.10457 0 3V2Z" fill="white"/>
-                                    <path d="M0 13C0 11.8954 0.895431 11 2 11H3C4.10457 11 5 11.8954 5 13V14C5 15.1046 4.10457 16 3 16H2C0.89543 16 0 15.1046 0 14V13Z" fill="white"/>
-                                    <path d="M11 13C11 11.8954 11.8954 11 13 11H14C15.1046 11 16 11.8954 16 13V14C16 15.1046 15.1046 16 14 16H13C11.8954 16 11 15.1046 11 14V13Z" fill="white"/>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11 2C11 0.89543 11.8954 0 13 0H14C15.1046 0 16 0.895431 16 2V3C16 4.10457 15.1046 5 14 5H13C11.8954 5 11 4.10457 11 3V2Z"
+                                        fill="white" />
+                                    <path
+                                        d="M0 2C0 0.89543 0.895431 0 2 0H3C4.10457 0 5 0.895431 5 2V3C5 4.10457 4.10457 5 3 5H2C0.89543 5 0 4.10457 0 3V2Z"
+                                        fill="white" />
+                                    <path
+                                        d="M0 13C0 11.8954 0.895431 11 2 11H3C4.10457 11 5 11.8954 5 13V14C5 15.1046 4.10457 16 3 16H2C0.89543 16 0 15.1046 0 14V13Z"
+                                        fill="white" />
+                                    <path
+                                        d="M11 13C11 11.8954 11.8954 11 13 11H14C15.1046 11 16 11.8954 16 13V14C16 15.1046 15.1046 16 14 16H13C11.8954 16 11 15.1046 11 14V13Z"
+                                        fill="white" />
                                 </svg>
                             </button>
                         </div>
@@ -77,8 +306,14 @@
 
     <div id="sidebar-area" class="sidebar-area">
         <button class="sidebar-trigger close">
-            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7" style="enable-background:new 0 0 16 12.7" xml:space="preserve">
-                <g><rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16" height="2"></rect><rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16" height="2"></rect></g>
+            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="12.7px"
+                viewBox="0 0 16 12.7" style="enable-background:new 0 0 16 12.7" xml:space="preserve">
+                <g>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
+                </g>
             </svg>
         </button>
         <div class="side-menu-content">
@@ -91,12 +326,18 @@
                 <h4 class="title">We Shape Interior Designs, Crafting Timeless and Inspiring Spaces</h4>
             </div>
             <div class="side-menu-gallary">
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-1.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-1.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-2.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-2.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-3.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-3.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-4.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-4.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-5.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-5.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-6.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-6.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-1.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-1.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-2.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-2.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-3.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-3.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-4.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-4.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-5.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-5.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-6.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-6.png" alt="img"></a></div>
             </div>
             <div class="side-menu-contact">
                 <ul class="side-menu-list">
@@ -122,11 +363,16 @@
             </div>
             <div class="side-menu-wrap"></div>
             <div class="side-menu-contact">
-                <div class="side-menu-header"><h3>Contact Us</h3></div>
+                <div class="side-menu-header">
+                    <h3>Contact Us</h3>
+                </div>
                 <ul class="side-menu-list">
-                    <li><i class="fas fa-map-marker-alt"></i><p>thinkB Creative Agency, Bengaluru, Karnataka 560043, India</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i>
+                        <p>thinkB Creative Agency, Bengaluru, Karnataka 560043, India</p>
+                    </li>
                     <li><i class="fas fa-phone"></i><a href="tel:+919845012345">+91 98450 12345</a></li>
-                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:info@entrust.com">info@entrust.com</a></li>
+                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:info@entrust.com">info@entrust.com</a>
+                    </li>
                 </ul>
             </div>
             <ul class="side-menu-social">
@@ -148,13 +394,14 @@
                 <div class="container">
                     <div class="page-header-content">
                         <h1 class="title">Services</h1>
-                        <h4 class="sub-title"><a class='home' href='index.html'>Home </a><span class="icon">-</span><a class='inner-page' href='services.html'> Services</a></h4>
+                        <h4 class="sub-title"><a class='home' href='index.html'>Home </a><span class="icon">-</span><a
+                                class='inner-page' href='services.html'> Services</a></h4>
                     </div>
                 </div>
             </section>
 
             <!-- Services Grid -->
-            <section class="service-inner pt-130 pb-130">
+            <!-- <section class="service-inner pt-130 pb-130">
                 <div class="container container-2">
                     <div class="row service-inner-item-wrap gy-5" data-masonry='{"percentPosition": true }'>
                         <div class="col-lg-4 col-md-6">
@@ -231,6 +478,143 @@
                         </div>
                     </div>
                 </div>
+            </section> -->
+
+            <!-- SERVICES SECTION -->
+            <section class="services-section">
+
+                <!-- Service 1 -->
+                <div class="service-row">
+                    <div class="service-img">
+                        <img src="assets/img/service/service-img-1.png"
+                            alt="Residential Interior">
+
+                    </div>
+                    <div class="service-body">
+                        <p class="service-tag">Service 01</p>
+                        <h2 class="service-title">Residential<br><em>Interior Design</em></h2>
+                        <p class="service-desc">Personalized interiors for apartments, villas, and homes that blend
+                            comfort, functionality, and timeless style tailored precisely to how you live.</p>
+                        <ul class="service-features">
+                            <li>Full-home & apartment design</li>
+                            <li>Villa & bungalow interiors</li>
+                            <li>Style curation & mood boards</li>
+                            <li>Turnkey execution</li>
+                        </ul>
+                        <a href="residential-interior-design.html" class="service-link">Explore Service →</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-row reverse">
+                    <div class="service-img">
+                        <img src="assets/img/service/service-img-2.png"
+                            alt="Modular Kitchen">
+
+                    </div>
+                    <div class="service-body">
+                        <p class="service-tag">Service 02</p>
+                        <h2 class="service-title">Modular Kitchen<br><em>& Storage</em></h2>
+                        <p class="service-desc">Functional and stylish kitchen and storage solutions designed for
+                            efficiency, organization, and seamless integration with your home interiors.</p>
+                        <ul class="service-features">
+                            <li>Modular kitchen planning</li>
+                            <li>Custom storage systems</li>
+                            <li>Hardware & finish selection</li>
+                            <li>Walk-in wardrobes</li>
+                        </ul>
+                        <a href="modular-kitchen-storage-design.html" class="service-link">Explore Service →</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-row">
+                    <div class="service-img">
+                        <img src="assets/img/service/service-img-3.png"
+                            alt="Space Planning">
+
+                    </div>
+                    <div class="service-body">
+                        <p class="service-tag">Service 03</p>
+                        <h2 class="service-title">Space Planning<br><em>& Layout</em></h2>
+                        <p class="service-desc">Strategic planning of layouts, furniture flow, circulation, and zoning
+                            to make every square foot work harder and feel effortlessly open.</p>
+                        <ul class="service-features">
+                            <li>Floor plan optimization</li>
+                            <li>Circulation & zoning</li>
+                            <li>Furniture layout</li>
+                            <li>Multi-room planning</li>
+                        </ul>
+                        <a href="space-planning-layout-design.html" class="service-link">Explore Service →</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-row reverse">
+                    <div class="service-img">
+                        <img src="assets/img/service/service-img-4.png"
+                            alt="Furniture & Materials">
+
+                    </div>
+                    <div class="service-body">
+                        <p class="service-tag">Service 04</p>
+                        <h2 class="service-title">Furniture,<br><em>Materials & Finish</em></h2>
+                        <p class="service-desc">Curated support for selecting furniture, color palettes, textures, and
+                            finishes that create a cohesive interior story.</p>
+                        <ul class="service-features">
+                            <li>Furniture sourcing</li>
+                            <li>Material & texture palette</li>
+                            <li>Color consultation</li>
+                            <li>Custom millwork</li>
+                        </ul>
+                        <a href="furniture-materials-finish-selection.html" class="service-link">Explore Service →</a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-row">
+                    <div class="service-img">
+                        <img src="assets/img/service/service-img-5.png"
+                            alt="3D Visualisation">
+
+                    </div>
+                    <div class="service-body">
+                        <p class="service-tag">Service 05</p>
+                        <h2 class="service-title">3D Visualisation<br><em>& Consultation</em></h2>
+                        <p class="service-desc">Photorealistic renders, concept boards, and walkthroughs so you can feel
+                            the space before it exists.</p>
+                        <ul class="service-features">
+                            <li>Photorealistic 3D renders</li>
+                            <li>Virtual walkthroughs</li>
+                            <li>Concept & mood boards</li>
+                            <li>Design revisions</li>
+                        </ul>
+                        <a href="3d-visualisation-design-consultation.html" class="service-link">Explore Service →</a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-row reverse">
+                    <div class="service-img">
+                        <img src="assets/img/service/service-img-6.png"
+                            alt="Lighting Design">
+
+                    </div>
+                    <div class="service-body">
+                        <p class="service-tag">Service 06</p>
+                        <h2 class="service-title">Lighting<br><em>& Ambience</em></h2>
+                        <p class="service-desc">Thoughtfully planned lighting layouts that enhance mood, highlight
+                            design elements, and create the right atmosphere.</p>
+                        <ul class="service-features">
+                            <li>Lighting concept & zoning</li>
+                            <li>Fixture selection</li>
+                            <li>Ambient, accent & task layers</li>
+                            <li>Smart lighting integration</li>
+                        </ul>
+                        <a href="lighting-ambience-design.html" class="service-link">Explore Service →</a>
+                    </div>
+                </div>
+
             </section>
 
             <!-- Newsletter -->
@@ -239,12 +623,15 @@
                 <div class="container">
                     <div class="newsletter-wrap">
                         <div class="section-heading text-center">
-                            <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">Subscribe to the newsletter</h4>
+                            <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                data-duration="0.9" data-stagger="0.03">Subscribe to the newsletter</h4>
                             <h2 class="section-title">Join <span>our newsletter <br> stay</span> up to date</h2>
-                            <p>Join our newsletter. Learn something new, gain access to exclusive content, <br> and stay informed with the latest updates in the industry.</p>
+                            <p>Join our newsletter. Learn something new, gain access to exclusive content, <br> and stay
+                                informed with the latest updates in the industry.</p>
                         </div>
                         <div class="newsletter-form">
-                            <input type="text" id="email" name="email" class="form-control" placeholder="Email address..">
+                            <input type="text" id="email" name="email" class="form-control"
+                                placeholder="Email address..">
                             <button type="submit"><i class="fa-regular fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -260,9 +647,11 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-widget">
                                 <div class="widget-header">
-                                    <div class="footer-logo"><a href="index.html"><img src="assets/img/logo/logo-1.png" alt="logo"></a></div>
+                                    <div class="footer-logo"><a href="index.html"><img src="assets/img/logo/logo-1.png"
+                                                alt="logo"></a></div>
                                 </div>
-                                <p class="mb-10">Elevating interiors with timeless design and refined elegance. Crafting spaces that leave a lasting impression.</p>
+                                <p class="mb-10">Elevating interiors with timeless design and refined elegance. Crafting
+                                    spaces that leave a lasting impression.</p>
                                 <p class="mb-0">thinkB Creative Agency, <br> Bengaluru, Karnataka 560043, <br> India</p>
                             </div>
                         </div>
@@ -284,10 +673,14 @@
                                 <ul class="footer-list">
                                     <li><a>Our Services</a></li>
                                     <li><a href="residential-interior-design.html">Residential Interior Design</a></li>
-                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage Design</a></li>
-                                    <li><a href="space-planning-layout-design.html">Space Planning & Layout Design</a></li>
-                                    <li><a href="furniture-materials-finish-selection.html">Furniture, Materials & Finish Selection</a></li>
-                                    <li><a href="3d-visualisation-design-consultation.html">3D Visualisation & Design Consultation</a></li>
+                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage
+                                            Design</a></li>
+                                    <li><a href="space-planning-layout-design.html">Space Planning & Layout Design</a>
+                                    </li>
+                                    <li><a href="furniture-materials-finish-selection.html">Furniture, Materials &
+                                            Finish Selection</a></li>
+                                    <li><a href="3d-visualisation-design-consultation.html">3D Visualisation & Design
+                                            Consultation</a></li>
                                     <li><a href="lighting-ambience-design.html">Lighting &amp; Ambience Design</a></li>
                                 </ul>
                             </div>
@@ -304,9 +697,12 @@
                                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                     </ul>
                                     <p class="mb-0">
-                                        © <script>document.write(new Date().getFullYear())</script> entrust. All Rights Reserved.
+                                        ©
+                                        <script>document.write(new Date().getFullYear())</script> entrust. All Rights
+                                        Reserved.
                                     </p>
-                                    <p>Designed and Developed by <a href="https://thinkb.agency" target="_blank">thinkB</a></p>
+                                    <p>Designed and Developed by <a href="https://thinkb.agency"
+                                            target="_blank">thinkB</a></p>
                                 </div>
                             </div>
                         </div>
@@ -343,4 +739,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

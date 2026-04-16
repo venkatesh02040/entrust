@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Entrust</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,500&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --ink: #0c0b09;
+      --paper: #f4f0e8;
+      --sand: #c8bfa8;
+      --copper: #a06840;
+      --warm: #e8dfd0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      padding: 80px 0;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .service-row.reverse {
+      direction: rtl;
+    }
+
+    .service-row.reverse > * {
+      direction: ltr;
+    }
+
+    .service-img {
+      position: relative;
+      overflow: hidden;
+      background: #1a1510;
+    }
+
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-num-overlay {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.07);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .service-body {
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem;
+    }
+
+    .service-row:nth-child(even) .service-body {
+      background: var(--warm);
+    }
+
+    .service-row:nth-child(3) .service-body {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .service-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .service-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--copper);
+    }
+
+    .service-row:nth-child(3) .service-tag {
+      color: var(--sand);
+    }
+    .service-row:nth-child(3) .service-tag::before {
+      background: var(--sand);
+    }
+
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 3.2vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-title em {
+      font-style: italic;
+      color: var(--copper);
+    }
+
+    .service-row:nth-child(3) .service-title em {
+      color: var(--sand);
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(12,11,9,0.55);
+      max-width: 400px;
+      margin-bottom: 2.5rem;
+    }
+
+    .service-row:nth-child(3) .service-desc {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-features li {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .service-features li::before {
+      content: '';
+      width: 16px;
+      height: 1px;
+      background: var(--copper);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .service-row:nth-child(3) .service-features li {
+      color: #fff;
+      opacity: 0.85;
+    }
+    .service-row:nth-child(3) .service-features li::before {
+      background: var(--sand);
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 0.4rem;
+      width: fit-content;
+    }
+
+    .service-row:nth-child(3) .service-link {
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .service-row,
+      .service-row.reverse {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      
+      .service-img {
+        height: 400px;
+      }
+      
+      .service-body {
+        padding: 3rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+
+    <!-- Service 1 -->
+    <div class="service-row">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=900&q=80" alt="Residential Interior">
+        <span class="service-num-overlay">01</span>
+      </div>
+      <div class="service-body">
+        <p class="service-tag">Service 01</p>
+        <h2 class="service-title">Residential<br><em>Interior Design</em></h2>
+        <p class="service-desc">Personalized interiors for apartments, villas, and homes that blend comfort, functionality, and timeless style — tailored precisely to how you live.</p>
+        <ul class="service-features">
+          <li>Full-home & apartment design</li>
+          <li>Villa & bungalow interiors</li>
+          <li>Style curation & mood boards</li>
+          <li>Turnkey execution</li>
+        </ul>
+        <a href="#" class="service-link">Explore Service →</a>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-row reverse">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt="Modular Kitchen">
+        <span class="service-num-overlay">02</span>
+      </div>
+      <div class="service-body">
+        <p class="service-tag">Service 02</p>
+        <h2 class="service-title">Modular Kitchen<br><em>& Storage</em></h2>
+        <p class="service-desc">Functional and stylish kitchen and storage solutions designed for efficiency, organization, and seamless integration with your home interiors.</p>
+        <ul class="service-features">
+          <li>Modular kitchen planning</li>
+          <li>Custom storage systems</li>
+          <li>Hardware & finish selection</li>
+          <li>Walk-in wardrobes</li>
+        </ul>
+        <a href="#" class="service-link">Explore Service →</a>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-row">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80" alt="Space Planning">
+        <span class="service-num-overlay">03</span>
+      </div>
+      <div class="service-body">
+        <p class="service-tag">Service 03</p>
+        <h2 class="service-title">Space Planning<br><em>& Layout</em></h2>
+        <p class="service-desc">Strategic planning of layouts, furniture flow, circulation, and zoning to make every square foot work harder — and feel effortlessly open.</p>
+        <ul class="service-features">
+          <li>Floor plan optimization</li>
+          <li>Circulation & zoning</li>
+          <li>Furniture layout</li>
+          <li>Multi-room planning</li>
+        </ul>
+        <a href="#" class="service-link">Explore Service →</a>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-row reverse">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="Furniture & Materials">
+        <span class="service-num-overlay">04</span>
+      </div>
+      <div class="service-body">
+        <p class="service-tag">Service 04</p>
+        <h2 class="service-title">Furniture,<br><em>Materials & Finish</em></h2>
+        <p class="service-desc">Curated support for selecting furniture, color palettes, textures, and finishes that create a cohesive interior story.</p>
+        <ul class="service-features">
+          <li>Furniture sourcing</li>
+          <li>Material & texture palette</li>
+          <li>Color consultation</li>
+          <li>Custom millwork</li>
+        </ul>
+        <a href="#" class="service-link">Explore Service →</a>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-row">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=900&q=80" alt="3D Visualisation">
+        <span class="service-num-overlay">05</span>
+      </div>
+      <div class="service-body">
+        <p class="service-tag">Service 05</p>
+        <h2 class="service-title">3D Visualisation<br><em>& Consultation</em></h2>
+        <p class="service-desc">Photorealistic renders, concept boards, and walkthroughs so you can feel the space before it exists.</p>
+        <ul class="service-features">
+          <li>Photorealistic 3D renders</li>
+          <li>Virtual walkthroughs</li>
+          <li>Concept & mood boards</li>
+          <li>Design revisions</li>
+        </ul>
+        <a href="#" class="service-link">Explore Service →</a>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-row reverse">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=900&q=80" alt="Lighting Design">
+        <span class="service-num-overlay">06</span>
+      </div>
+      <div class="service-body">
+        <p class="service-tag">Service 06</p>
+        <h2 class="service-title">Lighting<br><em>& Ambience</em></h2>
+        <p class="service-desc">Thoughtfully planned lighting layouts that enhance mood, highlight design elements, and create the right atmosphere.</p>
+        <ul class="service-features">
+          <li>Lighting concept & zoning</li>
+          <li>Fixture selection</li>
+          <li>Ambient, accent & task layers</li>
+          <li>Smart lighting integration</li>
+        </ul>
+        <a href="#" class="service-link">Explore Service →</a>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>

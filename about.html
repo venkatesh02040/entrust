@@ -23,13 +23,428 @@
     <link rel="stylesheet" href="assets/css/animation.css">
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* ─── FOUNDER SECTION ─────────────────────────────────────── */
+
+        .founder-section {
+            background: #faf8f5;
+            position: relative;
+        }
+
+        .founder-bg-line {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #e8dfd0 30%, #e8dfd0 70%, transparent);
+            opacity: 0.5;
+        }
+
+        /* .founder-wrap {
+    gap: 0 60px;
+} */
+
+        /* Image block */
+        .founder-img-block {
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        .founder-img-frame {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-img-frame img {
+            border-radius: 12px;
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            filter: grayscale(8%);
+            transition: filter 0.5s ease;
+        }
+
+        .founder-img-frame:hover img {
+            filter: grayscale(0%);
+        }
+
+        .founder-img-border {
+            position: absolute;
+            bottom: -14px;
+            right: -14px;
+            width: calc(100% - 24px);
+            height: calc(100% - 24px);
+            border: 1px solid #C6A34F;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .founder-tag {
+            border-radius: 12px;
+            position: absolute;
+            bottom: 10px;
+            left: -10px;
+            background: #1a1714;
+            color: #C6A34F;
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .founder-tag .tag-icon {
+            font-size: 16px;
+            opacity: 0.85;
+        }
+
+        /* Content */
+        .founder-content {
+            padding-left: 20px;
+        }
+
+        .founder-bio {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #6b6b62;
+            margin-bottom: 16px;
+        }
+
+        .founder-bio-wrap {
+            margin-bottom: 36px;
+        }
+
+        /* Philosophy list */
+        .founder-philosophy-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 44px;
+            padding: 32px;
+            background: #faf8f5;
+            border-left: 2px solid #C6A34F;
+        }
+
+        .founder-philosophy-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .phi-icon {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border: 1px solid #e8dfd0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #C6A34F;
+            font-size: 40px;
+            margin-top: 2px;
+        }
+
+        .phi-text h5 {
+            font-size: 20px;
+            font-weight: 300;
+            color: #1a1714;
+            margin-bottom: 3px;
+            letter-spacing: 0.3px;
+        }
+
+        .phi-text p {
+            font-size: 16px;
+            color: #8a8a7f;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Signature */
+        .founder-signature-wrap {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding-top: 10px;
+            border-top: 1px solid #eeebe4;
+        }
+
+        .founder-signature {
+            height: 56px;
+            width: auto;
+            opacity: 0.8;
+            min-width: 120px;
+        }
+
+        .founder-name {
+            font-size: 24px;
+            font-weight: 100;
+            color: #1a1714;
+            margin: 0 0 2px;
+            letter-spacing: 0.3px;
+        }
+
+        .founder-role-label {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #C6A34F;
+            font-weight: 500;
+        }
+
+        /* ─── TEAM SECTION ────────────────────────────────────────── */
+
+        .team-cards-wrap {
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .team-card {
+            background: #fff;
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            border-radius: 12px;
+        }
+
+        /* Image */
+        .team-card-img {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3 / 4;
+            background: #e8e4dc;
+        }
+
+        .team-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.5s ease;
+            filter: grayscale(15%);
+        }
+
+        .team-card:hover .team-card-img img {
+            transform: scale(1.04);
+            filter: grayscale(0%);
+        }
+
+        /* Overlay */
+        .team-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 23, 20, 0.55);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 24px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .team-card:hover .team-card-overlay {
+            opacity: 1;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .team-social a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(198, 163, 79, 0.7);
+            color: #C6A34F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+            transform: translateY(8px);
+            opacity: 0;
+            transition: transform 0.35s ease 0.05s, opacity 0.35s ease 0.05s, background 0.2s, color 0.2s;
+        }
+
+        .team-card:hover .team-social a {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .team-card:hover .team-social a:nth-child(2) {
+            transition-delay: 0.1s, 0.1s, 0s, 0s;
+        }
+
+        .team-social a:hover {
+            background: #C6A34F;
+            color: #fff;
+            border-color: #C6A34F;
+        }
+
+        /* Card number badge */
+        .team-card-number {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(198, 163, 79, 0.85);
+            padding: 4px 10px;
+            line-height: 1;
+        }
+
+        /* Card info */
+        .team-card-info {
+            padding: 22px 20px 24px;
+            border-top: 2px solid transparent;
+            transition: border-color 0.35s ease;
+        }
+
+        .team-card:hover .team-card-info {
+            border-top-color: #C6A34F;
+        }
+
+        .team-name {
+            font-size: 19px;
+            font-weight: 300;
+            color: #1a1714;
+            margin-bottom: 3px;
+            letter-spacing: 0.2px;
+        }
+
+        .team-role {
+            font-size: 11.5px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #C6A34F;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .team-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #8a8a7f;
+            margin: 0;
+        }
+
+        /* ─── TEAM CTA BANNER ─────────────────────────────────────── */
+
+        .team-cta-wrap {
+            margin-top: 20px;
+        }
+
+        .team-cta-inner {
+            background: #1a1714;
+            padding: 56px 64px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-cta-inner::before {
+            content: 'ENTRUST';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 100px;
+            font-weight: 900;
+            color: rgba(198, 163, 79, 0.04);
+            letter-spacing: 8px;
+            white-space: nowrap;
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .cta-eyebrow {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C6A34F;
+            font-weight: 600;
+            margin-bottom: 14px;
+            border-bottom: 1px solid rgba(198, 163, 79, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .cta-title {
+            font-size: clamp(22px, 2.5vw, 32px);
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.4;
+            margin: 0;
+            letter-spacing: 0.2px;
+        }
+
+        .cta-title span {
+            color: #C6A34F;
+            font-style: italic;
+        }
+
+        .team-cta-right p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 28px;
+        }
+
+        /* ─── RESPONSIVE ──────────────────────────────────────────── */
+
+        @media (max-width: 991px) {
+            .founder-content {
+                padding-left: 0;
+                margin-top: 40px;
+            }
+
+            .founder-img-frame img {
+                height: 440px;
+            }
+
+            .team-cta-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 40px 32px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .founder-philosophy-wrap {
+                padding: 24px;
+            }
+
+            .team-cta-inner {
+                padding: 36px 24px;
+            }
+
+            .team-cta-inner::before {
+                display: none;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!-- preloader -->
     <div class="preloader overflow-hidden">
-        <div class="site-name"><span>ENTRUST</span></div>
+        <div class="site-name"><span><img style="width: 75px;margin-bottom: 15px;" src="./assets/img/favicon.png"
+                    alt="img"></span> <span>ENTRUST</span></div>
     </div>
     <!-- /.preloader -->
 
@@ -63,7 +478,7 @@
                         <a href="tel:+919845012345" class="header-contact">
                             <span class="icon"><i class="fa-regular fa-phone"></i></span>
                             <span class="content">
-                                <span class="call-text">Call Us Phone</span>
+                                 
                                 <span class="call-number"> +91 98450 12345</span>
                             </span>
                         </a>
@@ -270,19 +685,17 @@
             </section>
             <!-- ./ about-section -->
 
-            <div class="video-area-wrap">
+            <!-- <div class="video-area-wrap">
                 <div class="video-bg"></div>
 
                 <video width="100%" autoplay muted loop playsinline>
                     <source src="assets/img/bg-img/video-bg-3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-            </div>
+            </div> -->
             <!-- ./ video-section -->
 
-            <section class="history-section bg-grey pt-130 pb-130">
-                <!-- <div class="history-text"><span>entrust</span></div> -->
-                <!-- <div class="history-element"><img src="assets/img/images/counter-img-1.png" alt="counter"></div> -->
+            <!-- <section class="history-section bg-grey pt-130 pb-130">
                 <div class="container container-2">
                     <div class="row section-heading-wrap ml-0 mw-100">
                         <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
@@ -357,10 +770,202 @@
                         </div>
                     </div>
                 </div>
+            </section> -->
+
+            <!-- ============================================================
+     FOUNDER SECTION
+     Place this after the .award-section and before .newsletter-section
+     ============================================================ -->
+
+            <section class="founder-section pt-130 pb-130 overflow-hidden">
+                <div class="founder-bg-line"></div>
+                <div class="container container-2">
+                    <div class="row align-items-center founder-wrap">
+
+                        <!-- LEFT: Image Side -->
+                        <div class="col-lg-5">
+                            <div class="founder-img-block">
+                                <div class="founder-img-frame">
+                                    <img src="assets/img/images/founder-img.jpeg" alt="Founder">
+                                    <div class="founder-img-border"></div>
+                                </div>
+                                <div class="founder-tag">
+                                    <span class="tag-icon"><i class="fa-regular fa-pen-nib"></i></span>
+                                    <span class="tag-label">Founder &amp; Principal Designer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Content Side -->
+                        <div class="col-lg-7">
+                            <div class="founder-content">
+                                <div class="section-heading">
+                                    <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                        data-duration="0.9" data-stagger="0.03">THE MIND BEHIND ENTRUST</h4>
+                                    <h2 class="section-title title-2">Designing With <span>Intention,<br> Building
+                                            With</span>
+                                        Purpose</h2>
+                                </div>
+                                <div class="founder-bio-wrap">
+                                    <p class="founder-bio">Entrust was born from a desire to create spaces that go
+                                        beyond aesthetics spaces that truly resonate with the people who inhabit them.
+                                        Rooted in a deep respect for materials, proportion, and human experience, the
+                                        studio was founded with one clear vision: to make considered, lasting interior
+                                        design accessible to those who care about where they live and work.</p>
+                                    <p class="founder-bio">Every project at Entrust starts with listening to you, your
+                                        lifestyle, and the story your space needs to tell. We believe the most
+                                        meaningful interiors are built on honest conversations and careful craft.</p>
+                                </div>
+                                <div class="founder-philosophy-wrap">
+                                    <div class="founder-philosophy-item">
+                                        <span class="phi-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                                        <div class="phi-text">
+                                            <h5>Vision-Driven</h5>
+                                            <p>Every design starts with your vision, never a preset approach.</p>
+                                        </div>
+                                    </div>
+                                    <div class="founder-philosophy-item">
+                                        <span class="phi-icon"><i class="fa-regular fa-gem"></i></span>
+                                        <div class="phi-text">
+                                            <h5>Detail-Obsessed</h5>
+                                            <p>We refine every detail so the final space feels seamless.</p>
+                                        </div>
+                                    </div>
+                                    <div class="founder-philosophy-item">
+                                        <span class="phi-icon"><i class="fa-regular fa-handshake"></i></span>
+                                        <div class="phi-text">
+                                            <h5>Built on Trust</h5>
+                                            <p>Transparent, collaborative, and client-first at every step.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="founder-signature-wrap">
+                                    <img src="assets/img/images/founder-signature.png" alt="signature"
+                                        class="founder-signature">
+                                    <div class="founder-name-block">
+                                        <h4 class="founder-name">Name</h4>
+                                        <span class="founder-role-label">Founder, Entrust</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- /.founder-section -->
+
+            <section class="project-section pt-130 fade-wrapper">
+                <!-- <div class="bg-shape" data-background="assets/img/shapes/project-shape-1.png"></div> -->
+                <!-- <div class="project-text"><span>Interior</span></div> -->
+                <div class="container container-2">
+                    <div class="row section-heading-wrap fade-top">
+                        <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="section-heading mb-0">
+                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                    data-duration="0.9" data-stagger="0.03">OUR DESIGN STYLES</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <div class="section-heading section-heading-2 mb-0">
+                                <h2 class="section-title cursor-effect title-2">Thoughtfully <span>Designed
+                                        Spaces</span> Tailored To You</h2>
+                                <p class="mb-0">Discover curated interior concepts shaped by our design
+                                    philosophy<br>modern, refined, and tailored to your lifestyle. From living spaces to
+                                    complete homes,<br>we create interiors that feel uniquely yours.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-carousel swiper fade-top">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-1.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Living Room</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="modern-living-room.html">Modern Living Room</a></h3>
+                                        <span>Elegant comfort for everyday living</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-2.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Dining Space</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="luxury-dining-space.html">Luxury Dining Space</a>
+                                        </h3>
+                                        <span>Refined interiors for memorable moments</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-3.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Stairway Design</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="minimal-staircase-concept.html">Minimal Staircase
+                                                Concept</a></h3>
+                                        <span>Clean lines with architectural depth</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-4.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Lounge Area</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="contemporary-lounge-interior.html">Contemporary
+                                                Lounge Interior</a></h3>
+                                        <span>Balanced design with premium detailing</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-5.png" alt="project">
+                                        <ul>
+                                            <li><a>Office</a></li>
+                                            <li><a>Workspace</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="executive-office-interior.html">Executive Office
+                                                Interior</a></h3>
+                                        <span>Functional spaces designed to inspire</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- ./ history-section -->
 
-            <section class="process-section overflow-hidden fade-wrapper">
+            <!-- <section class="process-section overflow-hidden fade-wrapper">
                 <div class="bg-shape" data-background="assets/img/shapes/process-shape-1.png"></div>
                 <div class="container container-2">
                     <div class="heading-space align-items-end">
@@ -436,8 +1041,118 @@
                                 vision to life.</a></h5>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- ./ process-section -->
+
+            <!-- <section class="project-section pt-130 fade-wrapper">
+                <div class="bg-shape" data-background="assets/img/shapes/project-shape-1.png"></div>
+                <div class="project-text"><span>Interior</span></div>
+                <div class="container container-2">
+                    <div class="row section-heading-wrap fade-top">
+                        <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="section-heading mb-0">
+                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                    data-duration="0.9" data-stagger="0.03">OUR DESIGN STYLES</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <div class="section-heading section-heading-2 mb-0">
+                                <h2 class="section-title cursor-effect title-2">Thoughtfully <span>Designed
+                                        Spaces</span> Tailored To You</h2>
+                                <p class="mb-0">Discover curated interior concepts shaped by our design
+                                    philosophy<br>modern, refined, and tailored to your lifestyle. From living spaces to
+                                    complete homes,<br>we create interiors that feel uniquely yours.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-carousel swiper fade-top">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-1.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Living Room</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="modern-living-room.html">Modern Living Room</a></h3>
+                                        <span>Elegant comfort for everyday living</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-2.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Dining Space</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="luxury-dining-space.html">Luxury Dining Space</a>
+                                        </h3>
+                                        <span>Refined interiors for memorable moments</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-3.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Stairway Design</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="minimal-staircase-concept.html">Minimal Staircase
+                                                Concept</a></h3>
+                                        <span>Clean lines with architectural depth</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-4.png" alt="project">
+                                        <ul>
+                                            <li><a>Residential</a></li>
+                                            <li><a>Lounge Area</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="contemporary-lounge-interior.html">Contemporary
+                                                Lounge Interior</a></h3>
+                                        <span>Balanced design with premium detailing</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-item">
+                                    <div class="project-img">
+                                        <img src="assets/img/project/project-img-5.png" alt="project">
+                                        <ul>
+                                            <li><a>Office</a></li>
+                                            <li><a>Workspace</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="title"><a href="executive-office-interior.html">Executive Office
+                                                Interior</a></h3>
+                                        <span>Functional spaces designed to inspire</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- ./ project-section -->
 
             <section class="award-section bg-grey pt-130 pb-130">
                 <div class="bg-shape"><img src="assets/img/shapes/team-bg-shape-1.png" alt="shape"></div>
@@ -518,7 +1233,144 @@
             </section>
             <!-- ./ award-section -->
 
-            <section class="gallary-section-2 pb-130 overflow-hidden">
+            <!-- ============================================================
+     TEAM SECTION
+     Place this after .founder-section and before .newsletter-section
+     ============================================================ -->
+
+            <section class="team-section bg-grey pt-130 pb-130 overflow-hidden">
+                <!-- <div class="bg-shape"><img src="assets/img/shapes/team-bg-shape-1.png" alt="shape"></div> -->
+                <div class="container container-2">
+
+                    <!-- Heading Row -->
+                    <div class="row section-heading-wrap">
+                        <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="section-heading mb-0">
+                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                    data-duration="0.9" data-stagger="0.03">THE PEOPLE BEHIND THE WORK</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-12">
+                            <div class="section-heading section-heading-2 mb-0">
+                                <h2 class="section-title title-2">A Team That <span>Designs</span> With <br> Care,
+                                    Craft, And
+                                    Curiosity</h2>
+                                <p class="mb-0">Each member of our studio brings a unique perspective to the table —<br>
+                                    united by a shared passion for spaces that feel considered and alive.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Cards -->
+                    <div class="row gy-4 team-cards-wrap">
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card-img">
+                                    <img src="assets/img/team/team-img-2.png" alt="Priya Nair">
+                                    <div class="team-card-overlay">
+                                        <div class="team-social">
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-card-info">
+                                    <h4 class="team-name">Priya Nair</h4>
+                                    <span class="team-role">Interior Designer</span>
+                                    <p class="team-desc">Specialises in residential spaces that blend warmth with
+                                        refined modern aesthetics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card-img">
+                                    <img src="assets/img/team/team-img-1.png" alt="Rohan Verma">
+                                    <div class="team-card-overlay">
+                                        <div class="team-social">
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-card-info">
+                                    <h4 class="team-name">Rohan Verma</h4>
+                                    <span class="team-role">Space Planner</span>
+                                    <p class="team-desc">Transforms difficult layouts into intuitive, functional spaces
+                                        with architectural clarity.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card-img">
+                                    <img src="assets/img/team/team-img-4.png" alt="Kavitha Rao">
+                                    <div class="team-card-overlay">
+                                        <div class="team-social">
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-card-info">
+                                    <h4 class="team-name">lissa</h4>
+                                    <span class="team-role">Materials Specialist</span>
+                                    <p class="team-desc">Brings precision and passion to every material, texture, and
+                                        finish decision.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="team-card">
+                                <div class="team-card-img">
+                                    <img src="assets/img/team/team-img-3.png" alt="Nikhil Sharma">
+                                    <div class="team-card-overlay">
+                                        <div class="team-social">
+                                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-card-info">
+                                    <h4 class="team-name">Nikhil Sharma</h4>
+                                    <span class="team-role">3D Visualisation</span>
+                                    <p class="team-desc">Brings design concepts to life with photorealistic renders that
+                                        capture every detail.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.team-cards-wrap -->
+
+                    <!-- Team CTA Banner -->
+                    <div class="team-cta-wrap">
+                        <div class="team-cta-inner">
+                            <div class="team-cta-left">
+                                <span class="cta-eyebrow">Join Our Studio</span>
+                                <h3 class="cta-title">We're building something <span>meaningful.</span><br> Come be part
+                                    of it.</h3>
+                            </div>
+                            <div class="team-cta-right">
+                                <p>If you're a designer, planner, or creative thinker who shares our belief in
+                                    considered design, we'd love to hear from you.</p>
+                                <a href="contact.html" style="color: white;" class="tl-primary-btn">Get in Touch <span class="icon"><i
+                                            class="fa-regular fa-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- /.team-section -->
+
+
+            <!-- <section class="gallary-section-2 pb-130 overflow-hidden">
                 <div class="bg-img" data-background="assets/img/bg-img/gallary-bg-1.png"></div>
                 <div class="container container-2">
                     <div class="row">
@@ -574,10 +1426,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- ./ gallary-section -->
 
-            <section class="testimonial-section pt-150 pb-130 fade-wrapper">
+            <!-- <section class="testimonial-section pt-150 pb-130 fade-wrapper">
                 <div class="container container-2">
                     <div class="row section-heading-wrap fade-top">
                         <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
@@ -632,7 +1484,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- ./ testimonial-section -->
 
             <!-- <section class="sponsor-section bg-white pt-120 pb-130 overflow-hidden">
@@ -678,7 +1530,7 @@
             </section> -->
             <!-- ./ sponsor-section -->
 
-            <section class="newsletter-section bg-white pb-130 overflow-hidden">
+            <section class="newsletter-section bg-white pt-130 pb-130 overflow-hidden">
                 <div class="bg-shape"><img src="assets/img/shapes/newsletter-shape.png" alt="shape"></div>
                 <div class="container">
                     <div class="newsletter-wrap">
@@ -735,7 +1587,8 @@
                                 <ul class="footer-list">
                                     <li><a>Our Services</a></li>
                                     <li><a href="residential-interior-design.html">Residential Interior Design</a></li>
-                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage Design</a></li>
+                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage
+                                            Design</a></li>
                                     <li><a href="space-planning-layout-design.html">Space Planning & Layout Design</a>
                                     </li>
                                     <li><a href="furniture-materials-finish-selection.html">Furniture, Materials &
@@ -758,9 +1611,12 @@
                                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                     </ul>
                                     <p class="mb-0">
-                                        © <script>document.write(new Date().getFullYear())</script> entrust. All Rights Reserved.
+                                        ©
+                                        <script>document.write(new Date().getFullYear())</script> entrust. All Rights
+                                        Reserved.
                                     </p>
-                                    <p>Designed and Developed by <a href="https://thinkb.agency" target="_blank">thinkB</a></p>
+                                    <p>Designed and Developed by <a href="https://thinkb.agency"
+                                            target="_blank">thinkB</a></p>
                                 </div>
                             </div>
                         </div>
