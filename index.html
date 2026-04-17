@@ -51,7 +51,9 @@
         .design-vision-section::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 1px;
             background: linear-gradient(to right, transparent, var(--entrust-gold), transparent);
         }
@@ -59,14 +61,17 @@
         .design-vision-section::after {
             content: '';
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 1px;
             background: linear-gradient(to right, transparent, var(--entrust-gold), transparent);
         }
 
         .dv-watermark {
             position: absolute;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             font-family: 'Cal Sans', serif;
             font-size: clamp(80px, 14vw, 200px);
@@ -106,7 +111,9 @@
             margin: 0 0 24px;
         }
 
-        .dv-main-title em { color: var(--entrust-gold); }
+        .dv-main-title em {
+            color: var(--entrust-gold);
+        }
 
         .dv-description {
             font-family: 'Golos Text', sans-serif;
@@ -139,13 +146,16 @@
         .dv-step:not(:last-child)::after {
             content: '';
             position: absolute;
-            right: 0; top: 14px;
-            width: 1px; height: 28px;
+            right: 0;
+            top: 14px;
+            width: 1px;
+            height: 28px;
             background: var(--entrust-border);
         }
 
         .dv-step-num {
-            width: 28px; height: 28px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             border: 1px solid var(--entrust-border);
             display: flex;
@@ -157,8 +167,16 @@
             transition: all 0.4s ease;
         }
 
-        .dv-step.active .dv-step-num  { border-color: var(--entrust-gold); background: var(--entrust-gold); color: #fff; }
-        .dv-step.completed .dv-step-num { border-color: var(--entrust-gold); color: var(--entrust-gold); }
+        .dv-step.active .dv-step-num {
+            border-color: var(--entrust-gold);
+            background: var(--entrust-gold);
+            color: #fff;
+        }
+
+        .dv-step.completed .dv-step-num {
+            border-color: var(--entrust-gold);
+            color: var(--entrust-gold);
+        }
 
         .dv-step-label {
             font-size: 10px;
@@ -167,7 +185,9 @@
             color: var(--entrust-muted);
         }
 
-        .dv-step.active .dv-step-label { color: var(--entrust-charcoal); }
+        .dv-step.active .dv-step-label {
+            color: var(--entrust-charcoal);
+        }
 
         /* ---- Config grid ---- */
         .dv-config-grid {
@@ -181,7 +201,9 @@
             margin-bottom: 0;
         }
 
-        .dv-room-panel { background: #fff; }
+        .dv-room-panel {
+            background: #fff;
+        }
 
         .dv-room-header {
             font-family: 'Cal Sans', serif;
@@ -192,8 +214,16 @@
             gap: 14px;
         }
 
-        .dv-room-icon { width: 36px; height: 36px; flex-shrink: 0; opacity: 0.6; }
-        .dv-room-title-wrap { flex: 1; }
+        .dv-room-icon {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+
+        .dv-room-title-wrap {
+            flex: 1;
+        }
 
         .dv-room-number {
             font-size: 10px;
@@ -212,7 +242,9 @@
             margin: 0;
         }
 
-        .dv-option-list { padding: 12px 0; }
+        .dv-option-list {
+            padding: 12px 0;
+        }
 
         .dv-option {
             font-family: 'Golos Text', sans-serif;
@@ -225,19 +257,27 @@
             position: relative;
         }
 
-        .dv-option:hover { background: var(--config-images-bg); }
-        .dv-option.selected { background: var(--config-images-bg); }
+        .dv-option:hover {
+            background: var(--config-images-bg);
+        }
+
+        .dv-option.selected {
+            background: var(--config-images-bg);
+        }
 
         .dv-option.selected::before {
             content: '';
             position: absolute;
-            left: 0; top: 0; bottom: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
             width: 2px;
             background: var(--entrust-gold);
         }
 
         .dv-option-radio {
-            width: 16px; height: 16px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             border: 1px solid var(--entrust-border-hover);
             flex-shrink: 0;
@@ -245,7 +285,9 @@
             transition: all 0.25s ease;
         }
 
-        .dv-option.selected .dv-option-radio { border-color: var(--entrust-gold); }
+        .dv-option.selected .dv-option-radio {
+            border-color: var(--entrust-gold);
+        }
 
         .dv-option.selected .dv-option-radio::after {
             content: '';
@@ -265,7 +307,10 @@
             line-height: 1.4;
         }
 
-        .dv-option.selected .dv-option-text { color: #162950; font-weight: 500; }
+        .dv-option.selected .dv-option-text {
+            color: #162950;
+            font-weight: 500;
+        }
 
         /* ---- Inline preview thumbnail ---- */
         .dv-room-preview {
@@ -276,21 +321,28 @@
             background: var(--entrust-charcoal);
         }
 
-        .dv-room-preview.visible { height: 250px; }
+        .dv-room-preview.visible {
+            height: 250px;
+        }
 
         .dv-room-preview img {
-            width: 100%; height: 250px;
+            width: 100%;
+            height: 250px;
             object-fit: cover;
             display: block;
             opacity: 0;
             transition: opacity 0.35s ease;
         }
 
-        .dv-room-preview img.loaded { opacity: 1; }
+        .dv-room-preview img.loaded {
+            opacity: 1;
+        }
 
         .dv-room-preview-label {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 32px 16px 12px;
             background: linear-gradient(to top, rgba(24, 22, 18, 0.82) 0%, transparent 100%);
             font-family: 'Cormorant Garamond', serif;
@@ -302,14 +354,17 @@
         }
 
         .dv-room-preview-placeholder {
-            width: 100%; height: 250px;
+            width: 100%;
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(201, 169, 110, 0.06);
         }
 
-        .dv-room-preview-placeholder svg { opacity: 0.2; }
+        .dv-room-preview-placeholder svg {
+            opacity: 0.2;
+        }
 
         /* =============================================
            CONTACT FIELDS — below grid, minimal & open
@@ -335,7 +390,7 @@
         .dv-contact-hint {
             text-align: center;
             font-family: 'Jost', sans-serif;
-            font-size: 15px;
+            font-size: 24px;
             font-weight: 400;
             letter-spacing: 0.3em;
             text-transform: uppercase;
@@ -357,11 +412,11 @@
         .dv-cf label {
             display: block;
             font-family: 'Jost', sans-serif;
-            font-size: 12px;
+            font-size: 20px;
             font-weight: 500;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--entrust-gold);
+            color: #162950;
             margin-bottom: 8px;
         }
 
@@ -391,9 +446,17 @@
         }
 
         /* Error state */
-        .dv-cf.dv-cf-error label { color: #c0392b; }
-        .dv-cf.dv-cf-error input { border-bottom-color: rgba(192, 57, 43, 0.6); }
-        .dv-cf.dv-cf-error input::placeholder { color: rgba(192, 57, 43, 0.45); }
+        .dv-cf.dv-cf-error label {
+            color: #c0392b;
+        }
+
+        .dv-cf.dv-cf-error input {
+            border-bottom-color: rgba(192, 57, 43, 0.6);
+        }
+
+        .dv-cf.dv-cf-error input::placeholder {
+            color: rgba(192, 57, 43, 0.45);
+        }
 
         /* ---- CTA Row ---- */
         .dv-cta-row {
@@ -411,7 +474,10 @@
             color: var(--entrust-muted);
         }
 
-        .dv-progress-text span { color: var(--entrust-gold); font-weight: 500; }
+        .dv-progress-text span {
+            color: var(--entrust-gold);
+            font-weight: 500;
+        }
 
         .dv-visualise-btn {
             display: inline-flex;
@@ -442,21 +508,44 @@
             z-index: 0;
         }
 
-        .dv-visualise-btn:hover::before { transform: translateX(0); }
-
-        .dv-visualise-btn span,
-        .dv-visualise-btn svg { position: relative; z-index: 1; }
-
-        .dv-visualise-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-        .dv-visualise-btn:disabled::before { display: none; }
-
-        @keyframes dvShake {
-            0%,100% { transform: translateX(0); }
-            20% { transform: translateX(-5px); }
-            60% { transform: translateX(5px); }
+        .dv-visualise-btn:hover::before {
+            transform: translateX(0);
         }
 
-        .dv-visualise-btn.shake { animation: dvShake 0.4s ease; }
+        .dv-visualise-btn span,
+        .dv-visualise-btn svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dv-visualise-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .dv-visualise-btn:disabled::before {
+            display: none;
+        }
+
+        @keyframes dvShake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-5px);
+            }
+
+            60% {
+                transform: translateX(5px);
+            }
+        }
+
+        .dv-visualise-btn.shake {
+            animation: dvShake 0.4s ease;
+        }
 
         .dv-reset-btn {
             border-radius: 12px;
@@ -472,7 +561,10 @@
             transition: all 0.3s ease;
         }
 
-        .dv-reset-btn:hover { border-color: var(--entrust-gold); color: var(--entrust-charcoal); }
+        .dv-reset-btn:hover {
+            border-color: var(--entrust-gold);
+            color: var(--entrust-charcoal);
+        }
 
         /* =============================================
            RESULT OVERLAY
@@ -480,8 +572,10 @@
         ============================================= */
         #dvOverlayRoot {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 999999;
             display: flex;
             align-items: center;
@@ -491,11 +585,17 @@
             transition: opacity 0.45s ease;
         }
 
-        #dvOverlayRoot.active { opacity: 1; pointer-events: all; }
+        #dvOverlayRoot.active {
+            opacity: 1;
+            pointer-events: all;
+        }
 
         .dv-overlay-backdrop {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(24, 22, 18, 0.88);
         }
 
@@ -511,14 +611,18 @@
             transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        #dvOverlayRoot.active .dv-overlay-panel { transform: translateY(0) scale(1); }
+        #dvOverlayRoot.active .dv-overlay-panel {
+            transform: translateY(0) scale(1);
+        }
 
         .dv-overlay-close {
             position: absolute;
-            top: 16px; right: 16px;
-            width: 36px; height: 36px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -527,9 +631,20 @@
             z-index: 2;
         }
 
-        .dv-overlay-close:hover { background: var(--entrust-gold); border-color: var(--entrust-gold); }
-        .dv-overlay-close svg { width: 13px; height: 13px; stroke: rgba(255,255,255,0.7); }
-        .dv-overlay-close:hover svg { stroke: #fff; }
+        .dv-overlay-close:hover {
+            background: var(--entrust-gold);
+            border-color: var(--entrust-gold);
+        }
+
+        .dv-overlay-close svg {
+            width: 13px;
+            height: 13px;
+            stroke: rgba(255, 255, 255, 0.7);
+        }
+
+        .dv-overlay-close:hover svg {
+            stroke: #fff;
+        }
 
         /* 2×2 mosaic */
         .dv-result-mosaic {
@@ -543,25 +658,33 @@
         .dv-mosaic-cell {
             position: relative;
             overflow: hidden;
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .dv-mosaic-cell img {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
             opacity: 0;
             transition: opacity 0.4s ease, transform 0.5s ease;
         }
 
-        .dv-mosaic-cell img.loaded { opacity: 1; }
-        .dv-mosaic-cell:hover img { transform: scale(1.04); }
+        .dv-mosaic-cell img.loaded {
+            opacity: 1;
+        }
+
+        .dv-mosaic-cell:hover img {
+            transform: scale(1.04);
+        }
 
         .dv-mosaic-label {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 28px 16px 12px;
-            background: linear-gradient(to top, rgba(24,22,18,0.82) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(24, 22, 18, 0.82) 0%, transparent 100%);
             pointer-events: none;
         }
 
@@ -585,14 +708,17 @@
         }
 
         .dv-mosaic-empty {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(201, 169, 110, 0.05);
         }
 
-        .dv-mosaic-empty svg { opacity: 0.15; }
+        .dv-mosaic-empty svg {
+            opacity: 0.15;
+        }
 
         /* Submit bar */
         .dv-result-bar {
@@ -618,8 +744,14 @@
             transition: background 0.3s ease;
         }
 
-        .dv-submit-btn:hover { background: var(--entrust-gold-light); }
-        .dv-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .dv-submit-btn:hover {
+            background: var(--entrust-gold-light);
+        }
+
+        .dv-submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
         /* Success message */
         .dv-success-msg {
@@ -629,7 +761,8 @@
         }
 
         .dv-success-icon {
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             border: 1px solid var(--entrust-gold);
             border-radius: 50%;
             display: flex;
@@ -638,7 +771,11 @@
             margin: 0 auto 18px;
         }
 
-        .dv-success-icon svg { width: 22px; height: 22px; stroke: var(--entrust-gold); }
+        .dv-success-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--entrust-gold);
+        }
 
         .dv-success-msg h4 {
             font-family: 'Cormorant Garamond', serif;
@@ -652,7 +789,7 @@
             font-size: 13px;
             font-weight: 300;
             letter-spacing: 0.03em;
-            color: rgba(245,240,232,0.45);
+            color: rgba(245, 240, 232, 0.45);
             margin: 0;
             line-height: 1.6;
         }
@@ -684,7 +821,8 @@
         }
 
         .pano-hint-ring {
-            width: 72px; height: 72px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
             border: 2px solid rgba(198, 163, 79, 0.7);
             display: flex;
@@ -706,7 +844,9 @@
         }
 
         @keyframes panoRingSpin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .pano-hint-icon {
@@ -716,8 +856,17 @@
         }
 
         @keyframes panoIconPulse {
-            0%,100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(0.88); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(0.88);
+            }
         }
 
         .pano-hint-text {
@@ -743,7 +892,7 @@
             letter-spacing: 0.18em;
             text-transform: uppercase;
             padding: 10px 24px;
-            border: 1px solid rgba(198,163,79,0.3);
+            border: 1px solid rgba(198, 163, 79, 0.3);
             white-space: nowrap;
             opacity: 0;
             pointer-events: none;
@@ -765,37 +914,98 @@
            RESPONSIVE
         ============================================= */
         @media (max-width: 1024px) {
-            .dv-config-grid { grid-template-columns: repeat(2, 1fr); }
-            .dv-contact-fields { grid-template-columns: 1fr; gap: 20px; }
-            .dv-step { padding: 0 16px; }
-            .dv-room-preview.visible { height: 400px; }
-            .dv-room-preview img, .dv-room-preview-placeholder { height: 400px; }
-            .dv-result-mosaic { grid-template-rows: 200px 200px; }
+            .dv-config-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dv-contact-fields {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .dv-step {
+                padding: 0 16px;
+            }
+
+            .dv-room-preview.visible {
+                height: 400px;
+            }
+
+            .dv-room-preview img,
+            .dv-room-preview-placeholder {
+                height: 400px;
+            }
+
+            .dv-result-mosaic {
+                grid-template-rows: 200px 200px;
+            }
         }
 
         @media (max-width: 768px) {
-            .design-vision-section { padding: 80px 0 100px; }
-            .dv-heading-wrap { margin-bottom: 48px; }
-            .dv-config-grid { grid-template-columns: 1fr; }
-            .dv-contact-fields { grid-template-columns: 1fr; }
-            .dv-step-indicator { display: none; }
-            .dv-cta-row { flex-direction: column; gap: 12px; }
-            .dv-visualise-btn, .dv-reset-btn { width: 100%; justify-content: center; }
-            .dv-result-mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(4, 180px); }
+            .design-vision-section {
+                padding: 80px 0 100px;
+            }
+
+            .dv-heading-wrap {
+                margin-bottom: 48px;
+            }
+
+            .dv-config-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dv-contact-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .dv-step-indicator {
+                display: none;
+            }
+
+            .dv-cta-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .dv-visualise-btn,
+            .dv-reset-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dv-result-mosaic {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 180px);
+            }
         }
 
         @media (max-width: 480px) {
-            .dv-room-header { padding: 20px 18px 16px; }
-            .dv-option { padding: 12px 18px; }
-            .dv-room-preview.visible { height: 250px; }
-            .dv-room-preview img, .dv-room-preview-placeholder { height: 250px; }
-            .dv-result-mosaic { grid-template-rows: repeat(4, 160px); }
+            .dv-room-header {
+                padding: 20px 18px 16px;
+            }
+
+            .dv-option {
+                padding: 12px 18px;
+            }
+
+            .dv-room-preview.visible {
+                height: 250px;
+            }
+
+            .dv-room-preview img,
+            .dv-room-preview-placeholder {
+                height: 250px;
+            }
+
+            .dv-result-mosaic {
+                grid-template-rows: repeat(4, 160px);
+            }
         }
 
         /* SweetAlert2 brand overrides */
         .swal2-popup.swal-entrust {
             background: #1c1a17 !important;
-            border: 1px solid rgba(201,169,110,0.25) !important;
+            border: 1px solid rgba(201, 169, 110, 0.25) !important;
             border-radius: 4px !important;
             font-family: 'Jost', sans-serif !important;
         }
@@ -808,7 +1018,7 @@
         }
 
         .swal-entrust .swal2-html-container {
-            color: rgba(245,240,232,0.55) !important;
+            color: rgba(245, 240, 232, 0.55) !important;
             font-size: 13px !important;
             font-family: 'Jost', sans-serif !important;
             letter-spacing: 0.04em !important;
@@ -827,12 +1037,12 @@
         }
 
         .swal-entrust .swal2-icon {
-            border-color: rgba(201,169,110,0.4) !important;
+            border-color: rgba(201, 169, 110, 0.4) !important;
         }
 
         .swal-entrust .swal2-icon.swal2-warning {
             color: #C6A34F !important;
-            border-color: rgba(201,169,110,0.4) !important;
+            border-color: rgba(201, 169, 110, 0.4) !important;
         }
 
         .swal-entrust .swal2-icon.swal2-warning .swal2-icon-content {
@@ -845,7 +1055,8 @@
 
     <!-- preloader -->
     <div class="preloader overflow-hidden">
-        <div class="site-name"><span><img style="width: 100px;margin-bottom: 15px;" src="./assets/img/favicon.png" alt="img"></span></div>
+        <div class="site-name"><span><img style="width: 100px;margin-bottom: 15px;" src="./assets/img/favicon.png"
+                    alt="img"></span></div>
     </div>
 
     <!-- header -->
@@ -875,7 +1086,7 @@
                         <a href="tel:+919845012345" class="header-contact">
                             <span class="icon"><i class="fa-regular fa-phone"></i></span>
                             <span class="content">
-                               
+
                                 <span class="call-number"> +91 98450 12345</span>
                             </span>
                         </a>
@@ -884,11 +1095,20 @@
                         </div>
                         <div class="sidebar-icon">
                             <button class="sidebar-trigger open">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 2C11 0.89543 11.8954 0 13 0H14C15.1046 0 16 0.895431 16 2V3C16 4.10457 15.1046 5 14 5H13C11.8954 5 11 4.10457 11 3V2Z" fill="white"/>
-                                    <path d="M0 2C0 0.89543 0.895431 0 2 0H3C4.10457 0 5 0.895431 5 2V3C5 4.10457 4.10457 5 3 5H2C0.89543 5 0 4.10457 0 3V2Z" fill="white"/>
-                                    <path d="M0 13C0 11.8954 0.895431 11 2 11H3C4.10457 11 5 11.8954 5 13V14C5 15.1046 4.10457 16 3 16H2C0.89543 16 0 15.1046 0 14V13Z" fill="white"/>
-                                    <path d="M11 13C11 11.8954 11.8954 11 13 11H14C15.1046 11 16 11.8954 16 13V14C16 15.1046 15.1046 16 14 16H13C11.8954 16 11 15.1046 11 14V13Z" fill="white"/>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11 2C11 0.89543 11.8954 0 13 0H14C15.1046 0 16 0.895431 16 2V3C16 4.10457 15.1046 5 14 5H13C11.8954 5 11 4.10457 11 3V2Z"
+                                        fill="white" />
+                                    <path
+                                        d="M0 2C0 0.89543 0.895431 0 2 0H3C4.10457 0 5 0.895431 5 2V3C5 4.10457 4.10457 5 3 5H2C0.89543 5 0 4.10457 0 3V2Z"
+                                        fill="white" />
+                                    <path
+                                        d="M0 13C0 11.8954 0.895431 11 2 11H3C4.10457 11 5 11.8954 5 13V14C5 15.1046 4.10457 16 3 16H2C0.89543 16 0 15.1046 0 14V13Z"
+                                        fill="white" />
+                                    <path
+                                        d="M11 13C11 11.8954 11.8954 11 13 11H14C15.1046 11 16 11.8954 16 13V14C16 15.1046 15.1046 16 14 16H13C11.8954 16 11 15.1046 11 14V13Z"
+                                        fill="white" />
                                 </svg>
                             </button>
                         </div>
@@ -900,10 +1120,13 @@
 
     <div id="sidebar-area" class="sidebar-area">
         <button class="sidebar-trigger close">
-            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7" style="enable-background: new 0 0 16 12.7" xml:space="preserve">
+            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="12.7px"
+                viewBox="0 0 16 12.7" style="enable-background: new 0 0 16 12.7" xml:space="preserve">
                 <g>
-                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16" height="2"></rect>
-                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16" height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
                 </g>
             </svg>
         </button>
@@ -917,12 +1140,18 @@
                 <h4 class="title">We Shape Interior Designs, Crafting Timeless and Inspiring Spaces</h4>
             </div>
             <div class="side-menu-gallary">
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-1.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-1.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-2.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-2.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-3.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-3.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-4.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-4.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-5.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-5.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-6.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-6.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-1.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-1.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-2.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-2.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-3.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-3.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-4.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-4.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-5.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-5.png" alt="img"></a></div>
+                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-6.png" class="venobox"
+                        data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-6.png" alt="img"></a></div>
             </div>
             <div class="side-menu-contact">
                 <ul class="side-menu-list">
@@ -949,11 +1178,16 @@
             </div>
             <div class="side-menu-wrap"></div>
             <div class="side-menu-contact">
-                <div class="side-menu-header"><h3>Contact Us</h3></div>
+                <div class="side-menu-header">
+                    <h3>Contact Us</h3>
+                </div>
                 <ul class="side-menu-list">
-                    <li><i class="fas fa-map-marker-alt"></i><p>Entrust Interior Designers, Bengaluru, Karnataka 560043, India</p></li>
+                    <li><i class="fas fa-map-marker-alt"></i>
+                        <p>Entrust Interior Designers, Bengaluru, Karnataka 560043, India</p>
+                    </li>
                     <li><i class="fas fa-phone"></i><a href="tel:+919845012345">+91 98450 12345</a></li>
-                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:info@entrust.com">info@entrust.com</a></li>
+                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:info@entrust.com">info@entrust.com</a>
+                    </li>
                 </ul>
             </div>
             <ul class="side-menu-social">
@@ -980,15 +1214,27 @@
                                     <div class="slider-content-wrap">
                                         <div class="slider-content">
                                             <div class="section-heading white-content">
-                                                <h4 class="sub-heading" data-animation="antra-fadeInDown" data-delay="1000ms" data-duration="1400ms">DESIGNED FOR MODERN LIVING</h4>
-                                                <h2 class="section-title cursor-effect" data-animation="antra-fadeInDown" data-delay="1200ms" data-duration="1400ms">The Art of Thoughtfully <br> Designed Interiors</h2>
+                                                <h4 class="sub-heading" data-animation="antra-fadeInDown"
+                                                    data-delay="1000ms" data-duration="1400ms">DESIGNED FOR MODERN
+                                                    LIVING</h4>
+                                                <h2 class="section-title cursor-effect"
+                                                    data-animation="antra-fadeInDown" data-delay="1200ms"
+                                                    data-duration="1400ms">The Art of Thoughtfully <br> Designed
+                                                    Interiors</h2>
                                             </div>
                                             <div class="bottom-content">
-                                                <div class="antra-desc" data-animation="antra-fadeInUp" data-delay="1000ms" data-duration="1400ms">
-                                                    <p>From living spaces to complete home interiors, we design environments<br>that balance elegance, comfort, and functionality <br> tailored to reflect your lifestyle and vision.</p>
+                                                <div class="antra-desc" data-animation="antra-fadeInUp"
+                                                    data-delay="1000ms" data-duration="1400ms">
+                                                    <p>From living spaces to complete home interiors, we design
+                                                        environments<br>that balance elegance, comfort, and
+                                                        functionality <br> tailored to reflect your lifestyle and
+                                                        vision.</p>
                                                 </div>
-                                                <div class="antra-btn" data-animation="antra-fadeInUp" data-delay="1200ms" data-duration="1400ms">
-                                                    <a href="contact.html" class="tl-primary-btn white-btn">Start Your Design Journey <span class="icon"><i class="fa-regular fa-arrow-right"></i></span></a>
+                                                <div class="antra-btn" data-animation="antra-fadeInUp"
+                                                    data-delay="1200ms" data-duration="1400ms">
+                                                    <a href="contact.html" class="tl-primary-btn white-btn">Start Your
+                                                        Design Journey <span class="icon"><i
+                                                                class="fa-regular fa-arrow-right"></i></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1003,15 +1249,26 @@
                                     <div class="slider-content-wrap">
                                         <div class="slider-content">
                                             <div class="section-heading white-content">
-                                                <h4 class="sub-heading" data-animation="antra-fadeInDown" data-delay="1000ms" data-duration="1400ms">SMART SPACES, BEAUTIFULLY BUILT</h4>
-                                                <h2 class="section-title cursor-effect" data-animation="antra-fadeInDown" data-delay="1200ms" data-duration="1400ms">Interior Concepts That Feel <br>Personal And Practical</h2>
+                                                <h4 class="sub-heading" data-animation="antra-fadeInDown"
+                                                    data-delay="1000ms" data-duration="1400ms">SMART SPACES, BEAUTIFULLY
+                                                    BUILT</h4>
+                                                <h2 class="section-title cursor-effect"
+                                                    data-animation="antra-fadeInDown" data-delay="1200ms"
+                                                    data-duration="1400ms">Interior Concepts That Feel <br>Personal And
+                                                    Practical</h2>
                                             </div>
                                             <div class="bottom-content">
-                                                <div class="antra-desc" data-animation="antra-fadeInUp" data-delay="1000ms" data-duration="1400ms">
-                                                    <p>Every space begins with your ideas. <br> We shape them into refined interiors through <br> thoughtful planning and a seamless design approach.</p>
+                                                <div class="antra-desc" data-animation="antra-fadeInUp"
+                                                    data-delay="1000ms" data-duration="1400ms">
+                                                    <p>Every space begins with your ideas. <br> We shape them into
+                                                        refined interiors through <br> thoughtful planning and a
+                                                        seamless design approach.</p>
                                                 </div>
-                                                <div class="antra-btn" data-animation="antra-fadeInUp" data-delay="1200ms" data-duration="1400ms">
-                                                    <a href="contact.html" class="tl-primary-btn white-btn">Book A Free Consultation <span class="icon"><i class="fa-regular fa-arrow-right"></i></span></a>
+                                                <div class="antra-btn" data-animation="antra-fadeInUp"
+                                                    data-delay="1200ms" data-duration="1400ms">
+                                                    <a href="contact.html" class="tl-primary-btn white-btn">Book A Free
+                                                        Consultation <span class="icon"><i
+                                                                class="fa-regular fa-arrow-right"></i></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1026,15 +1283,26 @@
                                     <div class="slider-content-wrap">
                                         <div class="slider-content">
                                             <div class="section-heading white-content">
-                                                <h4 class="sub-heading" data-animation="antra-fadeInDown" data-delay="1000ms" data-duration="1400ms">ELEGANCE IN EVERY DETAIL</h4>
-                                                <h2 class="section-title cursor-effect" data-animation="antra-fadeInDown" data-delay="1200ms" data-duration="1400ms">Timeless Interiors for <br> Everyday Spaces</h2>
+                                                <h4 class="sub-heading" data-animation="antra-fadeInDown"
+                                                    data-delay="1000ms" data-duration="1400ms">ELEGANCE IN EVERY DETAIL
+                                                </h4>
+                                                <h2 class="section-title cursor-effect"
+                                                    data-animation="antra-fadeInDown" data-delay="1200ms"
+                                                    data-duration="1400ms">Timeless Interiors for <br> Everyday Spaces
+                                                </h2>
                                             </div>
                                             <div class="bottom-content">
-                                                <div class="antra-desc" data-animation="antra-fadeInUp" data-delay="1000ms" data-duration="1400ms">
-                                                    <p>We design interiors that feel refined, functional, and deeply personal <br> crafted to elevate the way you live, <br> work, and experience your space.</p>
+                                                <div class="antra-desc" data-animation="antra-fadeInUp"
+                                                    data-delay="1000ms" data-duration="1400ms">
+                                                    <p>We design interiors that feel refined, functional, and deeply
+                                                        personal <br> crafted to elevate the way you live, <br> work,
+                                                        and experience your space.</p>
                                                 </div>
-                                                <div class="antra-btn" data-animation="antra-fadeInUp" data-delay="1200ms" data-duration="1400ms">
-                                                    <a href="contact.html" class="tl-primary-btn white-btn">Let's Design Your Space <span class="icon"><i class="fa-regular fa-arrow-right"></i></span></a>
+                                                <div class="antra-btn" data-animation="antra-fadeInUp"
+                                                    data-delay="1200ms" data-duration="1400ms">
+                                                    <a href="contact.html" class="tl-primary-btn white-btn">Let's Design
+                                                        Your Space <span class="icon"><i
+                                                                class="fa-regular fa-arrow-right"></i></span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1054,51 +1322,64 @@
                         <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
                         <div class="col-lg-4 col-md-12">
                             <div class="section-heading mb-0">
-                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">WHO We Are</h4>
+                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                    data-duration="0.9" data-stagger="0.03">WHO We Are</h4>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12">
                             <div class="section-heading section-heading-2 mb-0">
-                                <h2 class="section-title cursor-effect">A Fresh Perspective <span>in Interior</span> Design</h2>
-                                <p class="mb-0">At Entrust, we are a growing interior design company focused on creating spaces that are functional, elegant, and thoughtfully designed. With a fresh approach and a strong eye for detail, we help transform ideas into interiors and architectural concepts that reflect each client's vision and lifestyle.</p>
+                                <h2 class="section-title cursor-effect">A Fresh Perspective <span>in Interior</span>
+                                    Design</h2>
+                                <p class="mb-0">At Entrust, we are a growing interior design company focused on creating
+                                    spaces that are functional, elegant, and thoughtfully designed. With a fresh
+                                    approach and a strong eye for detail, we help transform ideas into interiors and
+                                    architectural concepts that reflect each client's vision and lifestyle.</p>
                             </div>
                         </div>
                     </div>
                     <div class="row gy-xl-0 gy-4">
                         <div class="col-xl-3 col-lg-6 col-md-12">
-                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100" data-direction="left">
+                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100"
+                                data-direction="left">
                                 <div class="service-top">
                                     <h3 class="title"><a>Architectural <br> Design</a></h3>
                                     <div class="icon"><img src="assets/img/icon/service-icon-1.png" alt="service"></div>
                                 </div>
-                                <p>We create practical designs balancing function, structure, and aesthetics with clarity and purpose.</p>
+                                <p>We create practical designs balancing function, structure, and aesthetics with
+                                    clarity and purpose.</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-12">
-                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100" data-direction="bottom">
+                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100"
+                                data-direction="bottom">
                                 <div class="service-top">
                                     <h3 class="title"><a>Interior Design <br> & Planning</a></h3>
                                     <div class="icon"><img src="assets/img/icon/service-icon-2.png" alt="service"></div>
                                 </div>
-                                <p>We design interiors that combine style, comfort, and functionality tailored to your vision and everyday needs.</p>
+                                <p>We design interiors that combine style, comfort, and functionality tailored to your
+                                    vision and everyday needs.</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-12">
-                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100" data-direction="bottom">
+                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100"
+                                data-direction="bottom">
                                 <div class="service-top">
                                     <h3 class="title"><a>Consulting <br> Services</a></h3>
                                     <div class="icon"><img src="assets/img/icon/service-icon-3.png" alt="service"></div>
                                 </div>
-                                <p>We help simplify your design journey with professional advice on planning, materials, layouts, and project direction.</p>
+                                <p>We help simplify your design journey with professional advice on planning, materials,
+                                    layouts, and project direction.</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-12">
-                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100" data-direction="right">
+                            <div class="service-item slide-anim" data-delay="0.3" data-offset="100"
+                                data-direction="right">
                                 <div class="service-top">
                                     <h3 class="title"><a>Project <br> Management</a></h3>
                                     <div class="icon"><img src="assets/img/icon/service-icon-4.png" alt="service"></div>
                                 </div>
-                                <p>We ensure smooth coordination, quality execution, and timely progress to bring your design vision to life with ease.</p>
+                                <p>We ensure smooth coordination, quality execution, and timely progress to bring your
+                                    design vision to life with ease.</p>
                             </div>
                         </div>
                     </div>
@@ -1125,7 +1406,9 @@
                     <div class="dv-heading-wrap">
                         <span class="dv-eyebrow">Curate Your Space</span>
                         <h2 class="dv-main-title">Design Your <em>Vision</em></h2>
-                        <p class="dv-description">Every home has a language. Tell us how you want each room to feel and we'll show you what your space could become. Select one style from each room to reveal your personalised design story.</p>
+                        <p class="dv-description">Every home has a language. Tell us how you want each room to feel and
+                            we'll show you what your space could become. Select one style from each room to reveal your
+                            personalised design story.</p>
                     </div>
 
                     <div class="dv-step-indicator" id="stepIndicator">
@@ -1153,13 +1436,15 @@
                         <!-- Kitchen -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
-                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="4" y="8" width="28" height="20" rx="1" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="4" y1="14" x2="32" y2="14" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="18" y1="14" x2="18" y2="28" stroke="#c9a96e" stroke-width="1"/>
-                                    <circle cx="11" cy="11" r="1.5" fill="#c9a96e"/>
-                                    <circle cx="25" cy="11" r="1.5" fill="#c9a96e"/>
-                                    <rect x="7" y="17" width="8" height="5" rx="0.5" stroke="#c9a96e" stroke-width="0.75"/>
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="8" width="28" height="20" rx="1" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="4" y1="14" x2="32" y2="14" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="18" y1="14" x2="18" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <circle cx="11" cy="11" r="1.5" fill="#c9a96e" />
+                                    <circle cx="25" cy="11" r="1.5" fill="#c9a96e" />
+                                    <rect x="7" y="17" width="8" height="5" rx="0.5" stroke="#c9a96e"
+                                        stroke-width="0.75" />
                                 </svg>
                                 <div class="dv-room-title-wrap">
                                     <span class="dv-room-number">Room 01</span>
@@ -1167,32 +1452,51 @@
                                 </div>
                             </div>
                             <div class="dv-option-list">
-                                <div class="dv-option" data-room="kitchen" data-value="contemporary" data-label="Contemporary" data-img="assets/img/config-images/contemporary-kitchen.png">
+                                <div class="dv-option" data-room="kitchen" data-value="contemporary"
+                                    data-label="Contemporary"
+                                    data-img="assets/img/config-images/contemporary-kitchen.png">
                                     <div class="dv-option-radio"></div><span class="dv-option-text">Contemporary</span>
                                 </div>
-                                <div class="dv-option" data-room="kitchen" data-value="modular-natural" data-label="Modular Natural" data-img="assets/img/config-images/designer-kitchen.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modular Natural</span>
+                                <div class="dv-option" data-room="kitchen" data-value="modular-natural"
+                                    data-label="Modular Natural"
+                                    data-img="assets/img/config-images/designer-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modular
+                                        Natural</span>
                                 </div>
-                                <div class="dv-option" data-room="kitchen" data-value="timber-designer" data-label="Timber Designer Feature" data-img="assets/img/config-images/natural-timber-kitchen.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Timber Designer Feature</span>
+                                <div class="dv-option" data-room="kitchen" data-value="timber-designer"
+                                    data-label="Timber Designer Feature"
+                                    data-img="assets/img/config-images/natural-timber-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Timber Designer
+                                        Feature</span>
                                 </div>
                             </div>
                             <div class="dv-room-preview" id="preview-kitchen">
-                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
                             </div>
                         </div>
 
                         <!-- Living Room -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
-                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="4" y="18" width="28" height="10" rx="1" stroke="#c9a96e" stroke-width="1"/>
-                                    <path d="M8 18V14a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke="#c9a96e" stroke-width="1"/>
-                                    <rect x="7" y="22" width="6" height="4" rx="0.5" stroke="#c9a96e" stroke-width="0.75"/>
-                                    <rect x="23" y="22" width="6" height="4" rx="0.5" stroke="#c9a96e" stroke-width="0.75"/>
-                                    <line x1="13" y1="24" x2="23" y2="24" stroke="#c9a96e" stroke-width="0.75"/>
-                                    <line x1="8" y1="28" x2="8" y2="31" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="28" y1="28" x2="28" y2="31" stroke="#c9a96e" stroke-width="1"/>
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="18" width="28" height="10" rx="1" stroke="#c9a96e"
+                                        stroke-width="1" />
+                                    <path d="M8 18V14a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4" stroke="#c9a96e"
+                                        stroke-width="1" />
+                                    <rect x="7" y="22" width="6" height="4" rx="0.5" stroke="#c9a96e"
+                                        stroke-width="0.75" />
+                                    <rect x="23" y="22" width="6" height="4" rx="0.5" stroke="#c9a96e"
+                                        stroke-width="0.75" />
+                                    <line x1="13" y1="24" x2="23" y2="24" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="8" y1="28" x2="8" y2="31" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="28" y1="28" x2="28" y2="31" stroke="#c9a96e" stroke-width="1" />
                                 </svg>
                                 <div class="dv-room-title-wrap">
                                     <span class="dv-room-number">Room 02</span>
@@ -1200,32 +1504,51 @@
                                 </div>
                             </div>
                             <div class="dv-option-list">
-                                <div class="dv-option" data-room="living" data-value="modern-minimal" data-label="Modern Minimal Lounge" data-img="assets/img/config-images/modern-minimal-living.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modern Minimal Lounge</span>
+                                <div class="dv-option" data-room="living" data-value="modern-minimal"
+                                    data-label="Modern Minimal Lounge"
+                                    data-img="assets/img/config-images/modern-minimal-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modern Minimal
+                                        Lounge</span>
                                 </div>
-                                <div class="dv-option" data-room="living" data-value="organic-living" data-label="Organic Living Space" data-img="assets/img/config-images/organic-living.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Organic Living Space</span>
+                                <div class="dv-option" data-room="living" data-value="organic-living"
+                                    data-label="Organic Living Space"
+                                    data-img="assets/img/config-images/organic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Organic Living
+                                        Space</span>
                                 </div>
-                                <div class="dv-option" data-room="living" data-value="curated-aesthetic" data-label="Curated Aesthetic Lounge" data-img="assets/img/config-images/aesthetic-living.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Curated Aesthetic Lounge</span>
+                                <div class="dv-option" data-room="living" data-value="curated-aesthetic"
+                                    data-label="Curated Aesthetic Lounge"
+                                    data-img="assets/img/config-images/aesthetic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Curated Aesthetic
+                                        Lounge</span>
                                 </div>
                             </div>
                             <div class="dv-room-preview" id="preview-living">
-                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
                             </div>
                         </div>
 
                         <!-- Bedroom -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
-                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="4" y="16" width="28" height="14" rx="1" stroke="#c9a96e" stroke-width="1"/>
-                                    <path d="M4 20h28" stroke="#c9a96e" stroke-width="1"/>
-                                    <path d="M14 16v4" stroke="#c9a96e" stroke-width="1"/>
-                                    <rect x="6" y="10" width="8" height="6" rx="0.5" stroke="#c9a96e" stroke-width="0.75"/>
-                                    <rect x="22" y="10" width="8" height="6" rx="0.5" stroke="#c9a96e" stroke-width="0.75"/>
-                                    <line x1="7" y1="30" x2="7" y2="33" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="29" y1="30" x2="29" y2="33" stroke="#c9a96e" stroke-width="1"/>
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="16" width="28" height="14" rx="1" stroke="#c9a96e"
+                                        stroke-width="1" />
+                                    <path d="M4 20h28" stroke="#c9a96e" stroke-width="1" />
+                                    <path d="M14 16v4" stroke="#c9a96e" stroke-width="1" />
+                                    <rect x="6" y="10" width="8" height="6" rx="0.5" stroke="#c9a96e"
+                                        stroke-width="0.75" />
+                                    <rect x="22" y="10" width="8" height="6" rx="0.5" stroke="#c9a96e"
+                                        stroke-width="0.75" />
+                                    <line x1="7" y1="30" x2="7" y2="33" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="29" y1="30" x2="29" y2="33" stroke="#c9a96e" stroke-width="1" />
                                 </svg>
                                 <div class="dv-room-title-wrap">
                                     <span class="dv-room-number">Room 03</span>
@@ -1233,32 +1556,49 @@
                                 </div>
                             </div>
                             <div class="dv-option-list">
-                                <div class="dv-option" data-room="bedroom" data-value="serene-minimal" data-label="Serene Minimal Bedroom" data-img="assets/img/config-images/seren-minimal-bedroom.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Serene Minimal Bedroom</span>
+                                <div class="dv-option" data-room="bedroom" data-value="serene-minimal"
+                                    data-label="Serene Minimal Bedroom"
+                                    data-img="assets/img/config-images/seren-minimal-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Serene Minimal
+                                        Bedroom</span>
                                 </div>
-                                <div class="dv-option" data-room="bedroom" data-value="modern-comfort" data-label="Modern Comfort Bedroom" data-img="assets/img/config-images/modern-comfrot-bedroom.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modern Comfort Bedroom</span>
+                                <div class="dv-option" data-room="bedroom" data-value="modern-comfort"
+                                    data-label="Modern Comfort Bedroom"
+                                    data-img="assets/img/config-images/modern-comfrot-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modern Comfort
+                                        Bedroom</span>
                                 </div>
-                                <div class="dv-option" data-room="bedroom" data-value="luxury-suite" data-label="Luxury Suite Bedroom" data-img="assets/img/config-images/luxury-suite-bedroom.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Luxury Suite Bedroom</span>
+                                <div class="dv-option" data-room="bedroom" data-value="luxury-suite"
+                                    data-label="Luxury Suite Bedroom"
+                                    data-img="assets/img/config-images/luxury-suite-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Luxury Suite
+                                        Bedroom</span>
                                 </div>
                             </div>
                             <div class="dv-room-preview" id="preview-bedroom">
-                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
                             </div>
                         </div>
 
                         <!-- Bathroom -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
-                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="4" y="20" width="28" height="10" rx="1" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="4" y1="24" x2="32" y2="24" stroke="#c9a96e" stroke-width="0.75"/>
-                                    <path d="M10 20V12a2 2 0 0 1 4 0v2" stroke="#c9a96e" stroke-width="1"/>
-                                    <circle cx="24" cy="14" r="3" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="24" y1="11" x2="24" y2="8" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="6" y1="30" x2="6" y2="33" stroke="#c9a96e" stroke-width="1"/>
-                                    <line x1="30" y1="30" x2="30" y2="33" stroke="#c9a96e" stroke-width="1"/>
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="20" width="28" height="10" rx="1" stroke="#c9a96e"
+                                        stroke-width="1" />
+                                    <line x1="4" y1="24" x2="32" y2="24" stroke="#c9a96e" stroke-width="0.75" />
+                                    <path d="M10 20V12a2 2 0 0 1 4 0v2" stroke="#c9a96e" stroke-width="1" />
+                                    <circle cx="24" cy="14" r="3" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="24" y1="11" x2="24" y2="8" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="6" y1="30" x2="6" y2="33" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="30" y1="30" x2="30" y2="33" stroke="#c9a96e" stroke-width="1" />
                                 </svg>
                                 <div class="dv-room-title-wrap">
                                     <span class="dv-room-number">Room 04</span>
@@ -1266,18 +1606,33 @@
                                 </div>
                             </div>
                             <div class="dv-option-list">
-                                <div class="dv-option" data-room="bathroom" data-value="contemporary-minimal" data-label="Contemporary Minimal Bath" data-img="assets/img/config-images/contemporary-minimal-bath.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Contemporary Minimal Bath</span>
+                                <div class="dv-option" data-room="bathroom" data-value="contemporary-minimal"
+                                    data-label="Contemporary Minimal Bath"
+                                    data-img="assets/img/config-images/contemporary-minimal-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Contemporary Minimal
+                                        Bath</span>
                                 </div>
-                                <div class="dv-option" data-room="bathroom" data-value="spa-inspired" data-label="Spa Inspired Bath" data-img="assets/img/config-images/spa-inspired-bath.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Spa Inspired Bath</span>
+                                <div class="dv-option" data-room="bathroom" data-value="spa-inspired"
+                                    data-label="Spa Inspired Bath"
+                                    data-img="assets/img/config-images/spa-inspired-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Spa Inspired
+                                        Bath</span>
                                 </div>
-                                <div class="dv-option" data-room="bathroom" data-value="signature-luxury" data-label="Signature Luxury Bath" data-img="assets/img/config-images/signature-luxury-bath.png">
-                                    <div class="dv-option-radio"></div><span class="dv-option-text">Signature Luxury Bath</span>
+                                <div class="dv-option" data-room="bathroom" data-value="signature-luxury"
+                                    data-label="Signature Luxury Bath"
+                                    data-img="assets/img/config-images/signature-luxury-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Signature Luxury
+                                        Bath</span>
                                 </div>
                             </div>
                             <div class="dv-room-preview" id="preview-bathroom">
-                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
                             </div>
                         </div>
 
@@ -1308,8 +1663,10 @@
                         <button class="dv-reset-btn" id="resetBtn" type="button">Clear All</button>
                         <button class="dv-visualise-btn" id="visualiseBtn" type="button" disabled>
                             <span>Visualise My Design</span>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                     </div>
@@ -1320,7 +1677,8 @@
             <!-- Counter -->
             <section class="counter-section counter-1">
                 <div class="counter-text"><span>ENTRUST</span></div>
-                <div class="counter-element scroll-area"><img class="scroll-img" src="assets/img/images/counter-img-1.png" alt="counter"></div>
+                <div class="counter-element scroll-area"><img class="scroll-img"
+                        src="assets/img/images/counter-img-1.png" alt="counter"></div>
                 <div class="container container-2"></div>
             </section>
 
@@ -1330,57 +1688,71 @@
                 <div class="container container-2">
                     <div class="heading-space align-items-end">
                         <div class="section-heading mb-0">
-                            <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">How We Work</h4>
-                            <h2 class="section-title cursor-effect title-2">A Thoughtful <span>Design <br> process</span> for exceptional <br> results.</h2>
+                            <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                data-duration="0.9" data-stagger="0.03">How We Work</h4>
+                            <h2 class="section-title cursor-effect title-2">A Thoughtful <span>Design <br>
+                                    process</span> for exceptional <br> results.</h2>
                         </div>
                         <div class="process-desc">
-                            <p class="mb-0">Every project begins with understanding your vision and evolves through<br> careful planning, creative execution, and attention to detail. <br> Our process is designed to make your journey smooth, <br> collaborative, and inspiring from start to finish.</p>
+                            <p class="mb-0">Every project begins with understanding your vision and evolves through<br>
+                                careful planning, creative execution, and attention to detail. <br> Our process is
+                                designed to make your journey smooth, <br> collaborative, and inspiring from start to
+                                finish.</p>
                         </div>
                     </div>
                     <div class="row gy-xl-0 gy-4 process-wrap fade-wrapper">
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="process-item fade-top">
-                                <div class="process-thumb"><img src="assets/img/images/process-img-1.png" alt="process"></div>
+                                <div class="process-thumb"><img src="assets/img/images/process-img-1.png" alt="process">
+                                </div>
                                 <div class="process-content">
                                     <h3 class="title"><span>01</span>. Initial Consultation</h3>
-                                    <p>We begin by understanding <br> your vision, space, and <br> functional requirements.</p>
+                                    <p>We begin by understanding <br> your vision, space, and <br> functional
+                                        requirements.</p>
                                 </div>
                                 <span class="number">01</span>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="process-item fade-top">
-                                <div class="process-thumb"><img src="assets/img/images/process-img-2.png" alt="process"></div>
+                                <div class="process-thumb"><img src="assets/img/images/process-img-2.png" alt="process">
+                                </div>
                                 <div class="process-content">
                                     <h3 class="title"><span>02</span>. Design & Planning</h3>
-                                    <p>We create layouts, concepts, <br> and design directions tailored <br> to your style and needs.</p>
+                                    <p>We create layouts, concepts, <br> and design directions tailored <br> to your
+                                        style and needs.</p>
                                 </div>
                                 <span class="number">02</span>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="process-item fade-top">
-                                <div class="process-thumb"><img src="assets/img/images/process-img-3.png" alt="process"></div>
+                                <div class="process-thumb"><img src="assets/img/images/process-img-3.png" alt="process">
+                                </div>
                                 <div class="process-content">
                                     <h3 class="title"><span>03</span>. Execution & Coordination</h3>
-                                    <p>We manage design progress, <br> materials, and on-site details <br> for smooth implementation.</p>
+                                    <p>We manage design progress, <br> materials, and on-site details <br> for smooth
+                                        implementation.</p>
                                 </div>
                                 <span class="number">03</span>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="process-item fade-top">
-                                <div class="process-thumb"><img src="assets/img/images/process-img-4.png" alt="process"></div>
+                                <div class="process-thumb"><img src="assets/img/images/process-img-4.png" alt="process">
+                                </div>
                                 <div class="process-content">
                                     <h3 class="title"><span>04</span>. Final Styling & Handover</h3>
-                                    <p>We complete the finishing <br> touches and deliver a space <br> ready to be experienced.</p>
+                                    <p>We complete the finishing <br> touches and deliver a space <br> ready to be
+                                        experienced.</p>
                                 </div>
                                 <span class="number">04</span>
                             </div>
                         </div>
                     </div>
                     <div class="process-text">
-                        <h5 class="bottom-text">Ready to transform your space? <a href="contact.html">Let's bring your vision to life.</a></h5>
+                        <h5 class="bottom-text">Ready to transform your space? <a href="contact.html">Let's bring your
+                                vision to life.</a></h5>
                     </div>
                 </div>
             </section>
@@ -1398,12 +1770,14 @@
                         <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
                         <div class="col-lg-4 col-md-12">
                             <div class="section-heading mb-0">
-                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">WHY CHOOSE ENTRUST</h4>
+                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                    data-duration="0.9" data-stagger="0.03">WHY CHOOSE ENTRUST</h4>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12">
                             <div class="section-heading section-heading-2 mb-0">
-                                <h2 class="section-title cursor-effect title-2">Thoughtful Design. <br> <span>Perfect Execution.</span> <br> Spaces You'll Love.</h2>
+                                <h2 class="section-title cursor-effect title-2">Thoughtful Design. <br> <span>Perfect
+                                        Execution.</span> <br> Spaces You'll Love.</h2>
                             </div>
                         </div>
                     </div>
@@ -1414,20 +1788,27 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="testi-carousel-wrap slide-anim" data-delay="0.3" data-offset="100" data-direction="right">
+                            <div class="testi-carousel-wrap slide-anim" data-delay="0.3" data-offset="100"
+                                data-direction="right">
                                 <div class="testi-top-content">
                                     <div class="right-content rating-list">
-                                        <p><i class="fa-solid fa-star" style="color: #C6A34F;"></i> Tailored To Your Lifestyle <br><i class="fa-solid fa-star" style="color: #C6A34F;"></i> Transparent From Start To Finish <br><i class="fa-solid fa-star" style="color: #C6A34F;"></i> Designs That Balance Beauty & Function</p>
+                                        <p><i class="fa-solid fa-star" style="color: #C6A34F;"></i> Tailored To Your
+                                            Lifestyle <br><i class="fa-solid fa-star" style="color: #C6A34F;"></i>
+                                            Transparent From Start To Finish <br><i class="fa-solid fa-star"
+                                                style="color: #C6A34F;"></i> Designs That Balance Beauty & Function</p>
                                     </div>
                                 </div>
                                 <div class="testi-carousel swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="testi-item">
-                                                <p>"We believe every space deserves a design journey built on creativity, clarity, and careful attention to detail."</p>
+                                                <p>"We believe every space deserves a design journey built on
+                                                    creativity, clarity, and careful attention to detail."</p>
                                                 <div class="testi-author">
-                                                    <div class="author-img"><img src="assets/img/favicon.png" width="50px" alt="author"></div>
-                                                    <h4 class="name">The Entrust Promise <span>Client-First Design Approach</span></h4>
+                                                    <div class="author-img"><img src="assets/img/favicon.png"
+                                                            width="50px" alt="author"></div>
+                                                    <h4 class="name">The Entrust Promise <span>Client-First Design
+                                                            Approach</span></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -1448,8 +1829,10 @@
                 <div class="bg-shape"><img src="assets/img/shapes/panoroma-shape-1.png" alt="shape"></div>
                 <div class="container">
                     <div class="section-heading text-center align-items-center fade-top">
-                        <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">360-degree panoramas</h4>
-                        <h2 class="section-title cursor-effect title-2">Create an even <span>greater <br>experience</span></h2>
+                        <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.9" data-stagger="0.03">360-degree panoramas</h4>
+                        <h2 class="section-title cursor-effect title-2">Create an even <span>greater
+                                <br>experience</span></h2>
                     </div>
                 </div>
                 <div class="antra-panoroma-container container fade-top" id="panoContainer">
@@ -1462,7 +1845,8 @@
                     </div>
                     <!-- Scroll-release toast — shown at max zoom -->
                     <div class="pano-release-toast" id="panoReleaseToast">
-                        <i class="fa-solid fa-arrow-down" style="margin-right:8px;font-size:10px;"></i>Scroll to continue
+                        <i class="fa-solid fa-arrow-down" style="margin-right:8px;font-size:10px;"></i>Scroll to
+                        continue
                     </div>
                     <div class="antra-panoroma-img" data-img="assets/img/bg-img/virtual-tours.jpg"></div>
                 </div>
@@ -1475,12 +1859,14 @@
                         <div class="shape"><img src="assets/img/shapes/section-heading.png" alt="shape"></div>
                         <div class="col-lg-4 col-md-12">
                             <div class="section-heading mb-0">
-                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">our design ideas</h4>
+                                <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                    data-duration="0.9" data-stagger="0.03">our design ideas</h4>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-12">
                             <div class="section-heading section-heading-2 mb-0">
-                                <h2 class="section-title cursor-effect title-2">Latest ideas <span>from our <br> Interior</span> designers</h2>
+                                <h2 class="section-title cursor-effect title-2">Latest ideas <span>from our <br>
+                                        Interior</span> designers</h2>
                             </div>
                         </div>
                     </div>
@@ -1488,31 +1874,49 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="post-card">
-                                    <div class="post-thumb"><img src="assets/img/blog/b1.jpg" alt="post"><span class="category">exteriors</span></div>
+                                    <div class="post-thumb"><img src="assets/img/blog/b1.jpg" alt="post"><span
+                                            class="category">exteriors</span></div>
                                     <div class="post-content">
-                                        <ul class="post-meta"><li>Mar 30, 2026</li><li>By <span>Admin</span></li></ul>
-                                        <h3 class="title"><a href="small-home-space.html">Four Ways for Creating Extra Space in Small Homes</a></h3>
-                                        <p>Modest, recently established interior design company that seeks to address a variety of topics, including…</p>
+                                        <ul class="post-meta">
+                                            <li>Mar 30, 2026</li>
+                                            <li>By <span>Admin</span></li>
+                                        </ul>
+                                        <h3 class="title"><a href="small-home-space.html">Four Ways for Creating Extra
+                                                Space in Small Homes</a></h3>
+                                        <p>Modest, recently established interior design company that seeks to address a
+                                            variety of topics, including…</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="post-card">
-                                    <div class="post-thumb"><img src="assets/img/blog/b2.jpg" alt="post"><span class="category">exteriors</span></div>
+                                    <div class="post-thumb"><img src="assets/img/blog/b2.jpg" alt="post"><span
+                                            class="category">exteriors</span></div>
                                     <div class="post-content">
-                                        <ul class="post-meta"><li>Mar 26, 2026</li><li>By <span>Admin</span></li></ul>
-                                        <h3 class="title"><a href="modern-interior-tips.html">Transform Your Home With Modern Interior Design Tips</a></h3>
-                                        <p>From minimalist furniture to statement lighting, explore how modern design principles can completely elevate your living space…</p>
+                                        <ul class="post-meta">
+                                            <li>Mar 26, 2026</li>
+                                            <li>By <span>Admin</span></li>
+                                        </ul>
+                                        <h3 class="title"><a href="modern-interior-tips.html">Transform Your Home With
+                                                Modern Interior Design Tips</a></h3>
+                                        <p>From minimalist furniture to statement lighting, explore how modern design
+                                            principles can completely elevate your living space…</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="post-card">
-                                    <div class="post-thumb"><img src="assets/img/blog/b3.jpg" alt="post"><span class="category">exteriors</span></div>
+                                    <div class="post-thumb"><img src="assets/img/blog/b3.jpg" alt="post"><span
+                                            class="category">exteriors</span></div>
                                     <div class="post-content">
-                                        <ul class="post-meta"><li>Mar 13, 2026</li><li>By <span>Admin</span></li></ul>
-                                        <h3 class="title"><a href="minimalist-space.html">Maximize Your Minimalist Space With Smart Solutions</a></h3>
-                                        <p>Minimalism is more than a trend it's a lifestyle. Learn how to design a clutter-free, elegant home that breathes simplicity and intention…</p>
+                                        <ul class="post-meta">
+                                            <li>Mar 13, 2026</li>
+                                            <li>By <span>Admin</span></li>
+                                        </ul>
+                                        <h3 class="title"><a href="minimalist-space.html">Maximize Your Minimalist Space
+                                                With Smart Solutions</a></h3>
+                                        <p>Minimalism is more than a trend it's a lifestyle. Learn how to design a
+                                            clutter-free, elegant home that breathes simplicity and intention…</p>
                                     </div>
                                 </div>
                             </div>
@@ -1527,12 +1931,16 @@
                 <div class="container">
                     <div class="newsletter-wrap">
                         <div class="section-heading text-center fade-top">
-                            <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char" data-duration="0.9" data-stagger="0.03">Subscribe to the newsletter</h4>
-                            <h2 class="section-title cursor-effect">Join <span>our newsletter <br> stay</span> up to date</h2>
-                            <p class="fade-top">Join our newsletter. Learn something new, gain access to exclusive content, <br> and stay informed with the latest updates in the industry.</p>
+                            <h4 class="sub-heading" data-text-animation="fade-in-right" data-split="char"
+                                data-duration="0.9" data-stagger="0.03">Subscribe to the newsletter</h4>
+                            <h2 class="section-title cursor-effect">Join <span>our newsletter <br> stay</span> up to
+                                date</h2>
+                            <p class="fade-top">Join our newsletter. Learn something new, gain access to exclusive
+                                content, <br> and stay informed with the latest updates in the industry.</p>
                         </div>
                         <div class="newsletter-form fade-top">
-                            <input type="text" id="email" name="email" class="form-control" placeholder="Email address..">
+                            <input type="text" id="email" name="email" class="form-control"
+                                placeholder="Email address..">
                             <button type="submit"><i class="fa-regular fa-arrow-right-long"></i></button>
                         </div>
                     </div>
@@ -1548,10 +1956,13 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-widget">
                                 <div class="widget-header">
-                                    <div class="footer-logo"><a href="index.html"><img src="assets/img/logo/logo-1.png" alt="logo"></a></div>
+                                    <div class="footer-logo"><a href="index.html"><img src="assets/img/logo/logo-1.png"
+                                                alt="logo"></a></div>
                                 </div>
-                                <p class="mb-10">Elevating interiors with timeless design and refined elegance. Crafting spaces that leave a lasting impression.</p>
-                                <p class="mb-0">Entrust Interior Designers, <br> Bengaluru, Karnataka 560043, <br> India</p>
+                                <p class="mb-10">Elevating interiors with timeless design and refined elegance. Crafting
+                                    spaces that leave a lasting impression.</p>
+                                <p class="mb-0">Entrust Interior Designers, <br> Bengaluru, Karnataka 560043, <br> India
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
@@ -1572,10 +1983,14 @@
                                 <ul class="footer-list">
                                     <li><a>Our Services</a></li>
                                     <li><a href="residential-interior-design.html">Residential Interior Design</a></li>
-                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage Design</a></li>
-                                    <li><a href="space-planning-layout-design.html">Space Planning & Layout Design</a></li>
-                                    <li><a href="furniture-materials-finish-selection.html">Furniture, Materials & Finish Selection</a></li>
-                                    <li><a href="3d-visualisation-design-consultation.html">3D Visualisation & Design Consultation</a></li>
+                                    <li><a href="modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage
+                                            Design</a></li>
+                                    <li><a href="space-planning-layout-design.html">Space Planning & Layout Design</a>
+                                    </li>
+                                    <li><a href="furniture-materials-finish-selection.html">Furniture, Materials &
+                                            Finish Selection</a></li>
+                                    <li><a href="3d-visualisation-design-consultation.html">3D Visualisation & Design
+                                            Consultation</a></li>
                                     <li><a href="lighting-ambience-design.html">Lighting &amp; Ambience Design</a></li>
                                 </ul>
                             </div>
@@ -1591,8 +2006,12 @@
                                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                         <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                                     </ul>
-                                    <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> entrust. All Rights Reserved.</p>
-                                    <p>Designed and Developed by <a href="https://thinkb.agency" target="_blank">thinkB</a></p>
+                                    <p class="mb-0">©
+                                        <script>document.write(new Date().getFullYear())</script> entrust. All Rights
+                                        Reserved.
+                                    </p>
+                                    <p>Designed and Developed by <a href="https://thinkb.agency"
+                                            target="_blank">thinkB</a></p>
                                 </div>
                             </div>
                         </div>
@@ -1637,445 +2056,446 @@
          DESIGN VISION CONFIGURATOR JS
     ============================================= -->
     <script>
-    (function () {
+            (function () {
 
-        var FORMSPREE_URL = 'https://formspree.io/f/mnjokvql';
+                var FORMSPREE_URL = 'https://formspree.io/f/mnjokvql';
 
-        var ROOMS = [
-            { id: 'kitchen',  label: 'Kitchen'    },
-            { id: 'living',   label: 'Living Room' },
-            { id: 'bedroom',  label: 'Bedroom'     },
-            { id: 'bathroom', label: 'Bathroom'    }
-        ];
+                var ROOMS = [
+                    { id: 'kitchen', label: 'Kitchen' },
+                    { id: 'living', label: 'Living Room' },
+                    { id: 'bedroom', label: 'Bedroom' },
+                    { id: 'bathroom', label: 'Bathroom' }
+                ];
 
-        var selectedImg   = { kitchen: null, living: null, bedroom: null, bathroom: null };
-        var selectedLabel = { kitchen: null, living: null, bedroom: null, bathroom: null };
-        var selections    = { kitchen: null, living: null, bedroom: null, bathroom: null };
+                var selectedImg = { kitchen: null, living: null, bedroom: null, bathroom: null };
+                var selectedLabel = { kitchen: null, living: null, bedroom: null, bathroom: null };
+                var selections = { kitchen: null, living: null, bedroom: null, bathroom: null };
 
-        /* ---- Build & inject overlay ---- */
-        var overlayHTML = [
-            '<div id="dvOverlayRoot" role="dialog" aria-modal="true" aria-label="Your Design Vision">',
-              '<div class="dv-overlay-backdrop" id="overlayBackdrop"></div>',
-              '<div class="dv-overlay-panel">',
-                '<button class="dv-overlay-close" id="overlayClose" aria-label="Close">',
-                  '<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">',
+                /* ---- Build & inject overlay ---- */
+                var overlayHTML = [
+                    '<div id="dvOverlayRoot" role="dialog" aria-modal="true" aria-label="Your Design Vision">',
+                    '<div class="dv-overlay-backdrop" id="overlayBackdrop"></div>',
+                    '<div class="dv-overlay-panel">',
+                    '<button class="dv-overlay-close" id="overlayClose" aria-label="Close">',
+                    '<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">',
                     '<path d="M1 1l12 12M13 1L1 13" stroke-width="1.5" stroke-linecap="round" stroke="rgba(255,255,255,0.7)"/>',
-                  '</svg>',
-                '</button>',
-                '<div class="dv-result-mosaic" id="dvResultMosaic">',
-                  '<div class="dv-mosaic-cell" id="dvCell-kitchen"></div>',
-                  '<div class="dv-mosaic-cell" id="dvCell-living"></div>',
-                  '<div class="dv-mosaic-cell" id="dvCell-bedroom"></div>',
-                  '<div class="dv-mosaic-cell" id="dvCell-bathroom"></div>',
-                '</div>',
-                '<div class="dv-result-bar" id="dvResultBar">',
-                  '<button class="dv-submit-btn" id="dvSubmitBtn" type="button">Submit My Vision ',
+                    '</svg>',
+                    '</button>',
+                    '<div class="dv-result-mosaic" id="dvResultMosaic">',
+                    '<div class="dv-mosaic-cell" id="dvCell-kitchen"></div>',
+                    '<div class="dv-mosaic-cell" id="dvCell-living"></div>',
+                    '<div class="dv-mosaic-cell" id="dvCell-bedroom"></div>',
+                    '<div class="dv-mosaic-cell" id="dvCell-bathroom"></div>',
+                    '</div>',
+                    '<div class="dv-result-bar" id="dvResultBar">',
+                    '<button class="dv-submit-btn" id="dvSubmitBtn" type="button">Submit My Vision ',
                     '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-                  '</button>',
-                '</div>',
-                '<div class="dv-success-msg" id="dvSuccessMsg">',
-                  '<div class="dv-success-icon"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10l4 4 8-8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
-                  "<h4>Thank you \u2014 we'll be in touch.</h4>",
-                  '<p>Your design preferences have been shared with our team.<br>Expect a call within 24 hours.</p>',
-                '</div>',
-              '</div>',
-            '</div>'
-        ].join('');
+                    '</button>',
+                    '</div>',
+                    '<div class="dv-success-msg" id="dvSuccessMsg">',
+                    '<div class="dv-success-icon"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10l4 4 8-8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
+                    "<h4>Thank you \u2014 we'll be in touch.</h4>",
+                    '<p>Your design preferences have been shared with our team.<br>Expect a call within 24 hours.</p>',
+                    '</div>',
+                    '</div>',
+                    '</div>'
+                ].join('');
 
-        document.body.insertAdjacentHTML('beforeend', overlayHTML);
+                document.body.insertAdjacentHTML('beforeend', overlayHTML);
 
-        /* ---- DOM refs ---- */
-        var visualiseBtn = document.getElementById('visualiseBtn');
-        var resetBtn     = document.getElementById('resetBtn');
-        var progressText = document.getElementById('progressText');
-        var overlay      = document.getElementById('dvOverlayRoot');
-        var overlayClose = document.getElementById('overlayClose');
-        var overlayBD    = document.getElementById('overlayBackdrop');
-        var submitBtn    = document.getElementById('dvSubmitBtn');
-        var successMsg   = document.getElementById('dvSuccessMsg');
-        var resultBar    = document.getElementById('dvResultBar');
+                /* ---- DOM refs ---- */
+                var visualiseBtn = document.getElementById('visualiseBtn');
+                var resetBtn = document.getElementById('resetBtn');
+                var progressText = document.getElementById('progressText');
+                var overlay = document.getElementById('dvOverlayRoot');
+                var overlayClose = document.getElementById('overlayClose');
+                var overlayBD = document.getElementById('overlayBackdrop');
+                var submitBtn = document.getElementById('dvSubmitBtn');
+                var successMsg = document.getElementById('dvSuccessMsg');
+                var resultBar = document.getElementById('dvResultBar');
 
-        var nameInput  = document.getElementById('dvName');
-        var phoneInput = document.getElementById('dvPhone');
-        var emailInput = document.getElementById('dvEmail');
-        var cfName     = document.getElementById('dvCfName');
-        var cfPhone    = document.getElementById('dvCfPhone');
-        var cfEmail    = document.getElementById('dvCfEmail');
+                var nameInput = document.getElementById('dvName');
+                var phoneInput = document.getElementById('dvPhone');
+                var emailInput = document.getElementById('dvEmail');
+                var cfName = document.getElementById('dvCfName');
+                var cfPhone = document.getElementById('dvCfPhone');
+                var cfEmail = document.getElementById('dvCfEmail');
 
-        var PLACEHOLDER_SVG = '<div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>';
+                var PLACEHOLDER_SVG = '<div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>';
 
-        function countSelected() {
-            return ROOMS.filter(function(r){ return selections[r.id]; }).length;
-        }
-
-        function updateSteps() {
-            document.querySelectorAll('.dv-step').forEach(function(step) {
-                var room = step.dataset.step;
-                step.classList.remove('active', 'completed');
-                if (selections[room]) step.classList.add('completed');
-            });
-            var firstEmpty = ROOMS.find(function(r){ return !selections[r.id]; });
-            if (firstEmpty) {
-                var el = document.querySelector('.dv-step[data-step="' + firstEmpty.id + '"]');
-                if (el) { el.classList.remove('completed'); el.classList.add('active'); }
-            }
-        }
-
-        function updateUI() {
-            var n = countSelected();
-            progressText.querySelector('span').textContent = n;
-            visualiseBtn.disabled = n < 4;
-            updateSteps();
-        }
-
-        /* ---- Render a mosaic cell ---- */
-        function renderMosaicCell(roomId) {
-            var cell  = document.getElementById('dvCell-' + roomId);
-            var label = ROOMS.find(function(r){ return r.id === roomId; }).label;
-            var img   = selectedImg[roomId];
-            var style = selectedLabel[roomId];
-            if (!cell) return;
-
-            if (img) {
-                var imgEl = new Image();
-                imgEl.onload = function() {
-                    cell.innerHTML =
-                        '<img src="' + img + '" alt="' + style + '">' +
-                        '<div class="dv-mosaic-label">' +
-                          '<span class="dv-mosaic-room-tag">' + label + '</span>' +
-                          '<div class="dv-mosaic-style-name">' + style + '</div>' +
-                        '</div>';
-                    var i = cell.querySelector('img');
-                    if (i) {
-                        if (i.complete) { i.classList.add('loaded'); }
-                        else { i.addEventListener('load', function(){ this.classList.add('loaded'); }); }
-                    }
-                };
-                imgEl.onerror = function() { cell.innerHTML = emptyCell(); };
-                imgEl.src = img;
-            } else {
-                cell.innerHTML = emptyCell();
-            }
-        }
-
-        function emptyCell() {
-            return '<div class="dv-mosaic-empty"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>';
-        }
-
-        /* ---- Option click ---- */
-        document.querySelectorAll('.dv-option').forEach(function(opt) {
-            opt.addEventListener('click', function() {
-                var room   = this.dataset.room;
-                var value  = this.dataset.value;
-                var imgSrc = this.dataset.img;
-                var lbl    = this.dataset.label;
-
-                document.querySelectorAll('.dv-option[data-room="' + room + '"]').forEach(function(o){ o.classList.remove('selected'); });
-                this.classList.add('selected');
-                selections[room]    = value;
-                selectedImg[room]   = imgSrc;
-                selectedLabel[room] = lbl;
-
-                var preview = document.getElementById('preview-' + room);
-                if (preview) {
-                    var img = new Image();
-                    img.onload = function() {
-                        preview.innerHTML = '<img src="' + imgSrc + '" alt="' + lbl + '"><div class="dv-room-preview-label">' + lbl + '</div>';
-                        var pImg = preview.querySelector('img');
-                        if (pImg.complete) { pImg.classList.add('loaded'); }
-                        else { pImg.addEventListener('load', function(){ this.classList.add('loaded'); }); }
-                        preview.classList.add('visible');
-                    };
-                    img.onerror = function() { preview.innerHTML = PLACEHOLDER_SVG; preview.classList.add('visible'); };
-                    img.src = imgSrc;
+                function countSelected() {
+                    return ROOMS.filter(function (r) { return selections[r.id]; }).length;
                 }
 
-                if (overlay.classList.contains('active')) { renderMosaicCell(room); }
-                updateUI();
-            });
-        });
+                function updateSteps() {
+                    document.querySelectorAll('.dv-step').forEach(function (step) {
+                        var room = step.dataset.step;
+                        step.classList.remove('active', 'completed');
+                        if (selections[room]) step.classList.add('completed');
+                    });
+                    var firstEmpty = ROOMS.find(function (r) { return !selections[r.id]; });
+                    if (firstEmpty) {
+                        var el = document.querySelector('.dv-step[data-step="' + firstEmpty.id + '"]');
+                        if (el) { el.classList.remove('completed'); el.classList.add('active'); }
+                    }
+                }
 
-        /* ---- Validate with SweetAlert2 ---- */
-        function validate() {
-            var missing = [];
-            [cfName, cfPhone, cfEmail].forEach(function(f){ f.classList.remove('dv-cf-error'); });
+                function updateUI() {
+                    var n = countSelected();
+                    progressText.querySelector('span').textContent = n;
+                    visualiseBtn.disabled = n < 4;
+                    updateSteps();
+                }
 
-            if (!nameInput.value.trim())  { cfName.classList.add('dv-cf-error');  missing.push('<i class="fa-solid fa-user" style="margin-right:8px;color:#C6A34F;"></i>Your Name'); }
-            if (!phoneInput.value.trim()) { cfPhone.classList.add('dv-cf-error'); missing.push('<i class="fa-solid fa-phone" style="margin-right:8px;color:#C6A34F;"></i>Phone Number'); }
-            if (!emailInput.value.trim() || emailInput.value.indexOf('@') === -1) {
-                cfEmail.classList.add('dv-cf-error');
-                missing.push('<i class="fa-solid fa-envelope" style="margin-right:8px;color:#C6A34F;"></i>Valid Email Address');
-            }
+                /* ---- Render a mosaic cell ---- */
+                function renderMosaicCell(roomId) {
+                    var cell = document.getElementById('dvCell-' + roomId);
+                    var label = ROOMS.find(function (r) { return r.id === roomId; }).label;
+                    var img = selectedImg[roomId];
+                    var style = selectedLabel[roomId];
+                    if (!cell) return;
 
-            if (missing.length > 0) {
-                Swal.fire({
-                    customClass: { popup: 'swal-entrust' },
-                    title: 'Details needed',
-                    html: '<div style="text-align:left;line-height:2.2;font-size:13px;">' + missing.join('<br>') + '</div>',
-                    icon: 'warning',
-                    confirmButtonText: 'Got it',
-                    showClass: { popup: 'swal2-show' },
-                    hideClass: { popup: 'swal2-hide' }
+                    if (img) {
+                        var imgEl = new Image();
+                        imgEl.onload = function () {
+                            cell.innerHTML =
+                                '<img src="' + img + '" alt="' + style + '">' +
+                                '<div class="dv-mosaic-label">' +
+                                '<span class="dv-mosaic-room-tag">' + label + '</span>' +
+                                '<div class="dv-mosaic-style-name">' + style + '</div>' +
+                                '</div>';
+                            var i = cell.querySelector('img');
+                            if (i) {
+                                if (i.complete) { i.classList.add('loaded'); }
+                                else { i.addEventListener('load', function () { this.classList.add('loaded'); }); }
+                            }
+                        };
+                        imgEl.onerror = function () { cell.innerHTML = emptyCell(); };
+                        imgEl.src = img;
+                    } else {
+                        cell.innerHTML = emptyCell();
+                    }
+                }
+
+                function emptyCell() {
+                    return '<div class="dv-mosaic-empty"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e" stroke-width="1"/><circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1"/><path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1"/></svg></div>';
+                }
+
+                /* ---- Option click ---- */
+                document.querySelectorAll('.dv-option').forEach(function (opt) {
+                    opt.addEventListener('click', function () {
+                        var room = this.dataset.room;
+                        var value = this.dataset.value;
+                        var imgSrc = this.dataset.img;
+                        var lbl = this.dataset.label;
+
+                        document.querySelectorAll('.dv-option[data-room="' + room + '"]').forEach(function (o) { o.classList.remove('selected'); });
+                        this.classList.add('selected');
+                        selections[room] = value;
+                        selectedImg[room] = imgSrc;
+                        selectedLabel[room] = lbl;
+
+                        var preview = document.getElementById('preview-' + room);
+                        if (preview) {
+                            var img = new Image();
+                            img.onload = function () {
+                                preview.innerHTML = '<img src="' + imgSrc + '" alt="' + lbl + '"><div class="dv-room-preview-label">' + lbl + '</div>';
+                                var pImg = preview.querySelector('img');
+                                if (pImg.complete) { pImg.classList.add('loaded'); }
+                                else { pImg.addEventListener('load', function () { this.classList.add('loaded'); }); }
+                                preview.classList.add('visible');
+                            };
+                            img.onerror = function () { preview.innerHTML = PLACEHOLDER_SVG; preview.classList.add('visible'); };
+                            img.src = imgSrc;
+                        }
+
+                        if (overlay.classList.contains('active')) { renderMosaicCell(room); }
+                        updateUI();
+                    });
                 });
-                return false;
-            }
-            return true;
-        }
 
-        /* Remove error on typing */
-        [nameInput, phoneInput, emailInput].forEach(function(inp) {
-            inp.addEventListener('input', function() {
-                this.closest('.dv-cf').classList.remove('dv-cf-error');
-            });
-        });
+                /* ---- Validate with SweetAlert2 ---- */
+                function validate() {
+                    var missing = [];
+                    [cfName, cfPhone, cfEmail].forEach(function (f) { f.classList.remove('dv-cf-error'); });
 
-        /* ---- Reset ---- */
-        resetBtn.addEventListener('click', function() {
-            document.querySelectorAll('.dv-option').forEach(function(o){ o.classList.remove('selected'); });
-            ROOMS.forEach(function(r) {
-                selections[r.id] = null; selectedImg[r.id] = null; selectedLabel[r.id] = null;
-                var p = document.getElementById('preview-' + r.id);
-                if (p) { p.classList.remove('visible'); p.innerHTML = PLACEHOLDER_SVG; }
-            });
-            nameInput.value = ''; phoneInput.value = ''; emailInput.value = '';
-            [cfName, cfPhone, cfEmail].forEach(function(f){ f.classList.remove('dv-cf-error'); });
-            updateUI();
-            document.querySelectorAll('.dv-step').forEach(function(s){ s.classList.remove('active','completed'); });
-            document.querySelector('.dv-step[data-step="kitchen"]').classList.add('active');
-        });
+                    if (!nameInput.value.trim()) { cfName.classList.add('dv-cf-error'); missing.push('<i class="fa-solid fa-user" style="margin-right:8px;color:#C6A34F;"></i>Your Name'); }
+                    if (!phoneInput.value.trim()) { cfPhone.classList.add('dv-cf-error'); missing.push('<i class="fa-solid fa-phone" style="margin-right:8px;color:#C6A34F;"></i>Phone Number'); }
+                    if (!emailInput.value.trim() || emailInput.value.indexOf('@') === -1) {
+                        cfEmail.classList.add('dv-cf-error');
+                        missing.push('<i class="fa-solid fa-envelope" style="margin-right:8px;color:#C6A34F;"></i>Valid Email Address');
+                    }
 
-        /* ---- Visualise ---- */
-        visualiseBtn.addEventListener('click', function() {
-            if (!validate()) {
-                document.getElementById('dvContactWrap').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                visualiseBtn.classList.add('shake');
-                setTimeout(function(){ visualiseBtn.classList.remove('shake'); }, 500);
-                return;
-            }
+                    if (missing.length > 0) {
+                        Swal.fire({
+                            customClass: { popup: 'swal-entrust' },
+                            title: 'Details needed',
+                            html: '<div style="text-align:left;line-height:2.2;font-size:13px;">' + missing.join('<br>') + '</div>',
+                            icon: 'warning',
+                            confirmButtonText: 'Got it',
+                            showClass: { popup: 'swal2-show' },
+                            hideClass: { popup: 'swal2-hide' }
+                        });
+                        return false;
+                    }
+                    return true;
+                }
 
-            ROOMS.forEach(function(r){ renderMosaicCell(r.id); });
+                /* Remove error on typing */
+                [nameInput, phoneInput, emailInput].forEach(function (inp) {
+                    inp.addEventListener('input', function () {
+                        this.closest('.dv-cf').classList.remove('dv-cf-error');
+                    });
+                });
 
-            resultBar.style.display  = '';
-            successMsg.style.display = 'none';
-            submitBtn.disabled       = false;
-            submitBtn.innerHTML      = 'Submit My Vision <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                /* ---- Reset ---- */
+                resetBtn.addEventListener('click', function () {
+                    document.querySelectorAll('.dv-option').forEach(function (o) { o.classList.remove('selected'); });
+                    ROOMS.forEach(function (r) {
+                        selections[r.id] = null; selectedImg[r.id] = null; selectedLabel[r.id] = null;
+                        var p = document.getElementById('preview-' + r.id);
+                        if (p) { p.classList.remove('visible'); p.innerHTML = PLACEHOLDER_SVG; }
+                    });
+                    nameInput.value = ''; phoneInput.value = ''; emailInput.value = '';
+                    [cfName, cfPhone, cfEmail].forEach(function (f) { f.classList.remove('dv-cf-error'); });
+                    updateUI();
+                    document.querySelectorAll('.dv-step').forEach(function (s) { s.classList.remove('active', 'completed'); });
+                    document.querySelector('.dv-step[data-step="kitchen"]').classList.add('active');
+                });
 
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+                /* ---- Visualise ---- */
+                visualiseBtn.addEventListener('click', function () {
+                    if (!validate()) {
+                        document.getElementById('dvContactWrap').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        visualiseBtn.classList.add('shake');
+                        setTimeout(function () { visualiseBtn.classList.remove('shake'); }, 500);
+                        return;
+                    }
 
-        /* ---- Submit to Formspree ---- */
-        submitBtn.addEventListener('click', function() {
-            submitBtn.disabled    = true;
-            submitBtn.textContent = 'Sending\u2026';
+                    ROOMS.forEach(function (r) { renderMosaicCell(r.id); });
 
-            var payload = {
-                name:        nameInput.value.trim(),
-                phone:       phoneInput.value.trim(),
-                email:       emailInput.value.trim(),
-                kitchen:     selectedLabel['kitchen']  || '\u2014',
-                living_room: selectedLabel['living']   || '\u2014',
-                bedroom:     selectedLabel['bedroom']  || '\u2014',
-                bathroom:    selectedLabel['bathroom'] || '\u2014',
-                _subject:    'Design Vision Enquiry from ' + nameInput.value.trim()
-            };
+                    resultBar.style.display = '';
+                    successMsg.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Submit My Vision <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-            fetch(FORMSPREE_URL, {
-                method:  'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body:    JSON.stringify(payload)
-            })
-            .then(function(res) {
-                if (res.ok) { resultBar.style.display = 'none'; successMsg.style.display = 'block'; }
-                else { return res.json().then(function(d){ throw new Error(d.error || 'Failed'); }); }
-            })
-            .catch(function(err) {
-                console.error('Formspree error:', err);
-                submitBtn.disabled    = false;
-                submitBtn.textContent = 'Try Again';
-            });
-        });
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
 
-        /* ---- Close overlay ---- */
-        function closeOverlay() { overlay.classList.remove('active'); document.body.style.overflow = ''; }
-        overlayClose.addEventListener('click', closeOverlay);
-        overlayBD.addEventListener('click', closeOverlay);
-        document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeOverlay(); });
+                /* ---- Submit to Formspree ---- */
+                submitBtn.addEventListener('click', function () {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending\u2026';
 
-        updateUI();
+                    var payload = {
+                        name: nameInput.value.trim(),
+                        phone: phoneInput.value.trim(),
+                        email: emailInput.value.trim(),
+                        kitchen: selectedLabel['kitchen'] || '\u2014',
+                        living_room: selectedLabel['living'] || '\u2014',
+                        bedroom: selectedLabel['bedroom'] || '\u2014',
+                        bathroom: selectedLabel['bathroom'] || '\u2014',
+                        _subject: 'Design Vision Enquiry from ' + nameInput.value.trim()
+                    };
 
-    })();
+                    fetch(FORMSPREE_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(payload)
+                    })
+                        .then(function (res) {
+                            if (res.ok) { resultBar.style.display = 'none'; successMsg.style.display = 'block'; }
+                            else { return res.json().then(function (d) { throw new Error(d.error || 'Failed'); }); }
+                        })
+                        .catch(function (err) {
+                            console.error('Formspree error:', err);
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Try Again';
+                        });
+                });
+
+                /* ---- Close overlay ---- */
+                function closeOverlay() { overlay.classList.remove('active'); document.body.style.overflow = ''; }
+                overlayClose.addEventListener('click', closeOverlay);
+                overlayBD.addEventListener('click', closeOverlay);
+                document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeOverlay(); });
+
+                updateUI();
+
+            })();
     </script>
 
     <!-- =============================================
          PANORAMA — 360 hint + scroll release JS
     ============================================= -->
     <script>
-    (function () {
+        (function () {
 
-        var panoContainer = document.getElementById('panoContainer');
-        var panoHint      = document.getElementById('panoHint');
-        var releaseToast  = document.getElementById('panoReleaseToast');
+            var panoContainer = document.getElementById('panoContainer');
+            var panoHint = document.getElementById('panoHint');
+            var releaseToast = document.getElementById('panoReleaseToast');
 
-        if (!panoContainer || !panoHint) return;
+            if (!panoContainer || !panoHint) return;
 
-        var hintShown      = false;
-        var hintDismissed  = false;
-        var panoZoomed     = false;   /* true once user has reached max zoom */
-        var releaseShowing = false;
+            var hintShown = false;
+            var hintDismissed = false;
+            var panoZoomed = false;   /* true once user has reached max zoom */
+            var releaseShowing = false;
 
-        /* --- Show hint when section scrolls into view (once) --- */
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting && !hintShown) {
-                    hintShown = true;
-                    panoHint.classList.add('visible');
+            /* --- Show hint when section scrolls into view (once) --- */
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !hintShown) {
+                        hintShown = true;
+                        panoHint.classList.add('visible');
 
-                    /* Auto-dismiss after 3s if user has not interacted */
-                    setTimeout(function() {
-                        if (!hintDismissed) { dismissHint(); }
-                    }, 3000);
-                }
-            });
-        }, { threshold: 0.4 });
+                        /* Auto-dismiss after 3s if user has not interacted */
+                        setTimeout(function () {
+                            if (!hintDismissed) { dismissHint(); }
+                        }, 3000);
+                    }
+                });
+            }, { threshold: 0.4 });
 
-        observer.observe(panoContainer);
+            observer.observe(panoContainer);
 
-        function dismissHint() {
-            hintDismissed = true;
-            panoHint.classList.add('fade-out');
-            setTimeout(function() {
-                panoHint.style.display = 'none';
-            }, 800);
-        }
-
-        /* Dismiss on first mouse interaction with the panorama */
-        panoContainer.addEventListener('mousedown', dismissHint, { once: true });
-        panoContainer.addEventListener('touchstart', dismissHint, { once: true, passive: true });
-
-        /* ---------------------------------------------------
-           Scroll release at max zoom
-           Panolens viewer stores camera in viewer.camera.
-           Default FOV = 60, min FOV (max zoom) ≈ 10.
-           We hook into the wheel event on the panorama element
-           and check if it has been zoomed to the limit.
-        --------------------------------------------------- */
-
-        /* Panolens initialises asynchronously — poll for viewer */
-        var panoViewer = null;
-        var FOV_MIN    = 10;   /* Panolens default minimum FOV */
-        var FOV_MAX    = 100;  /* Panolens default maximum FOV */
-        var atMaxZoom  = false;
-
-        /* Wait for Panolens viewer to be set on the container or window */
-        function findViewer() {
-            /* main.js may expose viewer as window.panoramaViewer or attach to the DOM element */
-            if (window.panoramaViewer) { panoViewer = window.panoramaViewer; return true; }
-            /* Try common PANOLENS patterns */
-            if (window.PANOLENS && window.PANOLENS._viewer) { panoViewer = window.PANOLENS._viewer; return true; }
-            return false;
-        }
-
-        var pollInterval = setInterval(function() {
-            if (findViewer()) { clearInterval(pollInterval); setupScrollRelease(); }
-        }, 300);
-
-        /* Fallback: if no viewer found in 5s just use wheel-count heuristic */
-        setTimeout(function() {
-            if (!panoViewer) {
-                clearInterval(pollInterval);
-                setupScrollReleaseHeuristic();
+            function dismissHint() {
+                hintDismissed = true;
+                panoHint.classList.add('fade-out');
+                setTimeout(function () {
+                    panoHint.style.display = 'none';
+                }, 800);
             }
-        }, 5000);
 
-        function setupScrollRelease() {
-            /* Check FOV on every render tick */
-            var origRender = panoViewer.render ? panoViewer.render.bind(panoViewer) : null;
+            /* Dismiss on first mouse interaction with the panorama */
+            panoContainer.addEventListener('mousedown', dismissHint, { once: true });
+            panoContainer.addEventListener('touchstart', dismissHint, { once: true, passive: true });
 
-            function checkFov() {
-                try {
-                    var cam = panoViewer.camera || (panoViewer.getCamera && panoViewer.getCamera());
-                    if (!cam) return;
-                    var fov = cam.fov;
-                    if (fov <= FOV_MIN + 1 && !atMaxZoom) {
+            /* ---------------------------------------------------
+               Scroll release at max zoom
+               Panolens viewer stores camera in viewer.camera.
+               Default FOV = 60, min FOV (max zoom) ≈ 10.
+               We hook into the wheel event on the panorama element
+               and check if it has been zoomed to the limit.
+            --------------------------------------------------- */
+
+            /* Panolens initialises asynchronously — poll for viewer */
+            var panoViewer = null;
+            var FOV_MIN = 10;   /* Panolens default minimum FOV */
+            var FOV_MAX = 100;  /* Panolens default maximum FOV */
+            var atMaxZoom = false;
+
+            /* Wait for Panolens viewer to be set on the container or window */
+            function findViewer() {
+                /* main.js may expose viewer as window.panoramaViewer or attach to the DOM element */
+                if (window.panoramaViewer) { panoViewer = window.panoramaViewer; return true; }
+                /* Try common PANOLENS patterns */
+                if (window.PANOLENS && window.PANOLENS._viewer) { panoViewer = window.PANOLENS._viewer; return true; }
+                return false;
+            }
+
+            var pollInterval = setInterval(function () {
+                if (findViewer()) { clearInterval(pollInterval); setupScrollRelease(); }
+            }, 300);
+
+            /* Fallback: if no viewer found in 5s just use wheel-count heuristic */
+            setTimeout(function () {
+                if (!panoViewer) {
+                    clearInterval(pollInterval);
+                    setupScrollReleaseHeuristic();
+                }
+            }, 5000);
+
+            function setupScrollRelease() {
+                /* Check FOV on every render tick */
+                var origRender = panoViewer.render ? panoViewer.render.bind(panoViewer) : null;
+
+                function checkFov() {
+                    try {
+                        var cam = panoViewer.camera || (panoViewer.getCamera && panoViewer.getCamera());
+                        if (!cam) return;
+                        var fov = cam.fov;
+                        if (fov <= FOV_MIN + 1 && !atMaxZoom) {
+                            atMaxZoom = true;
+                            showReleaseToast();
+                        }
+                        if (fov > FOV_MIN + 5) { atMaxZoom = false; hideReleaseToast(); }
+                    } catch (e) { }
+                }
+
+                panoContainer.addEventListener('wheel', function () {
+                    setTimeout(checkFov, 100);
+                }, { passive: true });
+            }
+
+            /* Heuristic fallback: count scroll-in events on the pano container.
+               If user has scrolled in 8+ times (deep zoom), release. */
+            function setupScrollReleaseHeuristic() {
+                var scrollInCount = 0;
+                var MAX_SCROLL_IN = 8;
+
+                panoContainer.addEventListener('wheel', function (e) {
+                    if (e.deltaY < 0) {
+                        /* zooming in */
+                        scrollInCount = Math.min(scrollInCount + 1, MAX_SCROLL_IN + 2);
+                    } else {
+                        /* zooming out */
+                        scrollInCount = Math.max(scrollInCount - 1, 0);
+                    }
+
+                    if (scrollInCount >= MAX_SCROLL_IN && !atMaxZoom) {
                         atMaxZoom = true;
                         showReleaseToast();
                     }
-                    if (fov > FOV_MIN + 5) { atMaxZoom = false; hideReleaseToast(); }
-                } catch(e) {}
+                    if (scrollInCount < MAX_SCROLL_IN - 2) {
+                        atMaxZoom = false;
+                        hideReleaseToast();
+                    }
+                }, { passive: true });
             }
 
-            panoContainer.addEventListener('wheel', function() {
-                setTimeout(checkFov, 100);
-            }, { passive: true });
-        }
+            function showReleaseToast() {
+                if (releaseShowing) return;
+                releaseShowing = true;
+                releaseToast.classList.add('show');
 
-        /* Heuristic fallback: count scroll-in events on the pano container.
-           If user has scrolled in 8+ times (deep zoom), release. */
-        function setupScrollReleaseHeuristic() {
-            var scrollInCount = 0;
-            var MAX_SCROLL_IN = 8;
+                /* After 2.5s, actually release the scroll capture from Panolens */
+                setTimeout(function () {
+                    releasePanoScroll();
+                }, 2500);
+            }
 
-            panoContainer.addEventListener('wheel', function(e) {
-                if (e.deltaY < 0) {
-                    /* zooming in */
-                    scrollInCount = Math.min(scrollInCount + 1, MAX_SCROLL_IN + 2);
-                } else {
-                    /* zooming out */
-                    scrollInCount = Math.max(scrollInCount - 1, 0);
-                }
+            function hideReleaseToast() {
+                releaseShowing = false;
+                releaseToast.classList.remove('show');
+            }
 
-                if (scrollInCount >= MAX_SCROLL_IN && !atMaxZoom) {
-                    atMaxZoom = true;
-                    showReleaseToast();
-                }
-                if (scrollInCount < MAX_SCROLL_IN - 2) {
-                    atMaxZoom = false;
-                    hideReleaseToast();
-                }
-            }, { passive: true });
-        }
+            function releasePanoScroll() {
+                /*
+                 * Panolens' ImagePanorama by default calls event.preventDefault()
+                 * on wheel events, trapping the user. We override the wheel handler
+                 * on the renderer's DOM element to stop preventDefault when at max zoom.
+                 */
+                var canvas = panoContainer.querySelector('canvas');
+                if (!canvas) { canvas = panoContainer.querySelector('.panolens-canvas') || panoContainer; }
 
-        function showReleaseToast() {
-            if (releaseShowing) return;
-            releaseShowing = true;
-            releaseToast.classList.add('show');
+                /* Add a capturing wheel listener that, once at max zoom, stops propagation
+                   to Panolens so the page can scroll normally. */
+                canvas.addEventListener('wheel', function (e) {
+                    if (atMaxZoom && e.deltaY > 0) {
+                        /* User is scrolling down at max zoom — let the page scroll */
+                        e.stopImmediatePropagation();
+                        /* We have to manually nudge the page scroll since Panolens already
+                           called preventDefault() at the renderer level. Use scrollBy. */
+                        window.scrollBy({ top: e.deltaY * 2, behavior: 'smooth' });
+                    }
+                }, { passive: false, capture: true });
+            }
 
-            /* After 2.5s, actually release the scroll capture from Panolens */
-            setTimeout(function() {
-                releasePanoScroll();
-            }, 2500);
-        }
-
-        function hideReleaseToast() {
-            releaseShowing = false;
-            releaseToast.classList.remove('show');
-        }
-
-        function releasePanoScroll() {
-            /*
-             * Panolens' ImagePanorama by default calls event.preventDefault()
-             * on wheel events, trapping the user. We override the wheel handler
-             * on the renderer's DOM element to stop preventDefault when at max zoom.
-             */
-            var canvas = panoContainer.querySelector('canvas');
-            if (!canvas) { canvas = panoContainer.querySelector('.panolens-canvas') || panoContainer; }
-
-            /* Add a capturing wheel listener that, once at max zoom, stops propagation
-               to Panolens so the page can scroll normally. */
-            canvas.addEventListener('wheel', function(e) {
-                if (atMaxZoom && e.deltaY > 0) {
-                    /* User is scrolling down at max zoom — let the page scroll */
-                    e.stopImmediatePropagation();
-                    /* We have to manually nudge the page scroll since Panolens already
-                       called preventDefault() at the renderer level. Use scrollBy. */
-                    window.scrollBy({ top: e.deltaY * 2, behavior: 'smooth' });
-                }
-            }, { passive: false, capture: true });
-        }
-
-    })();
+        })();
     </script>
 
 </body>
+
 </html>
