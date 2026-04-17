@@ -17887,7 +17887,7 @@ blockquote .content .author {
 
 .footer-text span {
     font-family: var(--tl-ff-heading);
-    font-size: 458px;
+    font-size: 348px;
     background: linear-gradient(179.69deg, #FFFAF2 0.27%, rgba(255, 251, 244, 0) 90.85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
@@ -17897,20 +17897,26 @@ blockquote .content .author {
 }
 
 @media(max-width: 1199px) {
-    .footer-text span {
-        font-size: 400px
+.footer-text span {
+        font-size: 248px;
+        position: relative;
+        bottom: 40px;
     }
 }
 
 @media only screen and (max-width: 992px) {
-    .footer-text span {
-        font-size: 300px
+.footer-text span {
+        font-size: 178px;
+        position: relative;
+        bottom: 50px;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .footer-text span {
-        font-size: 120px
+.footer-text span {
+        font-size: 70px;
+        position: relative;
+        bottom: 8px;
     }
 }
 
