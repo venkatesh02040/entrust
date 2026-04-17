@@ -17893,7 +17893,9 @@ blockquote .content .author {
     -webkit-text-fill-color: rgba(0, 0, 0, 0);
     background-clip: text;
     opacity: .64;
-    line-height: 1
+    line-height: 1;
+    position: relative;
+    bottom: 36px;
 }
 
 @media(max-width: 1199px) {
