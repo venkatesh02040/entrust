@@ -2794,7 +2794,7 @@ ul {
 }
 
 .header {
-    background-color: #C6A34F;
+    background-color: #f9f5ee;
     width: 100%;
     position: absolute;
     top: 0;
@@ -2894,7 +2894,7 @@ ul {
 }
 
 .header .primary-header-inner .header-menu-wrap ul li a {
-    color: var(--tl-color-common-white);
+    color: #C6A34F;
     display: block;
     font-size: 17px;
     padding: 36px 0;
@@ -2914,7 +2914,7 @@ ul {
 }
 
 .header .primary-header-inner .header-menu-wrap ul li a:hover {
-    color: var(--tl-color-common-white);
+    color: #162950;
 }
 
 .header .primary-header-inner .header-menu-wrap ul li a i {
@@ -3137,9 +3137,9 @@ ul {
 }
 
 .header .primary-header-inner .header-right-wrap .header-contact .icon {
-    color: var(--tl-color-common-white);
+    color: #C6A34F;
     font-size: 25px;
-    border: 1px solid white;
+    border: 1px solid #C6A34F;
     padding: 2px 0px 2px 8px;
     width: 45px;
     height: 45px;
@@ -3154,7 +3154,7 @@ ul {
 }
 
 .header .primary-header-inner .header-right-wrap .header-contact .content .call-number {
-    color: var(--tl-color-common-white);
+    color: #C6A34F;
     font-size: 16px;
     font-weight: 400
 }
@@ -3163,7 +3163,7 @@ ul {
     background-color: var(--tl-color-theme-primary);
     color: var(--tl-color-common-white);
     padding: 19px 30px;
-    border: 1px solid white;
+    border: 1px solid #C6A34F;
 }
 
 @media only screen and (max-width: 767px) {
@@ -3334,7 +3334,7 @@ ul {
 }
 
 .header .primary-header.fixed {
-    background-color: #c6a34f;
+    background-color: #f9f5ee;
     top: 0;
     transition: all .3s ease-in-out
 }
