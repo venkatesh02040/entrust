@@ -3186,12 +3186,12 @@ ul {
 
 .header .primary-header-inner .header-right-wrap .sidebar-icon .sidebar-trigger,
 .header .primary-header-inner .header-right-wrap .search-icon {
-    background: rgba(216, 218, 223, .13);
-    color: var(--tl-color-common-white);
+    background: #C6A34F;
+    color: white;
     border: 1px solid hsla(0, 0%, 100%, .09);
     backdrop-filter: blur(29px);
-    height: 56px;
-    width: 56px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
