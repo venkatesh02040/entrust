@@ -251,80 +251,80 @@ animateBars();
         });
 
         // Custom Cursor
-        function customCursor(viewSelector = '.antra-hover-view') {
+        // function customCursor(viewSelector = '.antra-hover-view') {
 
-            $("body").append('<div class="mt-cursor"></div>');
-            $("body").append('<div class="mt-cursor-view"></div>');
+        //     $("body").append('<div class="mt-cursor"></div>');
+        //     $("body").append('<div class="mt-cursor-view"></div>');
 
-            const cursor = $(".mt-cursor");
-            const viewButton = $(".mt-cursor-view");
+        //     const cursor = $(".mt-cursor");
+        //     const viewButton = $(".mt-cursor-view");
 
-            let targetX = 0;
-            let targetY = 0;
-            let cursorX = 0;
-            let cursorY = 0;
-            let viewX = 0;
-            let viewY = 0;
-            let rafId = null;
-            let running = false;
+        //     let targetX = 0;
+        //     let targetY = 0;
+        //     let cursorX = 0;
+        //     let cursorY = 0;
+        //     let viewX = 0;
+        //     let viewY = 0;
+        //     let rafId = null;
+        //     let running = false;
 
-            function animate() {
-                if (!running) return;
-                cursorX += (targetX - cursorX) * 0.35;
-                cursorY += (targetY - cursorY) * 0.35;
-                viewX += (targetX - viewX) * 0.18;
-                viewY += (targetY - viewY) * 0.18;
+        //     function animate() {
+        //         if (!running) return;
+        //         cursorX += (targetX - cursorX) * 0.35;
+        //         cursorY += (targetY - cursorY) * 0.35;
+        //         viewX += (targetX - viewX) * 0.18;
+        //         viewY += (targetY - viewY) * 0.18;
 
-                cursor.css({
-                    '--tl-cx': `${cursorX}px`,
-                    '--tl-cy': `${cursorY}px`,
-                    visibility: "inherit",
-                });
-                viewButton.css({
-                    '--tl-vx': `${viewX}px`,
-                    '--tl-vy': `${viewY}px`,
-                });
-                rafId = window.requestAnimationFrame(animate);
-            }
+        //         cursor.css({
+        //             '--tl-cx': `${cursorX}px`,
+        //             '--tl-cy': `${cursorY}px`,
+        //             visibility: "inherit",
+        //         });
+        //         viewButton.css({
+        //             '--tl-vx': `${viewX}px`,
+        //             '--tl-vy': `${viewY}px`,
+        //         });
+        //         rafId = window.requestAnimationFrame(animate);
+        //     }
 
-            $(window).on("mousemove.cursor", function(e) {
-                targetX = e.clientX;
-                targetY = e.clientY;
-                if (!running) {
-                    running = true;
-                    rafId = window.requestAnimationFrame(animate);
-                }
-            });
+        //     $(window).on("mousemove.cursor", function(e) {
+        //         targetX = e.clientX;
+        //         targetY = e.clientY;
+        //         if (!running) {
+        //             running = true;
+        //             rafId = window.requestAnimationFrame(animate);
+        //         }
+        //     });
 
-            $("body").on('mouseenter.cursor', viewSelector, function() {
-                viewButton.addClass("active");
-                cursor.css("opacity", "0");
-            }).on('mouseleave.cursor', viewSelector, function() {
-                viewButton.removeClass("active");
-                cursor.css("opacity", "1");
-            });
+        //     $("body").on('mouseenter.cursor', viewSelector, function() {
+        //         viewButton.addClass("active");
+        //         cursor.css("opacity", "0");
+        //     }).on('mouseleave.cursor', viewSelector, function() {
+        //         viewButton.removeClass("active");
+        //         cursor.css("opacity", "1");
+        //     });
 
-            // NEW: hero text effect
-            $("body").on("mouseenter.cursor", ".cursor-effect", function() {
-                cursor.addClass("cursor-lg cursor-blend");
-                })
-                .on("mouseleave.cursor", ".cursor-effect", function() {
-                cursor.removeClass("cursor-lg cursor-blend");
-                });
+        //     // NEW: hero text effect
+        //     $("body").on("mouseenter.cursor", ".cursor-effect", function() {
+        //         cursor.addClass("cursor-lg cursor-blend");
+        //         })
+        //         .on("mouseleave.cursor", ".cursor-effect", function() {
+        //         cursor.removeClass("cursor-lg cursor-blend");
+        //         });
 
-            window.destroyCustomCursor = function() {
-                $(window).off('.cursor');
-                $('body').off('.cursor');
-                if (rafId) {
-                    cancelAnimationFrame(rafId);
-                    rafId = null;
-                }
-                running = false;
-                cursor.remove();
-                viewButton.remove();
-            };
-        }
-        customCursor();
+        //     window.destroyCustomCursor = function() {
+        //         $(window).off('.cursor');
+        //         $('body').off('.cursor');
+        //         if (rafId) {
+        //             cancelAnimationFrame(rafId);
+        //             rafId = null;
+        //         }
+        //         running = false;
+        //         cursor.remove();
+        //         viewButton.remove();
+        //     };
+        // }
+        // customCursor();
 
         // Price range slider
         var priceRange = $("#price-range"),
