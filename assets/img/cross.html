@@ -10,4 +10,40 @@
 <h2 style="margin-top:20px;font-size: 30px;">Not Found
 </h2>
 <p>The resource requested could not be found on this server!</p>
-</div></div></body></html>
+</div></div>
+    <script>
+        const entrust_hamBtn = document.getElementById('entrust-ham-btn');
+        const entrust_overlay = document.getElementById('entrust-overlay');
+
+        function entrust_openMenu() {
+            entrust_hamBtn.classList.add('entrust-is-open');
+            entrust_overlay.classList.add('entrust-is-open');
+            entrust_hamBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function entrust_closeMenu() {
+            entrust_hamBtn.classList.remove('entrust-is-open');
+            entrust_overlay.classList.remove('entrust-is-open');
+            entrust_hamBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        entrust_hamBtn.addEventListener('click', () => {
+            entrust_overlay.classList.contains('entrust-is-open')
+                ? entrust_closeMenu()
+                : entrust_openMenu();
+        });
+
+        // Close on nav link click
+        entrust_overlay.querySelectorAll('.entrust-overlay__links a').forEach(link => {
+            link.addEventListener('click', entrust_closeMenu);
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') entrust_closeMenu();
+        });
+    </script>
+
+</body></html>

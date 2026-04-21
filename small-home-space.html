@@ -26,120 +26,139 @@
     <div class="preloader overflow-hidden">
         <div class="site-name"><span><img style="width: 100px;margin-bottom: 15px;" src="./assets/img/favicon.png" alt="img"></span></div>
     </div>
-    <header class="header sticky-active">
-        <div class="primary-header">
-            <div class="container">
-                <div class="primary-header-inner">
-                    <div class="header-left-wrap">
-                        <div class="header-logo d-lg-block">
-                            <a href="index.html"><img src="assets/img/logo/logo-2.png" alt="Entrust Interior Designers"></a>
-                        </div>
-                        <div class="header-menu-wrap">
-                            <div class="mobile-menu-items">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a class="enav-active" href="blogs.html">Blogs</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header-right-wrap">
-                        <a href="tel:+919845012345" class="header-contact">
-                            <span class="icon"><i class="fa-regular fa-phone"></i></span>
-                            <span class="content">
-                                 
-                                <span class="call-number"> +91 98450 12345</span>
-                            </span>
-                        </a>
-                        <div class="header-btn-wrap">
-                            <a href="contact.html" class="tl-primary-btn header-btn">Get in Touch</a>
-                        </div>
-                        <div class="sidebar-icon">
-                            <button class="sidebar-trigger open">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 2C11 0.89543 11.8954 0 13 0H14C15.1046 0 16 0.895431 16 2V3C16 4.10457 15.1046 5 14 5H13C11.8954 5 11 4.10457 11 3V2Z" fill="white"/>
-                                    <path d="M0 2C0 0.89543 0.895431 0 2 0H3C4.10457 0 5 0.895431 5 2V3C5 4.10457 4.10457 5 3 5H2C0.89543 5 0 4.10457 0 3V2Z" fill="white"/>
-                                    <path d="M0 13C0 11.8954 0.895431 11 2 11H3C4.10457 11 5 11.8954 5 13V14C5 15.1046 4.10457 16 3 16H2C0.89543 16 0 15.1046 0 14V13Z" fill="white"/>
-                                    <path d="M11 13C11 11.8954 11.8954 11 13 11H14C15.1046 11 16 11.8954 16 13V14C16 15.1046 15.1046 16 14 16H13C11.8954 16 11 15.1046 11 14V13Z" fill="white"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+    <!-- header -->
+    <header class="entrust-navbar">
+
+        <!-- LEFT -->
+        <div class=".tl-primary-btn.white-btn">
+            <a href="contact.html" class="tl-primary-btn header-btn">Get in Touch <span class="icon"><i
+                        class="fa-regular fa-arrow-right"></i></span> </a>
+        </div>
+
+        <!-- CENTER LOGO -->
+        <a href="/" class="entrust-navbar__logo">
+            <img class="entrust-logo" src="./assets/img/logo/logo-2.png" alt="Entrust Interior Designers Logo">
+        </a>
+
+        <!-- RIGHT -->
+        <div class="entrust-navbar__right">
+            <button class="entrust-hamburger" id="entrust-ham-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <div id="sidebar-area" class="sidebar-area">
-        <button class="sidebar-trigger close">
-            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7" style="enable-background:new 0 0 16 12.7" xml:space="preserve">
-                <g>
-                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16" height="2"></rect>
-                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16" height="2"></rect>
-                </g>
-            </svg>
-        </button>
-        <div class="side-menu-content">
-            <div class="side-menu-logo">
-                <a class="dark-img" href="index.html"><img src="assets/img/logo/logo-1.png" alt="logo"></a>
-                <a class="light-img" href="index.html"><img src="assets/img/logo/logo-2.png" alt="logo"></a>
-            </div>
-            <div class="side-menu-wrap"></div>
-            <div class="side-menu-about">
-                <h4 class="title">We Shape Interior Designs, Crafting Timeless and Inspiring Spaces</h4>
-            </div>
-            <div class="side-menu-gallary">
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-1.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-1.png" alt="Interior design project Bengaluru"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-2.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-2.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-3.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-3.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-4.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-4.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-5.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-5.png" alt="img"></a></div>
-                <div class="side-menu-gallary-item"><a href="assets/img/project/sidebar-gallary-6.png" class="venobox" data-gall="gallary1"><img src="assets/img/project/sidebar-gallary-6.png" alt="img"></a></div>
-            </div>
-            <div class="side-menu-contact">
-                <ul class="side-menu-list">
-                    <li>Entrust Interior Designers, <br>Bengaluru, Karnataka 560043,<br> India</li>
-                    <li><a href="tel:+919845012345">+91 98450 12345</a></li>
-                    <li><a class="mail" href="mailto:info@entrust.com">info@entrust.com</a></li>
+    <!-- ── OVERLAY ── -->
+    <div class="entrust-overlay" id="entrust-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="entrust-overlay__inner">
+
+            <!-- NAV LINKS -->
+            <nav class="entrust-overlay__nav">
+                <p class="entrust-overlay__nav-label">Navigation</p>
+                <div class="entrust-overlay__divider"></div>
+                <ul class="entrust-overlay__links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./blogs.html">Blogs</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
+            </nav>
+
+            <!-- DETAILS -->
+            <div class="entrust-overlay__details">
+
+                <!-- Address -->
+                <div>
+                    <p class="entrust-overlay__section-label">Our Studio</p>
+                    <div class="entrust-overlay__divider"></div>
+                    <p class="entrust-overlay__address">
+                        Entrust Interior Designers,<br>
+                        Bengaluru, Karnataka 560043,<br>
+                        India
+                    </p>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <p class="entrust-overlay__section-label">Reach Us</p>
+                    <div class="entrust-overlay__divider"></div>
+                    <a href="tel:+919845012345" class="entrust-overlay__contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+                        </svg>
+                        +91 98450 12345
+                    </a>
+                    <a href="mailto:info@entrust.com" class="entrust-overlay__contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        info@entrust.com
+                    </a>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <p class="entrust-overlay__section-label">Follow Us</p>
+                    <div class="entrust-overlay__divider"></div>
+                    <div class="entrust-overlay__social">
+
+                        <!-- Instagram -->
+                        <a href="#" class="entrust-social-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="#" class="entrust-social-link" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="#" class="entrust-social-link" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="#" class="entrust-social-link" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+
             </div>
-            <ul class="side-menu-social">
-                <li class="facebook"><a><i class="fab fa-facebook-f"></i></a></li>
-                <li class="instagram"><a><i class="fab fa-instagram"></i></a></li>
-                <li class="twitter"><a><i class="fab fa-twitter"></i></a></li>
-                <li class="youtube"><a><i class="fab fa-google-plus"></i></a></li>
-            </ul>
         </div>
     </div>
 
-    <div class="mobile-side-menu">
-        <div class="side-menu-content">
-            <div class="side-menu-head">
-                <a href="index.html"><img src="assets/img/logo/logo-2.png" alt="logo"></a>
-                <button class="mobile-side-menu-close"><i class="fa-regular fa-xmark"></i></button>
-            </div>
-            <div class="side-menu-wrap"></div>
-            <div class="side-menu-contact">
-                <div class="side-menu-header"><h3>Contact Us</h3></div>
-                <ul class="side-menu-list">
-                    <li><i class="fas fa-map-marker-alt"></i><p>Entrust Interior Designers, Bengaluru, Karnataka 560043, India</p></li>
-                    <li><i class="fas fa-phone"></i><a href="tel:+919845012345">+91 98450 12345</a></li>
-                    <li><i class="fas fa-envelope-open-text"></i><a href="mailto:info@entrust.com">info@entrust.com</a></li>
-                </ul>
-            </div>
-            <ul class="side-menu-social">
-                <li class="facebook"><a><i class="fab fa-facebook-f"></i></a></li>
-                <li class="instagram"><a><i class="fab fa-instagram"></i></a></li>
-                <li class="twitter"><a><i class="fab fa-twitter"></i></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="mobile-side-menu-overlay"></div>
+
 
     <div id="antra-smooth-wrapper">
         <div id="antra-smooth-content">
@@ -369,5 +388,41 @@
     <script src="assets/js/vendor/jquery.twentytwenty.min.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        const entrust_hamBtn = document.getElementById('entrust-ham-btn');
+        const entrust_overlay = document.getElementById('entrust-overlay');
+
+        function entrust_openMenu() {
+            entrust_hamBtn.classList.add('entrust-is-open');
+            entrust_overlay.classList.add('entrust-is-open');
+            entrust_hamBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function entrust_closeMenu() {
+            entrust_hamBtn.classList.remove('entrust-is-open');
+            entrust_overlay.classList.remove('entrust-is-open');
+            entrust_hamBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        entrust_hamBtn.addEventListener('click', () => {
+            entrust_overlay.classList.contains('entrust-is-open')
+                ? entrust_closeMenu()
+                : entrust_openMenu();
+        });
+
+        // Close on nav link click
+        entrust_overlay.querySelectorAll('.entrust-overlay__links a').forEach(link => {
+            link.addEventListener('click', entrust_closeMenu);
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') entrust_closeMenu();
+        });
+    </script>
+
 </body>
 </html>
