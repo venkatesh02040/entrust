@@ -125,10 +125,12 @@
             line-height: 1.75;
         }
 
-        /* Step indicator */
+        /* ---- Step indicator (scrollable on mobile) ---- */
         .dv-step-indicator {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 0;
             margin-bottom: 56px;
             position: relative;
             z-index: 1;
@@ -139,7 +141,7 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            padding: 0 24px;
+            padding: 0 20px;
             position: relative;
         }
 
@@ -189,7 +191,7 @@
             color: var(--entrust-charcoal);
         }
 
-        /* ---- Config grid ---- */
+        /* ---- Config grid — 4 cols row 1, 4 cols row 2 ---- */
         .dv-config-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -375,7 +377,6 @@
             z-index: 1;
         }
 
-        /* Subtle divider above */
         .dv-contact-fields-wrap::before {
             content: '';
             display: block;
@@ -403,7 +404,6 @@
             gap: 24px;
         }
 
-        /* Each field: no box, just a minimal underline + floating label */
         .dv-cf {
             position: relative;
         }
@@ -444,7 +444,6 @@
             border-bottom-color: var(--entrust-gold);
         }
 
-        /* Error state */
         .dv-cf.dv-cf-error label {
             color: #c0392b;
         }
@@ -566,8 +565,7 @@
         }
 
         /* =============================================
-           RESULT OVERLAY
-           Injected into <body> outside ScrollSmoother
+           RESULT OVERLAY — 2×4 mosaic for 8 rooms
         ============================================= */
         #dvOverlayRoot {
             position: fixed;
@@ -602,8 +600,8 @@
             position: relative;
             z-index: 1;
             background: var(--entrust-charcoal);
-            width: 90vw;
-            max-width: 860px;
+            width: 92vw;
+            max-width: 1080px;
             max-height: 92vh;
             overflow-y: auto;
             transform: translateY(28px) scale(0.97);
@@ -645,11 +643,11 @@
             stroke: #fff;
         }
 
-        /* 2×2 mosaic */
+        /* 4×2 mosaic grid (4 columns, 2 rows) */
         .dv-result-mosaic {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 240px 240px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 200px 200px;
             gap: 2px;
             background: rgba(201, 169, 110, 0.15);
         }
@@ -682,28 +680,28 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 28px 16px 12px;
-            background: linear-gradient(to top, rgba(24, 22, 18, 0.82) 0%, transparent 100%);
+            padding: 20px 12px 10px;
+            background: linear-gradient(to top, rgba(24, 22, 18, 0.85) 0%, transparent 100%);
             pointer-events: none;
         }
 
         .dv-mosaic-room-tag {
             display: block;
             font-family: 'Jost', sans-serif;
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 400;
-            letter-spacing: 0.28em;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--entrust-gold);
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .dv-mosaic-style-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 300;
             color: var(--entrust-ivory);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
         }
 
         .dv-mosaic-empty {
@@ -831,7 +829,6 @@
             animation: panoRingSpin 2.5s linear infinite;
         }
 
-        /* Dashed segment that spins */
         .pano-hint-ring::before {
             content: '';
             position: absolute;
@@ -878,7 +875,6 @@
             color: rgba(245, 240, 232, 0.85);
         }
 
-        /* Scroll-release notice (appears at max zoom) */
         .pano-release-toast {
             position: absolute;
             bottom: 24px;
@@ -904,7 +900,6 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* Container needs relative positioning for overlays */
         .antra-panoroma-container {
             position: relative;
         }
@@ -912,6 +907,12 @@
         /* =============================================
            RESPONSIVE
         ============================================= */
+        @media (max-width: 1280px) {
+            .dv-config-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media (max-width: 1024px) {
             .dv-config-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -923,20 +924,21 @@
             }
 
             .dv-step {
-                padding: 0 16px;
+                padding: 0 14px;
             }
 
             .dv-room-preview.visible {
-                height: 400px;
+                height: 300px;
             }
 
             .dv-room-preview img,
             .dv-room-preview-placeholder {
-                height: 400px;
+                height: 300px;
             }
 
             .dv-result-mosaic {
-                grid-template-rows: 200px 200px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 180px);
             }
         }
 
@@ -974,7 +976,11 @@
 
             .dv-result-mosaic {
                 grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, 180px);
+                grid-template-rows: repeat(8, 160px);
+            }
+
+            .dv-contact-fields-wrap {
+                margin: 24px;
             }
         }
 
@@ -988,20 +994,12 @@
             }
 
             .dv-room-preview.visible {
-                height: 250px;
+                height: 220px;
             }
 
             .dv-room-preview img,
             .dv-room-preview-placeholder {
-                height: 250px;
-            }
-
-            .dv-result-mosaic {
-                grid-template-rows: repeat(4, 160px);
-            }
-
-            .dv-contact-fields-wrap {
-                margin: 24px;
+                height: 220px;
             }
         }
 
@@ -1064,33 +1062,23 @@
 
     <!-- header -->
     <header class="entrust-navbar">
-
-        <!-- LEFT -->
         <div class=".tl-primary-btn.white-btn">
             <a href="./contact.html" class="tl-primary-btn header-btn">Get in Touch <span class="icon"><i
-                        class="fa-regular fa-arrow-right"></i></span> </a>
+                        class="fa-regular fa-arrow-right"></i></span></a>
         </div>
-
-        <!-- CENTER LOGO -->
         <a href="./index.html" class="entrust-navbar__logo">
             <img class="entrust-logo" src="./assets/img/logo/logo-2.png" alt="Entrust Interior Designers Logo">
         </a>
-
-        <!-- RIGHT -->
         <div class="entrust-navbar__right">
             <button class="entrust-hamburger" id="entrust-ham-btn" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- ── OVERLAY ── -->
+    <!-- overlay nav -->
     <div class="entrust-overlay" id="entrust-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
         <div class="entrust-overlay__inner">
-
-            <!-- NAV LINKS -->
             <nav class="entrust-overlay__nav">
                 <p class="entrust-overlay__nav-label">Navigation</p>
                 <div class="entrust-overlay__divider"></div>
@@ -1104,22 +1092,13 @@
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
-
-            <!-- DETAILS -->
             <div class="entrust-overlay__details">
-
-                <!-- Address -->
                 <div>
                     <p class="entrust-overlay__section-label">Our Studio</p>
                     <div class="entrust-overlay__divider"></div>
-                    <p class="entrust-overlay__address">
-                        Entrust Interior Designers,<br>
-                        Bengaluru, Karnataka 560043,<br>
-                        India
-                    </p>
+                    <p class="entrust-overlay__address">Entrust Interior Designers,<br>Bengaluru, Karnataka
+                        560043,<br>India</p>
                 </div>
-
-                <!-- Contact -->
                 <div>
                     <p class="entrust-overlay__section-label">Reach Us</p>
                     <div class="entrust-overlay__divider"></div>
@@ -1140,54 +1119,38 @@
                         info@entrust.com
                     </a>
                 </div>
-
-                <!-- Social -->
                 <div>
                     <p class="entrust-overlay__section-label">Follow Us</p>
                     <div class="entrust-overlay__divider"></div>
                     <div class="entrust-overlay__social">
-
-                        <!-- Instagram -->
-                        <a href="#" class="entrust-social-link" aria-label="Instagram">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <a href="#" class="entrust-social-link" aria-label="Instagram"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-
-                        <!-- Facebook -->
-                        <a href="#" class="entrust-social-link" aria-label="Facebook">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            </svg></a>
+                        <a href="#" class="entrust-social-link" aria-label="Facebook"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                            </svg>
-                        </a>
-
-                        <!-- LinkedIn -->
-                        <a href="#" class="entrust-social-link" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            </svg></a>
+                        <a href="#" class="entrust-social-link" aria-label="LinkedIn"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
                                 <rect x="2" y="9" width="4" height="12" />
                                 <circle cx="4" cy="4" r="2" />
-                            </svg>
-                        </a>
-
-                        <!-- YouTube -->
-                        <a href="#" class="entrust-social-link" aria-label="YouTube">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            </svg></a>
+                        <a href="#" class="entrust-social-link" aria-label="YouTube"><svg width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
                                 <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
-                            </svg>
-                        </a>
-
+                            </svg></a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -1258,8 +1221,8 @@
                                                 </div>
                                                 <div class="antra-btn" data-animation="antra-fadeInUp"
                                                     data-delay="1200ms" data-duration="1400ms">
-                                                    <a href="./contact.html" class="tl-primary-btn white-btn">Book A Free
-                                                        Consultation <span class="icon"><i
+                                                    <a href="./contact.html" class="tl-primary-btn white-btn">Book A
+                                                        Free Consultation <span class="icon"><i
                                                                 class="fa-regular fa-arrow-right"></i></span></a>
                                                 </div>
                                             </div>
@@ -1292,8 +1255,8 @@
                                                 </div>
                                                 <div class="antra-btn" data-animation="antra-fadeInUp"
                                                     data-delay="1200ms" data-duration="1400ms">
-                                                    <a href="./contact.html" class="tl-primary-btn white-btn">Let's Design
-                                                        Your Space <span class="icon"><i
+                                                    <a href="./contact.html" class="tl-primary-btn white-btn">Let's
+                                                        Design Your Space <span class="icon"><i
                                                                 class="fa-regular fa-arrow-right"></i></span></a>
                                                 </div>
                                             </div>
@@ -1306,9 +1269,8 @@
                 </div>
             </section>
 
-            
             <!-- =============================================
-                 DESIGN VISION CONFIGURATOR
+                 DESIGN VISION CONFIGURATOR — 8 rooms × 6 options
             ============================================= -->
             <section class="design-vision-section" id="design-vision">
                 <div class="dv-watermark" aria-hidden="true">VISION</div>
@@ -1323,29 +1285,40 @@
                             personalised design story.</p>
                     </div>
 
+                    <!-- 8 step indicators -->
                     <div class="dv-step-indicator" id="stepIndicator">
                         <div class="dv-step active" data-step="kitchen">
-                            <div class="dv-step-num">01</div>
-                            <span class="dv-step-label">Kitchen</span>
+                            <div class="dv-step-num">01</div><span class="dv-step-label">Kitchen</span>
                         </div>
                         <div class="dv-step" data-step="living">
-                            <div class="dv-step-num">02</div>
-                            <span class="dv-step-label">Living</span>
+                            <div class="dv-step-num">02</div><span class="dv-step-label">Living</span>
                         </div>
                         <div class="dv-step" data-step="bedroom">
-                            <div class="dv-step-num">03</div>
-                            <span class="dv-step-label">Bedroom</span>
+                            <div class="dv-step-num">03</div><span class="dv-step-label">Bedroom</span>
                         </div>
                         <div class="dv-step" data-step="bathroom">
-                            <div class="dv-step-num">04</div>
-                            <span class="dv-step-label">Bathroom</span>
+                            <div class="dv-step-num">04</div><span class="dv-step-label">Bathroom</span>
+                        </div>
+                        <div class="dv-step" data-step="dining">
+                            <div class="dv-step-num">05</div><span class="dv-step-label">Dining</span>
+                        </div>
+                        <div class="dv-step" data-step="office">
+                            <div class="dv-step-num">06</div><span class="dv-step-label">Office</span>
+                        </div>
+                        <div class="dv-step" data-step="foyer">
+                            <div class="dv-step-num">07</div><span class="dv-step-label">Foyer</span>
+                        </div>
+                        <div class="dv-step" data-step="balcony">
+                            <div class="dv-step-num">08</div><span class="dv-step-label">Balcony</span>
                         </div>
                     </div>
 
-                    <!-- ---- 4-column room grid ---- -->
-                    <div class="dv-config-grid" id="configGrid">
+                    <!-- =============================================
+                         ROW 1 — Kitchen, Living Room, Bedroom, Bathroom
+                    ============================================= -->
+                    <div class="dv-config-grid" id="configGrid" style="margin-bottom:1px;">
 
-                        <!-- Kitchen -->
+                        <!-- Kitchen — 6 options -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
                                 <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
@@ -1381,6 +1354,24 @@
                                     <div class="dv-option-radio"></div><span class="dv-option-text">Timber Designer
                                         Feature</span>
                                 </div>
+                                <div class="dv-option" data-room="kitchen" data-value="sleek-gloss"
+                                    data-label="Sleek Gloss Finish"
+                                    data-img="assets/img/config-images/contemporary-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Sleek Gloss
+                                        Finish</span>
+                                </div>
+                                <div class="dv-option" data-room="kitchen" data-value="industrial-open"
+                                    data-label="Industrial Open Shelf"
+                                    data-img="assets/img/config-images/designer-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Industrial Open
+                                        Shelf</span>
+                                </div>
+                                <div class="dv-option" data-room="kitchen" data-value="classic-shaker"
+                                    data-label="Classic Shaker Style"
+                                    data-img="assets/img/config-images/natural-timber-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Classic Shaker
+                                        Style</span>
+                                </div>
                             </div>
                             <div class="dv-room-preview" id="preview-kitchen">
                                 <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
@@ -1393,7 +1384,7 @@
                             </div>
                         </div>
 
-                        <!-- Living Room -->
+                        <!-- Living Room — 6 options -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
                                 <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
@@ -1434,6 +1425,24 @@
                                     <div class="dv-option-radio"></div><span class="dv-option-text">Curated Aesthetic
                                         Lounge</span>
                                 </div>
+                                <div class="dv-option" data-room="living" data-value="bold-eclectic"
+                                    data-label="Bold Eclectic Statement"
+                                    data-img="assets/img/config-images/modern-minimal-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Bold Eclectic
+                                        Statement</span>
+                                </div>
+                                <div class="dv-option" data-room="living" data-value="warm-classic"
+                                    data-label="Warm Classic Interior"
+                                    data-img="assets/img/config-images/organic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Warm Classic
+                                        Interior</span>
+                                </div>
+                                <div class="dv-option" data-room="living" data-value="coastal-light"
+                                    data-label="Coastal Light Living"
+                                    data-img="assets/img/config-images/aesthetic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Coastal Light
+                                        Living</span>
+                                </div>
                             </div>
                             <div class="dv-room-preview" id="preview-living">
                                 <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
@@ -1446,7 +1455,7 @@
                             </div>
                         </div>
 
-                        <!-- Bedroom -->
+                        <!-- Bedroom — 6 options -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
                                 <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
@@ -1486,6 +1495,24 @@
                                     <div class="dv-option-radio"></div><span class="dv-option-text">Luxury Suite
                                         Bedroom</span>
                                 </div>
+                                <div class="dv-option" data-room="bedroom" data-value="japandi-calm"
+                                    data-label="Japandi Calm Retreat"
+                                    data-img="assets/img/config-images/seren-minimal-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Japandi Calm
+                                        Retreat</span>
+                                </div>
+                                <div class="dv-option" data-room="bedroom" data-value="warm-textures"
+                                    data-label="Warm Textured Haven"
+                                    data-img="assets/img/config-images/modern-comfrot-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Warm Textured
+                                        Haven</span>
+                                </div>
+                                <div class="dv-option" data-room="bedroom" data-value="art-deco-glam"
+                                    data-label="Art Deco Glamour"
+                                    data-img="assets/img/config-images/luxury-suite-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Art Deco
+                                        Glamour</span>
+                                </div>
                             </div>
                             <div class="dv-room-preview" id="preview-bedroom">
                                 <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
@@ -1498,7 +1525,7 @@
                             </div>
                         </div>
 
-                        <!-- Bathroom -->
+                        <!-- Bathroom — 6 options -->
                         <div class="dv-room-panel">
                             <div class="dv-room-header">
                                 <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
@@ -1536,6 +1563,24 @@
                                     <div class="dv-option-radio"></div><span class="dv-option-text">Signature Luxury
                                         Bath</span>
                                 </div>
+                                <div class="dv-option" data-room="bathroom" data-value="industrial-stone"
+                                    data-label="Industrial Stone Bath"
+                                    data-img="assets/img/config-images/contemporary-minimal-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Industrial Stone
+                                        Bath</span>
+                                </div>
+                                <div class="dv-option" data-room="bathroom" data-value="zen-retreat"
+                                    data-label="Zen Garden Retreat"
+                                    data-img="assets/img/config-images/spa-inspired-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Zen Garden
+                                        Retreat</span>
+                                </div>
+                                <div class="dv-option" data-room="bathroom" data-value="classic-marble"
+                                    data-label="Classic Marble Elegance"
+                                    data-img="assets/img/config-images/signature-luxury-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Classic Marble
+                                        Elegance</span>
+                                </div>
                             </div>
                             <div class="dv-room-preview" id="preview-bathroom">
                                 <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
@@ -1548,9 +1593,285 @@
                             </div>
                         </div>
 
-                    </div><!-- /.dv-config-grid -->
+                    </div><!-- /.row-1 grid -->
 
-                    <!-- ---- Contact fields — below grid, minimal open style ---- -->
+                    <!-- =============================================
+                         ROW 2 — Dining, Home Office, Foyer, Balcony
+                    ============================================= -->
+                    <div class="dv-config-grid" id="configGrid2" style="border-top:none;border-radius:0 0 10px 10px;">
+
+                        <!-- Dining Room — 6 options -->
+                        <div class="dv-room-panel">
+                            <div class="dv-room-header">
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="14" width="28" height="4" rx="1" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="8" y1="18" x2="8" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="28" y1="18" x2="28" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="18" y1="18" x2="18" y2="28" stroke="#c9a96e" stroke-width="0.75" />
+                                    <circle cx="10" cy="10" r="2" stroke="#c9a96e" stroke-width="1" />
+                                    <circle cx="18" cy="8" r="2" stroke="#c9a96e" stroke-width="1" />
+                                    <circle cx="26" cy="10" r="2" stroke="#c9a96e" stroke-width="1" />
+                                </svg>
+                                <div class="dv-room-title-wrap">
+                                    <span class="dv-room-number">Room 05</span>
+                                    <h3 class="dv-room-name">Dining Room</h3>
+                                </div>
+                            </div>
+                            <div class="dv-option-list">
+                                <div class="dv-option" data-room="dining" data-value="formal-classic"
+                                    data-label="Formal Classic Dining"
+                                    data-img="assets/img/config-images/contemporary-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Formal Classic
+                                        Dining</span>
+                                </div>
+                                <div class="dv-option" data-room="dining" data-value="open-social"
+                                    data-label="Open Social Dining"
+                                    data-img="assets/img/config-images/modern-minimal-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Open Social
+                                        Dining</span>
+                                </div>
+                                <div class="dv-option" data-room="dining" data-value="rustic-farmhouse"
+                                    data-label="Rustic Farmhouse Table"
+                                    data-img="assets/img/config-images/natural-timber-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Rustic Farmhouse
+                                        Table</span>
+                                </div>
+                                <div class="dv-option" data-room="dining" data-value="luxe-banquet"
+                                    data-label="Luxe Banquet Setting"
+                                    data-img="assets/img/config-images/luxury-suite-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Luxe Banquet
+                                        Setting</span>
+                                </div>
+                                <div class="dv-option" data-room="dining" data-value="minimal-floating"
+                                    data-label="Minimal Floating Shelf"
+                                    data-img="assets/img/config-images/seren-minimal-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Minimal Floating
+                                        Shelf</span>
+                                </div>
+                                <div class="dv-option" data-room="dining" data-value="industrial-raw"
+                                    data-label="Industrial Raw Steel"
+                                    data-img="assets/img/config-images/designer-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Industrial Raw
+                                        Steel</span>
+                                </div>
+                            </div>
+                            <div class="dv-room-preview" id="preview-dining">
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
+                            </div>
+                        </div>
+
+                        <!-- Home Office — 6 options -->
+                        <div class="dv-room-panel">
+                            <div class="dv-room-header">
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="6" width="28" height="18" rx="1" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="4" y1="12" x2="32" y2="12" stroke="#c9a96e" stroke-width="0.75" />
+                                    <rect x="14" y="24" width="8" height="4" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="8" y1="28" x2="28" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <circle cx="18" cy="9" r="1.5" fill="#c9a96e" />
+                                </svg>
+                                <div class="dv-room-title-wrap">
+                                    <span class="dv-room-number">Room 06</span>
+                                    <h3 class="dv-room-name">Home Office</h3>
+                                </div>
+                            </div>
+                            <div class="dv-option-list">
+                                <div class="dv-option" data-room="office" data-value="executive-dark"
+                                    data-label="Executive Dark Wood"
+                                    data-img="assets/img/config-images/luxury-suite-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Executive Dark
+                                        Wood</span>
+                                </div>
+                                <div class="dv-option" data-room="office" data-value="minimal-light"
+                                    data-label="Minimal Light Studio"
+                                    data-img="assets/img/config-images/seren-minimal-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Minimal Light
+                                        Studio</span>
+                                </div>
+                                <div class="dv-option" data-room="office" data-value="creative-loft"
+                                    data-label="Creative Loft Workspace"
+                                    data-img="assets/img/config-images/organic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Creative Loft
+                                        Workspace</span>
+                                </div>
+                                <div class="dv-option" data-room="office" data-value="biophilic-desk"
+                                    data-label="Biophilic Nature Desk"
+                                    data-img="assets/img/config-images/natural-timber-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Biophilic Nature
+                                        Desk</span>
+                                </div>
+                                <div class="dv-option" data-room="office" data-value="modern-glass"
+                                    data-label="Modern Glass & Steel"
+                                    data-img="assets/img/config-images/contemporary-minimal-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Modern Glass &
+                                        Steel</span>
+                                </div>
+                                <div class="dv-option" data-room="office" data-value="cosy-library"
+                                    data-label="Cosy Library Nook"
+                                    data-img="assets/img/config-images/aesthetic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Cosy Library
+                                        Nook</span>
+                                </div>
+                            </div>
+                            <div class="dv-room-preview" id="preview-office">
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
+                            </div>
+                        </div>
+
+                        <!-- Foyer / Entryway — 6 options -->
+                        <div class="dv-room-panel">
+                            <div class="dv-room-header">
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="10" y="4" width="16" height="28" rx="1" stroke="#c9a96e"
+                                        stroke-width="1" />
+                                    <rect x="13" y="16" width="6" height="10" rx="0.5" stroke="#c9a96e"
+                                        stroke-width="0.75" />
+                                    <circle cx="20" cy="21" r="1" fill="#c9a96e" />
+                                    <line x1="4" y1="32" x2="32" y2="32" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="10" y1="4" x2="4" y2="10" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="26" y1="4" x2="32" y2="10" stroke="#c9a96e" stroke-width="0.75" />
+                                </svg>
+                                <div class="dv-room-title-wrap">
+                                    <span class="dv-room-number">Room 07</span>
+                                    <h3 class="dv-room-name">Foyer</h3>
+                                </div>
+                            </div>
+                            <div class="dv-option-list">
+                                <div class="dv-option" data-room="foyer" data-value="grand-statement"
+                                    data-label="Grand Statement Entry"
+                                    data-img="assets/img/config-images/luxury-suite-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Grand Statement
+                                        Entry</span>
+                                </div>
+                                <div class="dv-option" data-room="foyer" data-value="warm-welcome"
+                                    data-label="Warm Welcome Hall"
+                                    data-img="assets/img/config-images/modern-comfrot-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Warm Welcome
+                                        Hall</span>
+                                </div>
+                                <div class="dv-option" data-room="foyer" data-value="minimal-art"
+                                    data-label="Minimal Art Gallery"
+                                    data-img="assets/img/config-images/seren-minimal-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Minimal Art
+                                        Gallery</span>
+                                </div>
+                                <div class="dv-option" data-room="foyer" data-value="earthy-tones"
+                                    data-label="Earthy Tone Passage"
+                                    data-img="assets/img/config-images/natural-timber-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Earthy Tone
+                                        Passage</span>
+                                </div>
+                                <div class="dv-option" data-room="foyer" data-value="arch-curve"
+                                    data-label="Arch & Curve Detail"
+                                    data-img="assets/img/config-images/aesthetic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Arch & Curve
+                                        Detail</span>
+                                </div>
+                                <div class="dv-option" data-room="foyer" data-value="mirror-light"
+                                    data-label="Mirror & Light Play"
+                                    data-img="assets/img/config-images/contemporary-minimal-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Mirror & Light
+                                        Play</span>
+                                </div>
+                            </div>
+                            <div class="dv-room-preview" id="preview-foyer">
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
+                            </div>
+                        </div>
+
+                        <!-- Balcony / Outdoor — 6 options -->
+                        <div class="dv-room-panel">
+                            <div class="dv-room-header">
+                                <svg class="dv-room-icon" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="4" y1="28" x2="32" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="4" y1="20" x2="32" y2="20" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="8" y1="20" x2="8" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <line x1="16" y1="20" x2="16" y2="28" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="24" y1="20" x2="24" y2="28" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="28" y1="20" x2="28" y2="28" stroke="#c9a96e" stroke-width="1" />
+                                    <path d="M10 20 Q18 10 26 20" stroke="#c9a96e" stroke-width="0.75" fill="none" />
+                                    <circle cx="18" cy="8" r="3" stroke="#c9a96e" stroke-width="0.75" />
+                                    <line x1="18" y1="11" x2="18" y2="14" stroke="#c9a96e" stroke-width="0.75" />
+                                </svg>
+                                <div class="dv-room-title-wrap">
+                                    <span class="dv-room-number">Room 08</span>
+                                    <h3 class="dv-room-name">Balcony</h3>
+                                </div>
+                            </div>
+                            <div class="dv-option-list">
+                                <div class="dv-option" data-room="balcony" data-value="urban-garden"
+                                    data-label="Urban Garden Terrace"
+                                    data-img="assets/img/config-images/organic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Urban Garden
+                                        Terrace</span>
+                                </div>
+                                <div class="dv-option" data-room="balcony" data-value="zen-outdoor"
+                                    data-label="Zen Outdoor Lounge"
+                                    data-img="assets/img/config-images/spa-inspired-bath.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Zen Outdoor
+                                        Lounge</span>
+                                </div>
+                                <div class="dv-option" data-room="balcony" data-value="coastal-deck"
+                                    data-label="Coastal Deck Retreat"
+                                    data-img="assets/img/config-images/aesthetic-living.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Coastal Deck
+                                        Retreat</span>
+                                </div>
+                                <div class="dv-option" data-room="balcony" data-value="luxury-pergola"
+                                    data-label="Luxury Pergola Sit-out"
+                                    data-img="assets/img/config-images/luxury-suite-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Luxury Pergola
+                                        Sit-out</span>
+                                </div>
+                                <div class="dv-option" data-room="balcony" data-value="minimal-planter"
+                                    data-label="Minimal Planter Wall"
+                                    data-img="assets/img/config-images/seren-minimal-bedroom.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Minimal Planter
+                                        Wall</span>
+                                </div>
+                                <div class="dv-option" data-room="balcony" data-value="rustic-wood-deck"
+                                    data-label="Rustic Wood Deck"
+                                    data-img="assets/img/config-images/natural-timber-kitchen.png">
+                                    <div class="dv-option-radio"></div><span class="dv-option-text">Rustic Wood
+                                        Deck</span>
+                                </div>
+                            </div>
+                            <div class="dv-room-preview" id="preview-balcony">
+                                <div class="dv-room-preview-placeholder"><svg width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="28" height="28" rx="1" stroke="#c9a96e"
+                                            stroke-width="1" />
+                                        <circle cx="11" cy="11" r="3" stroke="#c9a96e" stroke-width="1" />
+                                        <path d="M2 22l8-7 7 6 5-4 8 6" stroke="#c9a96e" stroke-width="1" />
+                                    </svg></div>
+                            </div>
+                        </div>
+
+                    </div><!-- /.row-2 grid -->
+
+                    <!-- Contact fields -->
                     <div class="dv-contact-fields-wrap" id="dvContactWrap">
                         <p class="dv-contact-hint">Your details</p>
                         <div class="dv-contact-fields">
@@ -1571,7 +1892,7 @@
 
                     <!-- CTA row -->
                     <div class="dv-cta-row">
-                        <span class="dv-progress-text" id="progressText"><span>0</span> of 4 rooms selected</span>
+                        <span class="dv-progress-text" id="progressText"><span>0</span> of 8 rooms selected</span>
                         <button class="dv-reset-btn" id="resetBtn" type="button">Clear All</button>
                         <button class="dv-visualise-btn" id="visualiseBtn" type="button" disabled>
                             <span>Visualise My Design</span>
@@ -1667,7 +1988,6 @@
                 </video>
             </div>
 
-
             <!-- Counter -->
             <section class="counter-section counter-1">
                 <div class="counter-text"><span>ENTRUST</span></div>
@@ -1703,8 +2023,7 @@
                                     <h3 class="title"><span>01</span>. Initial Consultation</h3>
                                     <p>We begin by understanding <br> your vision, space, and <br> functional
                                         requirements.</p>
-                                </div>
-                                <span class="number">01</span>
+                                </div><span class="number">01</span>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6">
@@ -1715,8 +2034,7 @@
                                     <h3 class="title"><span>02</span>. Design & Planning</h3>
                                     <p>We create layouts, concepts, <br> and design directions tailored <br> to your
                                         style and needs.</p>
-                                </div>
-                                <span class="number">02</span>
+                                </div><span class="number">02</span>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6">
@@ -1727,8 +2045,7 @@
                                     <h3 class="title"><span>03</span>. Execution & Coordination</h3>
                                     <p>We manage design progress, <br> materials, and on-site details <br> for smooth
                                         implementation.</p>
-                                </div>
-                                <span class="number">03</span>
+                                </div><span class="number">03</span>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-6 col-md-6">
@@ -1739,8 +2056,7 @@
                                     <h3 class="title"><span>04</span>. Final Styling & Handover</h3>
                                     <p>We complete the finishing <br> touches and deliver a space <br> ready to be
                                         experienced.</p>
-                                </div>
-                                <span class="number">04</span>
+                                </div><span class="number">04</span>
                             </div>
                         </div>
                     </div>
@@ -1778,18 +2094,17 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="testi-img slide-anim" data-delay="0.3" data-offset="100" data-direction="left">
-                                <img src="assets/img/testi/testi-img-1.png" alt="testi">
-                            </div>
+                                <img src="assets/img/testi/testi-img-1.png" alt="testi"></div>
                         </div>
                         <div class="col-lg-6">
                             <div class="testi-carousel-wrap slide-anim" data-delay="0.3" data-offset="100"
                                 data-direction="right">
                                 <div class="testi-top-content">
                                     <div class="right-content rating-list">
-                                        <p><i class="fa-solid fa-star" style="color: #C6A34F;"></i> Tailored To Your
-                                            Lifestyle <br><i class="fa-solid fa-star" style="color: #C6A34F;"></i>
+                                        <p><i class="fa-solid fa-star" style="color:#C6A34F;"></i> Tailored To Your
+                                            Lifestyle <br><i class="fa-solid fa-star" style="color:#C6A34F;"></i>
                                             Transparent From Start To Finish <br><i class="fa-solid fa-star"
-                                                style="color: #C6A34F;"></i> Designs That Balance Beauty & Function</p>
+                                                style="color:#C6A34F;"></i> Designs That Balance Beauty & Function</p>
                                     </div>
                                 </div>
                                 <div class="testi-carousel swiper">
@@ -1814,11 +2129,7 @@
                 </div>
             </section>
 
-            <!-- =============================================
-                 360 PANORAMA SECTION
-                 - hint overlay on scroll-into-view
-                 - releases scroll at max zoom
-            ============================================= -->
+            <!-- Panorama -->
             <div class="antra-panoroma-area pt-150 fade-wrapper">
                 <div class="bg-shape"><img src="assets/img/shapes/panoroma-shape-1.png" alt="shape"></div>
                 <div class="container">
@@ -1830,18 +2141,12 @@
                     </div>
                 </div>
                 <div class="antra-panoroma-container container fade-top" id="panoContainer">
-                    <!-- 360 hint overlay — shown on section enter, fades after interaction -->
                     <div class="pano-hint-overlay" id="panoHint">
-                        <div class="pano-hint-ring">
-                            <i class="fa-solid fa-rotate pano-hint-icon"></i>
-                        </div>
+                        <div class="pano-hint-ring"><i class="fa-solid fa-rotate pano-hint-icon"></i></div>
                         <span class="pano-hint-text">swipe around for 360-degree · Scroll to zoom</span>
                     </div>
-                    <!-- Scroll-release toast — shown at max zoom -->
-                    <div class="pano-release-toast" id="panoReleaseToast">
-                        <i class="fa-solid fa-arrow-down" style="margin-right:8px;font-size:10px;"></i>Scroll to
-                        continue
-                    </div>
+                    <div class="pano-release-toast" id="panoReleaseToast"><i class="fa-solid fa-arrow-down"
+                            style="margin-right:8px;font-size:10px;"></i>Scroll to continue</div>
                     <div class="antra-panoroma-img" data-img="assets/img/bg-img/virtual-tours.jpg"></div>
                 </div>
             </div>
@@ -1875,8 +2180,8 @@
                                             <li>Mar 30, 2026</li>
                                             <li>By <span>Admin</span></li>
                                         </ul>
-                                        <h3 class="title"><a href="./blogs/small-home-space.html">Four Ways for Creating Extra
-                                                Space in Small Homes</a></h3>
+                                        <h3 class="title"><a href="./blogs/small-home-space.html">Four Ways for Creating
+                                                Extra Space in Small Homes</a></h3>
                                         <p>Modest, recently established interior design company that seeks to address a
                                             variety of topics, including…</p>
                                     </div>
@@ -1891,8 +2196,8 @@
                                             <li>Mar 26, 2026</li>
                                             <li>By <span>Admin</span></li>
                                         </ul>
-                                        <h3 class="title"><a href="./blogs/modern-interior-tips.html">Transform Your Home With
-                                                Modern Interior Design Tips</a></h3>
+                                        <h3 class="title"><a href="./blogs/modern-interior-tips.html">Transform Your
+                                                Home With Modern Interior Design Tips</a></h3>
                                         <p>From minimalist furniture to statement lighting, explore how modern design
                                             principles can completely elevate your living space…</p>
                                     </div>
@@ -1907,8 +2212,8 @@
                                             <li>Mar 13, 2026</li>
                                             <li>By <span>Admin</span></li>
                                         </ul>
-                                        <h3 class="title"><a href="./blogs/minimalist-space.html">Maximize Your Minimalist Space
-                                                With Smart Solutions</a></h3>
+                                        <h3 class="title"><a href="./blogs/minimalist-space.html">Maximize Your
+                                                Minimalist Space With Smart Solutions</a></h3>
                                         <p>Minimalism is more than a trend it's a lifestyle. Learn how to design a
                                             clutter-free, elegant home that breathes simplicity and intention…</p>
                                     </div>
@@ -1950,8 +2255,8 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-widget">
                                 <div class="widget-header">
-                                    <div class="footer-logo"><a href="./index.html"><img src="assets/img/logo/logo-1.png"
-                                                alt="logo"></a></div>
+                                    <div class="footer-logo"><a href="./index.html"><img
+                                                src="assets/img/logo/logo-1.png" alt="logo"></a></div>
                                 </div>
                                 <p class="mb-10">Elevating interiors with timeless design and refined elegance. Crafting
                                     spaces that leave a lasting impression.</p>
@@ -1976,16 +2281,18 @@
                             <div class="footer-widget footer-col-2 pl-0">
                                 <ul class="footer-list">
                                     <li><a>Our Services</a></li>
-                                    <li><a href="./services/residential-interior-design.html">Residential Interior Design</a></li>
-                                    <li><a href="./services/modular-kitchen-storage-design.html">Modular Kitchen &amp; Storage
+                                    <li><a href="./services/residential-interior-design.html">Residential Interior
                                             Design</a></li>
-                                    <li><a href="./services/space-planning-layout-design.html">Space Planning & Layout Design</a>
-                                    </li>
-                                    <li><a href="./services/furniture-materials-finish-selection.html">Furniture, Materials &
-                                            Finish Selection</a></li>
-                                    <li><a href="./services/3d-visualisation-design-consultation.html">3D Visualisation & Design
-                                            Consultation</a></li>
-                                    <li><a href="./services/lighting-ambience-design.html">Lighting &amp; Ambience Design</a></li>
+                                    <li><a href="./services/modular-kitchen-storage-design.html">Modular Kitchen &amp;
+                                            Storage Design</a></li>
+                                    <li><a href="./services/space-planning-layout-design.html">Space Planning & Layout
+                                            Design</a></li>
+                                    <li><a href="./services/furniture-materials-finish-selection.html">Furniture,
+                                            Materials & Finish Selection</a></li>
+                                    <li><a href="./services/3d-visualisation-design-consultation.html">3D Visualisation
+                                            & Design Consultation</a></li>
+                                    <li><a href="./services/lighting-ambience-design.html">Lighting &amp; Ambience
+                                            Design</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -2042,49 +2349,48 @@
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/banner-process.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- =============================================
-         DESIGN VISION CONFIGURATOR JS
+         DESIGN VISION CONFIGURATOR JS — 8 rooms
     ============================================= -->
     <script>
             (function () {
 
                 var FORMSPREE_URL = 'https://formspree.io/f/mnjokvql';
 
+                /* 8 rooms in fixed mosaic order */
                 var ROOMS = [
                     { id: 'kitchen', label: 'Kitchen' },
                     { id: 'living', label: 'Living Room' },
                     { id: 'bedroom', label: 'Bedroom' },
-                    { id: 'bathroom', label: 'Bathroom' }
+                    { id: 'bathroom', label: 'Bathroom' },
+                    { id: 'dining', label: 'Dining Room' },
+                    { id: 'office', label: 'Home Office' },
+                    { id: 'foyer', label: 'Foyer' },
+                    { id: 'balcony', label: 'Balcony' }
                 ];
 
-                var selectedImg = { kitchen: null, living: null, bedroom: null, bathroom: null };
-                var selectedLabel = { kitchen: null, living: null, bedroom: null, bathroom: null };
-                var selections = { kitchen: null, living: null, bedroom: null, bathroom: null };
+                var selectedImg = {};
+                var selectedLabel = {};
+                var selections = {};
+                ROOMS.forEach(function (r) { selectedImg[r.id] = null; selectedLabel[r.id] = null; selections[r.id] = null; });
 
-                /* ---- Build & inject overlay ---- */
+                /* ---- Build & inject overlay (4×2 mosaic) ---- */
+                var mosaicCells = ROOMS.map(function (r) {
+                    return '<div class="dv-mosaic-cell" id="dvCell-' + r.id + '"></div>';
+                }).join('');
+
                 var overlayHTML = [
                     '<div id="dvOverlayRoot" role="dialog" aria-modal="true" aria-label="Your Design Vision">',
                     '<div class="dv-overlay-backdrop" id="overlayBackdrop"></div>',
                     '<div class="dv-overlay-panel">',
                     '<button class="dv-overlay-close" id="overlayClose" aria-label="Close">',
-                    '<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">',
-                    '<path d="M1 1l12 12M13 1L1 13" stroke-width="1.5" stroke-linecap="round" stroke="rgba(255,255,255,0.7)"/>',
-                    '</svg>',
+                    '<svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l12 12M13 1L1 13" stroke-width="1.5" stroke-linecap="round" stroke="rgba(255,255,255,0.7)"/></svg>',
                     '</button>',
-                    '<div class="dv-result-mosaic" id="dvResultMosaic">',
-                    '<div class="dv-mosaic-cell" id="dvCell-kitchen"></div>',
-                    '<div class="dv-mosaic-cell" id="dvCell-living"></div>',
-                    '<div class="dv-mosaic-cell" id="dvCell-bedroom"></div>',
-                    '<div class="dv-mosaic-cell" id="dvCell-bathroom"></div>',
-                    '</div>',
+                    '<div class="dv-result-mosaic" id="dvResultMosaic">' + mosaicCells + '</div>',
                     '<div class="dv-result-bar" id="dvResultBar">',
-                    '<button class="dv-submit-btn" id="dvSubmitBtn" type="button">Submit My Vision ',
-                    '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-                    '</button>',
+                    '<button class="dv-submit-btn" id="dvSubmitBtn" type="button">Submit My Vision <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
                     '</div>',
                     '<div class="dv-success-msg" id="dvSuccessMsg">',
                     '<div class="dv-success-icon"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10l4 4 8-8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>',
@@ -2137,7 +2443,8 @@
                 function updateUI() {
                     var n = countSelected();
                     progressText.querySelector('span').textContent = n;
-                    visualiseBtn.disabled = n < 4;
+                    /* Enable only when all 8 rooms selected */
+                    visualiseBtn.disabled = n < 8;
                     updateSteps();
                 }
 
@@ -2226,20 +2533,15 @@
                             title: 'Details needed',
                             html: '<div style="text-align:left;line-height:2.2;font-size:13px;">' + missing.join('<br>') + '</div>',
                             icon: 'warning',
-                            confirmButtonText: 'Got it',
-                            showClass: { popup: 'swal2-show' },
-                            hideClass: { popup: 'swal2-hide' }
+                            confirmButtonText: 'Got it'
                         });
                         return false;
                     }
                     return true;
                 }
 
-                /* Remove error on typing */
                 [nameInput, phoneInput, emailInput].forEach(function (inp) {
-                    inp.addEventListener('input', function () {
-                        this.closest('.dv-cf').classList.remove('dv-cf-error');
-                    });
+                    inp.addEventListener('input', function () { this.closest('.dv-cf').classList.remove('dv-cf-error'); });
                 });
 
                 /* ---- Reset ---- */
@@ -2277,7 +2579,7 @@
                     document.body.style.overflow = 'hidden';
                 });
 
-                /* ---- Submit to Formspree ---- */
+                /* ---- Submit to Formspree — all 8 rooms included ---- */
                 submitBtn.addEventListener('click', function () {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending\u2026';
@@ -2290,6 +2592,10 @@
                         living_room: selectedLabel['living'] || '\u2014',
                         bedroom: selectedLabel['bedroom'] || '\u2014',
                         bathroom: selectedLabel['bathroom'] || '\u2014',
+                        dining_room: selectedLabel['dining'] || '\u2014',
+                        home_office: selectedLabel['office'] || '\u2014',
+                        foyer: selectedLabel['foyer'] || '\u2014',
+                        balcony: selectedLabel['balcony'] || '\u2014',
                         _subject: 'Design Vision Enquiry from ' + nameInput.value.trim()
                     };
 
@@ -2320,132 +2626,66 @@
             })();
     </script>
 
-    <!-- =============================================
-         PANORAMA — 360 hint + scroll release JS
-    ============================================= -->
+    <!-- Panorama JS (unchanged) -->
     <script>
         (function () {
-
             var panoContainer = document.getElementById('panoContainer');
             var panoHint = document.getElementById('panoHint');
             var releaseToast = document.getElementById('panoReleaseToast');
-
             if (!panoContainer || !panoHint) return;
 
-            var hintShown = false;
-            var hintDismissed = false;
-            var panoZoomed = false;   /* true once user has reached max zoom */
-            var releaseShowing = false;
+            var hintShown = false, hintDismissed = false, releaseShowing = false, atMaxZoom = false;
 
-            /* --- Show hint when section scrolls into view (once) --- */
             var observer = new IntersectionObserver(function (entries) {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting && !hintShown) {
                         hintShown = true;
                         panoHint.classList.add('visible');
-
-                        /* Auto-dismiss after 3s if user has not interacted */
-                        setTimeout(function () {
-                            if (!hintDismissed) { dismissHint(); }
-                        }, 3000);
+                        setTimeout(function () { if (!hintDismissed) dismissHint(); }, 3000);
                     }
                 });
             }, { threshold: 0.4 });
-
             observer.observe(panoContainer);
 
             function dismissHint() {
                 hintDismissed = true;
                 panoHint.classList.add('fade-out');
-                setTimeout(function () {
-                    panoHint.style.display = 'none';
-                }, 800);
+                setTimeout(function () { panoHint.style.display = 'none'; }, 800);
             }
 
-            /* Dismiss on first mouse interaction with the panorama */
             panoContainer.addEventListener('mousedown', dismissHint, { once: true });
             panoContainer.addEventListener('touchstart', dismissHint, { once: true, passive: true });
 
-            /* ---------------------------------------------------
-               Scroll release at max zoom
-               Panolens viewer stores camera in viewer.camera.
-               Default FOV = 60, min FOV (max zoom) ≈ 10.
-               We hook into the wheel event on the panorama element
-               and check if it has been zoomed to the limit.
-            --------------------------------------------------- */
-
-            /* Panolens initialises asynchronously — poll for viewer */
             var panoViewer = null;
-            var FOV_MIN = 10;   /* Panolens default minimum FOV */
-            var FOV_MAX = 100;  /* Panolens default maximum FOV */
-            var atMaxZoom = false;
-
-            /* Wait for Panolens viewer to be set on the container or window */
             function findViewer() {
-                /* main.js may expose viewer as window.panoramaViewer or attach to the DOM element */
                 if (window.panoramaViewer) { panoViewer = window.panoramaViewer; return true; }
-                /* Try common PANOLENS patterns */
                 if (window.PANOLENS && window.PANOLENS._viewer) { panoViewer = window.PANOLENS._viewer; return true; }
                 return false;
             }
-
-            var pollInterval = setInterval(function () {
-                if (findViewer()) { clearInterval(pollInterval); setupScrollRelease(); }
-            }, 300);
-
-            /* Fallback: if no viewer found in 5s just use wheel-count heuristic */
-            setTimeout(function () {
-                if (!panoViewer) {
-                    clearInterval(pollInterval);
-                    setupScrollReleaseHeuristic();
-                }
-            }, 5000);
+            var pollInterval = setInterval(function () { if (findViewer()) { clearInterval(pollInterval); setupScrollRelease(); } }, 300);
+            setTimeout(function () { if (!panoViewer) { clearInterval(pollInterval); setupScrollReleaseHeuristic(); } }, 5000);
 
             function setupScrollRelease() {
-                /* Check FOV on every render tick */
-                var origRender = panoViewer.render ? panoViewer.render.bind(panoViewer) : null;
-
-                function checkFov() {
-                    try {
-                        var cam = panoViewer.camera || (panoViewer.getCamera && panoViewer.getCamera());
-                        if (!cam) return;
-                        var fov = cam.fov;
-                        if (fov <= FOV_MIN + 1 && !atMaxZoom) {
-                            atMaxZoom = true;
-                            showReleaseToast();
-                        }
-                        if (fov > FOV_MIN + 5) { atMaxZoom = false; hideReleaseToast(); }
-                    } catch (e) { }
-                }
-
-                panoContainer.addEventListener('wheel', function () {
-                    setTimeout(checkFov, 100);
-                }, { passive: true });
+                panoContainer.addEventListener('wheel', function () { setTimeout(checkFov, 100); }, { passive: true });
             }
 
-            /* Heuristic fallback: count scroll-in events on the pano container.
-               If user has scrolled in 8+ times (deep zoom), release. */
+            function checkFov() {
+                try {
+                    var cam = panoViewer.camera || (panoViewer.getCamera && panoViewer.getCamera());
+                    if (!cam) return;
+                    var fov = cam.fov;
+                    if (fov <= 11 && !atMaxZoom) { atMaxZoom = true; showReleaseToast(); }
+                    if (fov > 15) { atMaxZoom = false; hideReleaseToast(); }
+                } catch (e) { }
+            }
+
             function setupScrollReleaseHeuristic() {
-                var scrollInCount = 0;
-                var MAX_SCROLL_IN = 8;
-
+                var count = 0;
                 panoContainer.addEventListener('wheel', function (e) {
-                    if (e.deltaY < 0) {
-                        /* zooming in */
-                        scrollInCount = Math.min(scrollInCount + 1, MAX_SCROLL_IN + 2);
-                    } else {
-                        /* zooming out */
-                        scrollInCount = Math.max(scrollInCount - 1, 0);
-                    }
-
-                    if (scrollInCount >= MAX_SCROLL_IN && !atMaxZoom) {
-                        atMaxZoom = true;
-                        showReleaseToast();
-                    }
-                    if (scrollInCount < MAX_SCROLL_IN - 2) {
-                        atMaxZoom = false;
-                        hideReleaseToast();
-                    }
+                    if (e.deltaY < 0) { count = Math.min(count + 1, 10); }
+                    else { count = Math.max(count - 1, 0); }
+                    if (count >= 8 && !atMaxZoom) { atMaxZoom = true; showReleaseToast(); }
+                    if (count < 6) { atMaxZoom = false; hideReleaseToast(); }
                 }, { passive: true });
             }
 
@@ -2453,77 +2693,34 @@
                 if (releaseShowing) return;
                 releaseShowing = true;
                 releaseToast.classList.add('show');
-
-                /* After 2.5s, actually release the scroll capture from Panolens */
-                setTimeout(function () {
-                    releasePanoScroll();
-                }, 2500);
+                setTimeout(releasePanoScroll, 2500);
             }
 
-            function hideReleaseToast() {
-                releaseShowing = false;
-                releaseToast.classList.remove('show');
-            }
+            function hideReleaseToast() { releaseShowing = false; releaseToast.classList.remove('show'); }
 
             function releasePanoScroll() {
-                /*
-                 * Panolens' ImagePanorama by default calls event.preventDefault()
-                 * on wheel events, trapping the user. We override the wheel handler
-                 * on the renderer's DOM element to stop preventDefault when at max zoom.
-                 */
-                var canvas = panoContainer.querySelector('canvas');
-                if (!canvas) { canvas = panoContainer.querySelector('.panolens-canvas') || panoContainer; }
-
-                /* Add a capturing wheel listener that, once at max zoom, stops propagation
-                   to Panolens so the page can scroll normally. */
+                var canvas = panoContainer.querySelector('canvas') || panoContainer.querySelector('.panolens-canvas') || panoContainer;
                 canvas.addEventListener('wheel', function (e) {
                     if (atMaxZoom && e.deltaY > 0) {
-                        /* User is scrolling down at max zoom — let the page scroll */
                         e.stopImmediatePropagation();
-                        /* We have to manually nudge the page scroll since Panolens already
-                           called preventDefault() at the renderer level. Use scrollBy. */
                         window.scrollBy({ top: e.deltaY * 2, behavior: 'smooth' });
                     }
                 }, { passive: false, capture: true });
             }
-
         })();
     </script>
 
-
+    <!-- Nav overlay JS (unchanged) -->
     <script>
         const entrust_hamBtn = document.getElementById('entrust-ham-btn');
         const entrust_overlay = document.getElementById('entrust-overlay');
 
-        function entrust_openMenu() {
-            entrust_hamBtn.classList.add('entrust-is-open');
-            entrust_overlay.classList.add('entrust-is-open');
-            entrust_hamBtn.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-        }
+        function entrust_openMenu() { entrust_hamBtn.classList.add('entrust-is-open'); entrust_overlay.classList.add('entrust-is-open'); entrust_hamBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
+        function entrust_closeMenu() { entrust_hamBtn.classList.remove('entrust-is-open'); entrust_overlay.classList.remove('entrust-is-open'); entrust_hamBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
 
-        function entrust_closeMenu() {
-            entrust_hamBtn.classList.remove('entrust-is-open');
-            entrust_overlay.classList.remove('entrust-is-open');
-            entrust_hamBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        entrust_hamBtn.addEventListener('click', () => {
-            entrust_overlay.classList.contains('entrust-is-open')
-                ? entrust_closeMenu()
-                : entrust_openMenu();
-        });
-
-        // Close on nav link click
-        entrust_overlay.querySelectorAll('.entrust-overlay__links a').forEach(link => {
-            link.addEventListener('click', entrust_closeMenu);
-        });
-
-        // Close on Escape
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') entrust_closeMenu();
-        });
+        entrust_hamBtn.addEventListener('click', () => { entrust_overlay.classList.contains('entrust-is-open') ? entrust_closeMenu() : entrust_openMenu(); });
+        entrust_overlay.querySelectorAll('.entrust-overlay__links a').forEach(link => { link.addEventListener('click', entrust_closeMenu); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') entrust_closeMenu(); });
     </script>
 
 </body>
