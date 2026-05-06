@@ -4204,11 +4204,29 @@ ul {
     border-bottom: 1px solid var(--tl-color-border-1)
 }
 
+.tl-primary-btn.spc-header-btn{
+    display: none;
+}
+
 @media(max-width: 1399px) {
     .service-item .service-top {
         flex-direction: column-reverse;
         align-items: baseline
     }
+}
+
+@media(max-width: 600px) {
+    .service-item .service-top {
+    padding-bottom: 40px;
+    }
+
+    .tl-primary-btn.header-btn{
+    display: none;
+}
+
+.tl-primary-btn.spc-header-btn{
+    display: block;
+}
 }
 
 .service-item .service-top .title {
